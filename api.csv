@@ -1,4 +1,4 @@
 api,input,output,,,,,,,filter,,language,,,,,url
-,json,cases,csv,deaths,json,xml,gzip,"upload time",area,date,.net,elixir,java,javascript,R,
+,json,cases,csv,deaths,json,xml,gzip,"upload time",area,date,C#,elixir,java,javascript,R,
 "uk government",y,y,y,y,y,y,y,y,y,y,y,y,n,y,y,https://coronavirus.data.gov.uk/details/developers-guide
 api.covid19api.com,,,,,,,,,,,,,,,,https://documenter.getpostman.com/view/10808728/SzS8rjbc
