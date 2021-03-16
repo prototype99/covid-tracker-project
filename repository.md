@@ -1,1 +1,1 @@
-In this context, a repository is where code is stored, in our case it is a [git](repository), although there are also others
+In this context, a repository is where code is stored, in our case it is a [git](repository.md), although there are also others

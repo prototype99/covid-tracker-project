@@ -1,3 +1,3 @@
-This lets you work on a locally [cloned](clone) [git](git) [repository](repository) and more easily do things like create [branches](branch), amend [commits](commit), amend [commit](commit) authors, [rebase](rebase) [branches](branch) and [pull](pull) changes.
+This lets you work on a locally [cloned](clone.md) [git](git.md) [repository](repository.md) and more easily do things like create [branches](branch.md), amend [commits](commit.md), amend [commit](commit.md) authors, [rebase](rebase.md) [branches](branch.md) and [pull](pull.md) changes.
 
-Options include the [official github client](github-client), [smartgit](smartgit) or [gitkraken](gitkraken)
+Options include the [official github client](github-client.md), [smartgit](smartgit.md) or [gitkraken](gitkraken.md)

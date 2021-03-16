@@ -1,1 +1,1 @@
-This is basically synonymous to uploading your [commits](commit) to the online version of a [repository](repository)
+This is basically synonymous to uploading your [commits](commit.md) to the online version of a [repository](repository.md)

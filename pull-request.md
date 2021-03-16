@@ -1,1 +1,1 @@
-A pull request is a request to have your [commits](commit) [merged](merge) into a [repository](repository). It's recommended to have a [branch](branch) for each type of change you want to make so that things are more organised.
+A pull request is a request to have your [commits](commit.md) [merged](merge.md) into a [repository](repository.md). It's recommended to have a [branch](branch.md) for each type of change you want to make so that things are more organised.

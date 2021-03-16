@@ -1,1 +1,1 @@
-every [repository](repository) has a main, or master [(deprecated)](historic-terms) [branch](branch). You can, however, create more branches, which is useful for [pull requests](pull-request).
+every [repository](repository.md) has a main, or master [(deprecated)](historic-terms.md) [branch](branch.md). You can, however, create more branches, which is useful for [pull requests](pull-request.md).
