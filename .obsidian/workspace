@@ -18,31 +18,10 @@
   "left": {
     "id": "37ecec5f479a20ca",
     "type": "split",
-    "children": [
-      {
-        "id": "6f8f9dbc5b8ebee3",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "a57378fd552884f4",
-            "type": "leaf",
-            "state": {
-              "type": "search",
-              "state": {
-                "query": "file:",
-                "matchingCase": false,
-                "explainSearch": false,
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical"
-              }
-            }
-          }
-        ]
-      }
-    ],
+    "children": [],
     "direction": "horizontal",
-    "width": 170
+    "width": 170,
+    "collapsed": true
   },
   "right": {
     "id": "93695e2cb251453e",
