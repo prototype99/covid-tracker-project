@@ -1,6 +1,1 @@
-### Easier idea
-**Type:**			Desktop app
-**Language:**	Java
-### Harder idea
-**Type:**			Website
-**Language:**	JavaScript/CSS/HTML
+Will be a desktop app written in [java](java.md)

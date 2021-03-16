@@ -1,0 +1,1 @@
+Load up [obsidian](obsidian.md) for a full view of our extensive documentation, [clone](clone.md) this [repository](repository.md), and away you go!
