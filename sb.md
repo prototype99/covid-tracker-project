@@ -1,0 +1,1 @@
+Highly variable availability, usually available from an uknown until around 16:00, a lot more available through methods other than microsoft teams
