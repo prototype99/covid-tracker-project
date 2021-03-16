@@ -1,0 +1,1 @@
+options include [intellij idea community edition](intellij.md), [eclipse](eclipse.md) and [processing](processing.md)
