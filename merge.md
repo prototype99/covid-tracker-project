@@ -1,0 +1,1 @@
+When a pull request is accepted, it will be [commited](commit) into the [repository]

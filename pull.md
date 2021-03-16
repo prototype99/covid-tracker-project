@@ -1,0 +1,1 @@
+Basically how you make sure you have the latest [commits](commit) from other people. if the [git client](git-client) asks you what you prefer, choose [rebase](rebase) mode

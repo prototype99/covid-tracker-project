@@ -1,0 +1,1 @@
+The term "master" is deprecated in favour of "main" as it is generally used in the context of a "master/slave" relationship, which I am sure many of you will realise, is literally slavery. computers have been around a long time, sometimes language has to evolve, to reflect changing societal values. Besides, now you have to type less letters, why not?

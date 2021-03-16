@@ -1,0 +1,1 @@
+free for public and private [repositories](repository) if you use the latest version

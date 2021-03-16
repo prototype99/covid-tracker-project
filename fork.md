@@ -1,0 +1,1 @@
+A fork is your own copy of a [repository](repository). Forks are great because they serve as a place to store your own [commits](commit) as well as being a form of backup/redundancy. Unless you plan to work entirely online you will want to [clone](clone) it.

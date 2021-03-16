@@ -1,0 +1,1 @@
+This is the act of replacing the history of a [branch](branch) with another [branch](branch), almost like replacing the base of a branch, I guess.

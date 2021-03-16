@@ -1,0 +1,1 @@
+An excellent [git client](git-client) beloved by many. Free for public [repositories](repository) just like ours.
