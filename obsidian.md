@@ -1,0 +1,1 @@
+you can get obsidian [here](https://obsidian.md/)
