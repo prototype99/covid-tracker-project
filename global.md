@@ -1,0 +1,1 @@
+All, or most of the world. Includes the [United Kingdom](uk.md)

@@ -1,0 +1,1 @@
+conducted research into [apis](apis.md), applied [obsidian](obsidian.md) for enhanced documentation
