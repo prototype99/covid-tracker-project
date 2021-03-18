@@ -1,0 +1,1 @@
+This is a state applied to [meetings](meetings.md) that have failed, usually due to only one member arriving, or mutual agreement
