@@ -1,9 +1,9 @@
 A lot of the roles were established during this meeting.
 
-Physical presence:
+##### Physical presence:
 - [as](as.md)
 - [sb](sb.md)
-Digital presence:
+##### Digital presence:
 - [aa](aa.md)
-Absentee:
+##### Absentee:
 - [mt](mt.md)

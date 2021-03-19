@@ -4,4 +4,14 @@ This meeting will include a check to make sure that everyone is comfortable with
 
 This meeting will hopefully instigate the beginning of code production and will also include a [lead writer](lead-writer.md) consultation.
 
-only [sb](sb.md) arrived, meeting may be regarded as [failed](failed.md) unless that changes
+meeting [failed](failed.md).
+
+##### present:
+- [sb](sb.md)
+
+##### Absentee:
+- [mt](mt.md)
+- [as](as.md)
+
+##### Excused absence:
+- [aa](aa.md) (medical)

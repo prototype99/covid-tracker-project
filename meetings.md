@@ -6,8 +6,10 @@ It is generally expected for all members to be there for major meetings with a p
 
 naming format: meeting major.minor
 
-Elapsed meetings:
+##### Elapsed meetings:
 - [meeting 0](meeting0.md)
 - [meeting 0.5](meeting0.5.md)
-Future meetings:
 - [meeting 1](meeting1.md)
+- [meeting 1.1](meeting1.1.md)
+##### Future meetings:
+- [meeting 1.2](meeting1.2.md)
