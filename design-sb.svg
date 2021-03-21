@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="163.16875mm"
-   height="135.31717mm"
-   viewBox="0 0 163.16875 135.31717"
+   width="165.92192mm"
+   height="139.84325mm"
+   viewBox="0 0 165.92192 139.84325"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 5da689c313, 2019-01-14"
-   sodipodi:docname="prototype.svg"
+   sodipodi:docname="design-sb.svg"
    inkscape:export-filename="/home/seirra/Yandex.Disk/groupwork/prototype.png"
    inkscape:export-xdpi="212.6722"
    inkscape:export-ydpi="212.6722">
@@ -29,8 +29,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="264.78297"
-     inkscape:cy="221.18987"
+     inkscape:cx="247.16458"
+     inkscape:cy="382.91473"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -47,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -55,7 +55,14 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(20.447083,-99.017477)">
+     transform="translate(22.400133,-96.006104)">
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.07738423;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect843"
+       width="165.92192"
+       height="139.84325"
+       x="-22.400133"
+       y="96.006104" />
     <rect
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.29828286;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect817"
@@ -165,7 +172,7 @@
          style="stroke-width:0.26458332">maybe also some links to pages with covid advice</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.0588336px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.0588336px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        x="41.465416"
        y="133.26381"
        id="text905"><tspan
@@ -173,7 +180,7 @@
          id="tspan903"
          x="41.465416"
          y="133.26381"
-         style="stroke-width:0.26458332;fill:#808080;">(this is a map)</tspan></text>
+         style="fill:#808080;stroke-width:0.26458332">(this is a map)</tspan></text>
     <rect
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.62676293;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect823-4"
