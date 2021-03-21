@@ -5,7 +5,7 @@ import javax.swing.*;
 public class mainForm {
     private JPanel mainPanel;
     private JTextField textField1;
-    private JButton button1;
+    private JButton goButton;
 
     public mainForm() {
     }
