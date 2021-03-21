@@ -1,25 +1,25 @@
 https://documenter.getpostman.com/view/10808728/SzS8rjbc
 api that covers the [world](global.md). Unknown as of yet what the input will be.
 ##### available data:
-- [cases](cases.md)
-- [deaths](deaths.md)
-- [recoveries](recovery.md)
-- [upload time](upload.md)
+- #cases
+- #deaths
+- #recoveries
+- #upload-time
 ##### ouputs as:
-- [json](json.md)
+- #json
 ##### can filter by:
-- [area](area.md)
-- [date](date.md)
+- #area
+- #date
 ##### supported languages are:
-- [C](c.md)
-- [C#](c-sharp.md)
-- [go](go.md)
-- [java](java.md)
-- [javascript](js.md)
-- [objective-C](oc.md)
-- [ocaml](ocaml.md)
-- [php](php.md)
-- [python](python.md)
-- [R](r.md)
-- [ruby](ruby.md)
-- [swift](swift.md)
+- #C
+- #C-sharp 
+- #go
+- #java
+- #javascript
+- #objective-C
+- #ocaml
+- #php
+- #python
+- #R
+- #ruby
+- #swift

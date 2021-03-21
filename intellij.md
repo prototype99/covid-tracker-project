@@ -1,1 +1,1 @@
-is an [ide](ide.md) for [java](java.md)
+is an [ide](ide.md) for #java

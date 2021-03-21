@@ -1,1 +1,1 @@
-Strong experience in [java](java.md)
+Strong experience in #java
