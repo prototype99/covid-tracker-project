@@ -1,16 +1,16 @@
 https://documenter.getpostman.com/view/10808728/SzS8rjbc
 api that covers the [world](global.md). Unknown as of yet what the input will be.
-available data:
+##### available data:
 - [cases](cases.md)
 - [deaths](deaths.md)
 - [recoveries](recovery.md)
 - [upload time](upload.md)
-ouputs as:
+##### ouputs as:
 - [json](json.md)
-can filter by:
+##### can filter by:
 - [area](area.md)
 - [date](date.md)
-supported languages are:
+##### supported languages are:
 - [C](c.md)
 - [C#](c-sharp.md)
 - [go](go.md)

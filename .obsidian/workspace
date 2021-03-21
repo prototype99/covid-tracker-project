@@ -8,11 +8,8 @@
         "type": "leaf",
         "active": true,
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "project.md",
-            "mode": "preview"
-          }
+          "type": "graph",
+          "state": {}
         }
       }
     ],
@@ -40,7 +37,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "project.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -57,15 +53,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "uk-gov-api.md",
+    "covid19api.md",
+    "meetings.md",
+    "obsidian.md",
     "project.md",
     "meeting1.2.md",
     "meeting1.1.md",
-    "meetings.md",
     "user-survey.md",
     "designs.md",
-    "lead-designer.md",
-    "assignment-spec.md",
-    "assignment-spec.pdf",
-    "Untitled.md"
+    "lead-designer.md"
   ]
 }
