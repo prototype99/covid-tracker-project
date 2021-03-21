@@ -4,12 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "b6e88f59a202e285",
+        "id": "a0c6e6f6c12df1ac",
         "type": "leaf",
         "active": true,
         "state": {
-          "type": "graph",
-          "state": {}
+          "type": "pdf",
+          "state": {
+            "file": "assignment-spec.pdf"
+          }
         }
       }
     ],
@@ -37,6 +39,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "assignment-spec.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -53,6 +56,8 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "assignment-spec.pdf",
+    "unit-handbook.pdf",
     "meeting1.2.md",
     "meetings.md",
     "meeting1.1.md",
@@ -60,8 +65,6 @@
     "meeting1.md",
     "meeting0.md",
     "covid19api.md",
-    "uk-gov-api.md",
-    "global.md",
-    "apis.md"
+    "uk-gov-api.md"
   ]
 }
