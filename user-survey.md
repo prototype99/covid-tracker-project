@@ -1,0 +1,1 @@
+a survey was made by the [user ambassador](user-ambassador.md). [they](user-ambassador.md) later in [meeting 1.2](meeting1.2.md) showed that the [user](user.md) has a preference towards a [website](website.md)

@@ -8,8 +8,11 @@
         "type": "leaf",
         "active": true,
         "state": {
-          "type": "graph",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "meeting1.2.md",
+            "mode": "source"
+          }
         }
       }
     ],
@@ -37,6 +40,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "meeting1.2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -53,15 +57,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "meeting1.2.md",
+    "meeting1.1.md",
+    "meetings.md",
+    "user-survey.md",
     "designs.md",
     "lead-designer.md",
     "assignment-spec.md",
     "assignment-spec.pdf",
     "Untitled.md",
-    "unit-handbook.pdf",
-    "meeting1.2.md",
-    "meetings.md",
-    "meeting1.1.md",
-    "meeting0.5.md"
+    "unit-handbook.pdf"
   ]
 }
