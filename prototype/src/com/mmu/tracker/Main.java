@@ -3,9 +3,11 @@ package com.mmu.tracker;
 import javax.swing.*;
 
 public class Main {
-    //add form items
+    //add form items, warnings are suppressed because they are actually needed
+    @SuppressWarnings("unused")
     private JButton goButton;
     private JPanel mainPanel;
+    @SuppressWarnings("unused")
     private JTextField searchBar;
     //main code block
     public static void main(String[] args) {
