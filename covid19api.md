@@ -1,3 +1,4 @@
+https://covid19api.com/
 https://documenter.getpostman.com/view/10808728/SzS8rjbc
 api that covers the [world](global.md). Unknown as of yet what the input will be.
 ##### available data:
