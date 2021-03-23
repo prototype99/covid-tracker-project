@@ -14,7 +14,7 @@ api that covers the [world](global.md). Unknown as of yet what the input will be
 - #C
 - #C-sharp 
 - #go
-- #java
+- #java ( #java/okhttp or #java/unirest , unirest seems easier )
 - #javascript
 - #objective-C
 - #ocaml
