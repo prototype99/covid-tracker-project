@@ -3,7 +3,7 @@ package com.mmu.tracker;
 import javax.swing.*;
 
 public class Main {
-    //add form items, warnings are suppressed because they are actually needed
+    //add form items, warnings are suppressed because they are actually needed for successful build
     @SuppressWarnings("unused")
     private JButton goButton;
     private JPanel mainPanel;
