@@ -12,5 +12,4 @@ naming format: meeting major.minor
 - [meeting 1](meeting1.md)
 - [meeting 1.1](meeting1.1.md)
 - [meeting 1.2](meeting1.2.md)
-##### Future meetings:
-- [meeting 1.3](meeting1.3.md)
+- [meeting 2](meeting2.md)

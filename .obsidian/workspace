@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "638e00a8d7634651",
+        "id": "53598443035167f9",
         "type": "leaf",
         "active": true,
         "state": {
@@ -53,15 +53,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "meeting2.md",
+    "meetings.md",
+    "meeting0.md",
+    "meeting1.md",
     "covid19api.md",
     "intellij.md",
     "lead-developer.md",
     "java.md",
     "project.md",
-    "uk-gov-api.md",
-    "global.md",
-    "meetings.md",
-    "meeting0.md",
-    "meeting1.md"
+    "uk-gov-api.md"
   ]
 }
