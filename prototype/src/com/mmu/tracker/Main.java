@@ -1,5 +1,7 @@
 package com.mmu.tracker;
 //import required libraries
+import kong.unirest.Unirest;
+
 import javax.swing.*;
 
 public class Main {
@@ -17,5 +19,8 @@ public class Main {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+        //equivalent to Unirest.setTimeouts(0, 0);
+        Unirest.config().socketTimeout(0)
+                .connectTimeout(0);
     }
 }
