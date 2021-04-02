@@ -25,7 +25,7 @@
  *
  */
 
-package org.apache.hc.core5.http;
+package org.apache.http;
 
 /**
  * Signals that an HTTP protocol violation has occurred.

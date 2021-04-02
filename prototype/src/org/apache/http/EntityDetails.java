@@ -25,22 +25,44 @@
  *
  */
 
-package org.apache.hc.core5.http;
+package org.apache.http;
+
+import java.util.Set;
 
 /**
- * Commons chars used by HTTP/1.1 protocol.
+ * Details of an entity transmitted by a message.
  *
  * @since 5.0
  */
-public final class Chars {
+public interface EntityDetails {
 
-    public static final int CR = 13; // <US-ASCII CR, carriage return (13)>
-    public static final int LF = 10; // <US-ASCII LF, linefeed (10)>
-    public static final int SP = 32; // <US-ASCII SP, space (32)>
-    public static final int HT = 9;  // <US-ASCII HT, horizontal-tab (9)>
-    public static final int DEL = 127; // <US-ASCII DEL, delete (127)>
+    /**
+     * Returns length of the entity, if known.
+     */
+    long getContentLength();
 
-    private Chars() {
-    }
+    /**
+     * Returns content type of the entity, if known.
+     */
+    String getContentType();
+
+    /**
+     * Returns content encoding of the entity, if known.
+     */
+    String getContentEncoding();
+
+    /**
+     * Returns chunked transfer hint for this entity.
+     * <p>
+     * The behavior of wrapping entities is implementation dependent,
+     * but should respect the primary purpose.
+     * </p>
+     */
+    boolean isChunked();
+
+    /**
+     * Preliminary declaration of trailing headers.
+     */
+    Set<String> getTrailerNames();
 
 }

@@ -24,28 +24,22 @@
  * <http://www.apache.org/>.
  *
  */
+package org.apache.annotation;
 
-package org.apache.hc.core5.http;
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
- * Represents an HTTP header field consisting of a field name and a field
- * value.
- *
- * @since 4.0
+ * This annotation defines behavioral contract enforced at runtime by instances of annotated classes.
  */
-public interface Header extends NameValuePair {
+@Documented
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.CLASS)
+public @interface Contract {
 
-    /**
-     * Returns {@code true} if the header should be considered sensitive.
-     * <p>
-     * Some encoding schemes such as HPACK impose restrictions on encoded
-     * representation of sensitive headers.
-     * </p>
-     *
-     * @return {@code true} if the header should be considered sensitive.
-     *
-     * @since 5.0
-     */
-    boolean isSensitive();
+    ThreadingBehavior threading() default ThreadingBehavior.UNSAFE;
 
 }

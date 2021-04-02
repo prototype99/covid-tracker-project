@@ -25,44 +25,27 @@
  *
  */
 
-package org.apache.hc.core5.http;
-
-import java.util.Set;
+package org.apache.http;
 
 /**
- * Details of an entity transmitted by a message.
+ * Represents an HTTP header field consisting of a field name and a field
+ * value.
  *
- * @since 5.0
+ * @since 4.0
  */
-public interface EntityDetails {
+public interface Header extends NameValuePair {
 
     /**
-     * Returns length of the entity, if known.
-     */
-    long getContentLength();
-
-    /**
-     * Returns content type of the entity, if known.
-     */
-    String getContentType();
-
-    /**
-     * Returns content encoding of the entity, if known.
-     */
-    String getContentEncoding();
-
-    /**
-     * Returns chunked transfer hint for this entity.
+     * Returns {@code true} if the header should be considered sensitive.
      * <p>
-     * The behavior of wrapping entities is implementation dependent,
-     * but should respect the primary purpose.
+     * Some encoding schemes such as HPACK impose restrictions on encoded
+     * representation of sensitive headers.
      * </p>
+     *
+     * @return {@code true} if the header should be considered sensitive.
+     *
+     * @since 5.0
      */
-    boolean isChunked();
-
-    /**
-     * Preliminary declaration of trailing headers.
-     */
-    Set<String> getTrailerNames();
+    boolean isSensitive();
 
 }

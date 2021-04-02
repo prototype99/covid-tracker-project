@@ -25,27 +25,22 @@
  *
  */
 
-package org.apache.hc.core5.http;
+package org.apache.http;
 
 /**
- * A name-value pair parameter used as an element of HTTP messages.
+ * Commons chars used by HTTP/1.1 protocol.
  *
- * @since 4.0
+ * @since 5.0
  */
-public interface NameValuePair {
+public final class Chars {
 
-    /**
-     * Gets the name of this pair.
-     *
-     * @return the name of this pair, never {@code null}.
-     */
-    String getName();
+    public static final int CR = 13; // <US-ASCII CR, carriage return (13)>
+    public static final int LF = 10; // <US-ASCII LF, linefeed (10)>
+    public static final int SP = 32; // <US-ASCII SP, space (32)>
+    public static final int HT = 9;  // <US-ASCII HT, horizontal-tab (9)>
+    public static final int DEL = 127; // <US-ASCII DEL, delete (127)>
 
-    /**
-     * Gets the value of this pair.
-     *
-     * @return the value of this pair, may be {@code null}.
-     */
-    String getValue();
+    private Chars() {
+    }
 
 }

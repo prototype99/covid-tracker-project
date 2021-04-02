@@ -24,46 +24,28 @@
  * <http://www.apache.org/>.
  *
  */
-package org.apache.hc.core5.annotation;
+
+package org.apache.http;
 
 /**
- Defines types of threading behavior enforced at runtime.
+ * A name-value pair parameter used as an element of HTTP messages.
+ *
+ * @since 4.0
  */
-public enum ThreadingBehavior {
+public interface NameValuePair {
 
     /**
-     * Instances of classes with the given contract are expected to be fully immutable
-     * and thread-safe.
+     * Gets the name of this pair.
+     *
+     * @return the name of this pair, never {@code null}.
      */
-    IMMUTABLE,
+    String getName();
 
     /**
-     * Instances of classes with the given contract are expected to be immutable if their
-     * dependencies injected at construction time are immutable and are expected to be thread-safe
-     * if their dependencies are thread-safe.
+     * Gets the value of this pair.
+     *
+     * @return the value of this pair, may be {@code null}.
      */
-    IMMUTABLE_CONDITIONAL,
-
-    /**
-     * Instances of classes with the given contract are expected to maintain no state
-     * and to be thread-safe.
-     */
-    STATELESS,
-
-    /**
-     * Instances of classes with the given contract are expected to be fully thread-safe.
-     */
-    SAFE,
-
-    /**
-     * Instances of classes with the given contract are expected to be thread-safe if their
-     * dependencies injected at construction time are thread-safe.
-     */
-    SAFE_CONDITIONAL,
-
-    /**
-     * Instances of classes with the given contract are expected to be non thread-safe.
-     */
-    UNSAFE
+    String getValue();
 
 }

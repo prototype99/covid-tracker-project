@@ -25,7 +25,7 @@
  *
  */
 
-package org.apache.hc.core5.http;
+package org.apache.http;
 
 /**
  * HTTP messages consist of requests from client to server and responses

@@ -25,14 +25,14 @@
  *
  */
 
-package org.apache.hc.core5.util;
+package org.apache.util;
 
 import java.text.ParseException;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.hc.core5.annotation.Contract;
-import org.apache.hc.core5.annotation.ThreadingBehavior;
+import org.apache.annotation.Contract;
+import org.apache.annotation.ThreadingBehavior;
 
 /**
  * Represents a time value as a {@code long} time and a {@link TimeUnit}.
