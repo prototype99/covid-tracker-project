@@ -25,31 +25,27 @@
  *
  */
 
-package org.apache.hc.core5.http;
+package org.apache.net;
 
 /**
- * Contains an {@link HttpEntity}.
+ * Endpoint identified by name (usually a fully qualified domain name) and port.
  *
  * @since 5.0
  */
-public interface HttpEntityContainer {
+public interface NamedEndpoint {
 
     /**
-     * Obtains the message entity, if available.
+     * Returns name (IP or DNS name).
      *
-     * @return  the message entity, or {@code null} if not available
+     * @return the host name (IP or DNS name)
      */
-    HttpEntity getEntity();
+    String getHostName();
 
     /**
-     * Sets an entity for this message.
-     * <p>
-     * Please note that if an entity has already been set it is responsibility of the caller
-     * to ensure release of the resources that may be associated with that entity.
-     * </p>
+     * Returns the port.
      *
-     * @param entity    the entity to set of this message, or {@code null} to unset
+     * @return the host port, or {@code -1} if not set
      */
-    void setEntity(HttpEntity entity);
+    int getPort();
 
 }

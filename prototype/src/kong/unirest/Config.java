@@ -28,7 +28,7 @@ package kong.unirest;
 import kong.unirest.apache.ApacheAsyncClient;
 import kong.unirest.apache.ApacheClient;
 import org.apache.http.HttpRequestInterceptor;
-import org.apache.http.client.HttpClient;
+import org.apache.http.classic.HttpClient;
 import org.apache.http.nio.client.HttpAsyncClient;
 
 import javax.net.ssl.HostnameVerifier;

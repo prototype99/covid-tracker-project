@@ -25,9 +25,9 @@
  *
  */
 
-package org.apache.hc.core5.http.protocol;
+package org.apache.http.protocol;
 
-import org.apache.hc.core5.http.ProtocolVersion;
+import org.apache.http.ProtocolVersion;
 
 /**
  * HttpContext represents execution state of an HTTP process. It is a structure

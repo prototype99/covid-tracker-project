@@ -24,9 +24,9 @@
  * <http://www.apache.org/>.
  *
  */
-package org.apache.hc.core5.net;
+package org.apache.net;
 
-import org.apache.hc.core5.util.Args;
+import org.apache.util.Args;
 
 /**
  * Port helper methods.

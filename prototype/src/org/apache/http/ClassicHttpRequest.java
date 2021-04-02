@@ -25,7 +25,7 @@
  *
  */
 
-package org.apache.hc.core5.http;
+package org.apache.http;
 
 /**
  * 'Classic' {@link HttpRequest} message that can enclose {@link HttpEntity}.

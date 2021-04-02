@@ -25,12 +25,12 @@
  *
  */
 
-package org.apache.hc.core5.http;
+package org.apache.http;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import org.apache.hc.core5.net.URIAuthority;
+import org.apache.net.URIAuthority;
 
 /**
  * A request message from a client to a server includes, within the

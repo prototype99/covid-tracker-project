@@ -25,18 +25,18 @@
  *
  */
 
-package org.apache.hc.core5.net;
+package org.apache.net;
 
 import java.io.Serializable;
 import java.net.URISyntaxException;
 import java.util.BitSet;
 import java.util.Locale;
 
-import org.apache.hc.core5.annotation.Contract;
-import org.apache.hc.core5.annotation.ThreadingBehavior;
-import org.apache.hc.core5.util.LangUtils;
-import org.apache.hc.core5.util.TextUtils;
-import org.apache.hc.core5.util.Tokenizer;
+import org.apache.annotation.Contract;
+import org.apache.annotation.ThreadingBehavior;
+import org.apache.util.LangUtils;
+import org.apache.util.TextUtils;
+import org.apache.util.Tokenizer;
 
 /**
  * Represents authority component of request {@link java.net.URI}.

@@ -25,16 +25,16 @@
  *
  */
 
-package org.apache.hc.client5.http.classic;
+package org.apache.http.classic;
 
 import java.io.IOException;
 
-import org.apache.hc.core5.http.ClassicHttpRequest;
-import org.apache.hc.core5.http.ClassicHttpResponse;
-import org.apache.hc.core5.http.HttpHost;
-import org.apache.hc.core5.http.HttpResponse;
-import org.apache.hc.core5.http.io.HttpClientResponseHandler;
-import org.apache.hc.core5.http.protocol.HttpContext;
+import org.apache.http.ClassicHttpRequest;
+import org.apache.http.ClassicHttpResponse;
+import org.apache.http.HttpHost;
+import org.apache.http.HttpResponse;
+import org.apache.http.io.HttpClientResponseHandler;
+import org.apache.http.protocol.HttpContext;
 
 /**
  * This interface represents only the most basic contract for HTTP request

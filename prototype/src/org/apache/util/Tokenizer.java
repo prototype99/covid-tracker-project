@@ -25,12 +25,12 @@
  *
  */
 
-package org.apache.hc.core5.util;
+package org.apache.util;
 
 import java.util.BitSet;
 
-import org.apache.hc.core5.annotation.Contract;
-import org.apache.hc.core5.annotation.ThreadingBehavior;
+import org.apache.annotation.Contract;
+import org.apache.annotation.ThreadingBehavior;
 
 /**
  * Tokenizer that can be used as a foundation for more complex parsing routines.
