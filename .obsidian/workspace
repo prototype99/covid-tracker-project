@@ -4,13 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "22ceb330d796a53f",
+        "id": "f1fdb388f88d564a",
         "type": "leaf",
         "active": true,
         "state": {
-          "type": "pdf",
+          "type": "markdown",
           "state": {
-            "file": "assignment-spec.pdf"
+            "file": "lib.md",
+            "mode": "source"
           }
         }
       }
@@ -39,7 +40,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "assignment-spec.pdf",
+                "file": "lib.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -56,8 +57,8 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "assignment-spec.pdf",
     "lib.md",
+    "assignment-spec.pdf",
     "technology-researcher.md",
     "lead-developer.md",
     "project.md",
