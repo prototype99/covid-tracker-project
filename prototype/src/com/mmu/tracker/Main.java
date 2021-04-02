@@ -22,8 +22,8 @@ public class Main {
         //equivalent to Unirest.setTimeouts(0, 0);
         Unirest.config().socketTimeout(0)
                 .connectTimeout(0);
-        //needs some work ig
-        System.out.println(HttpResponse<String> response = Unirest.get("https://api.covid19api.com/")
-                .asString());
+        HttpResponse response = (HttpResponse) Unirest.get("https://api.covid19api.com/")
+                .asString();
+        System.out.println(response);
     }
 }

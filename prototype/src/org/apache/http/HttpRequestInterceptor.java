@@ -25,13 +25,13 @@
  *
  */
 
-package org.apache.hc.core5.http;
+package org.apache.http;
 
 import java.io.IOException;
 
-import org.apache.hc.core5.annotation.Contract;
-import org.apache.hc.core5.annotation.ThreadingBehavior;
-import org.apache.hc.core5.http.protocol.HttpContext;
+import org.apache.annotation.Contract;
+import org.apache.annotation.ThreadingBehavior;
+import org.apache.http.protocol.HttpContext;
 
 /**
  * HTTP protocol interceptor is a routine that implements a specific aspect of
