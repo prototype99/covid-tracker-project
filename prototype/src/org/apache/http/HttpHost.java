@@ -25,7 +25,7 @@
  *
  */
 
-package org.apache.hc.core5.http;
+package org.apache.http;
 
 import java.io.Serializable;
 import java.net.InetAddress;
@@ -33,14 +33,14 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Locale;
 
-import org.apache.hc.core5.annotation.Contract;
-import org.apache.hc.core5.annotation.ThreadingBehavior;
-import org.apache.hc.core5.net.NamedEndpoint;
-import org.apache.hc.core5.net.Ports;
-import org.apache.hc.core5.net.URIAuthority;
-import org.apache.hc.core5.util.Args;
-import org.apache.hc.core5.util.LangUtils;
-import org.apache.hc.core5.util.TextUtils;
+import org.apache.annotation.Contract;
+import org.apache.annotation.ThreadingBehavior;
+import org.apache.net.NamedEndpoint;
+import org.apache.net.Ports;
+import org.apache.net.URIAuthority;
+import org.apache.util.Args;
+import org.apache.util.LangUtils;
+import org.apache.util.TextUtils;
 
 /**
  * Component that holds all details needed to describe an HTTP connection

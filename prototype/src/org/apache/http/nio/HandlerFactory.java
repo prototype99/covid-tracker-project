@@ -24,16 +24,29 @@
  * <http://www.apache.org/>.
  *
  */
+package org.apache.http.nio;
 
-package org.apache.hc.core5.function;
+import org.apache.http.HttpException;
+import org.apache.http.HttpRequest;
+import org.apache.http.protocol.HttpContext;
 
 /**
- * Abstract object supplier.
+ * Abstract handler factory.
+ *
+ * @param <T> handler type
  *
  * @since 5.0
  */
-public interface Supplier<T> {
+public interface HandlerFactory<T extends ResourceHolder> {
 
-    T get();
+    /**
+     * Creates a new handler instance based on properties of
+     * an incoming request message..
+     *
+     * @param request the incoming reqquest head.
+     * @param context the actual execution context.
+     * @return handler
+     */
+    T create(HttpRequest request, HttpContext context) throws HttpException;
 
 }

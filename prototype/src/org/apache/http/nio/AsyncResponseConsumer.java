@@ -24,39 +24,48 @@
  * <http://www.apache.org/>.
  *
  */
-package org.apache.hc.core5.http.nio;
+package org.apache.http.nio;
 
 import java.io.IOException;
 
-import org.apache.hc.core5.http.HttpException;
-import org.apache.hc.core5.http.protocol.HttpContext;
+import org.apache.concurrent.FutureCallback;
+import org.apache.http.EntityDetails;
+import org.apache.http.HttpException;
+import org.apache.http.HttpResponse;
+import org.apache.http.protocol.HttpContext;
 
 /**
- * Abstract asynchronous request producer.
+ * Abstract asynchronous response consumer.
+ *
+ * @param <T> response representation.
  *
  * @since 5.0
  */
-public interface AsyncRequestProducer extends AsyncDataProducer {
+public interface AsyncResponseConsumer<T> extends AsyncDataConsumer {
 
     /**
-     * Triggered to signal the ability of the underlying request channel
-     * to accept a request messages. The data producer can choose to send
-     * a request message immediately inside the call or asynchronously
-     * at some later point.
+     * Triggered to signal receipt of a response message head.
      *
-     * @param channel the request channel capable to accepting a request message.
+     * @param response the response message head.
+     * @param entityDetails the response entity details or {@code null} if the response
+     *                      does not enclose an entity.
+     * @param context the actual execution context.
+     * @param resultCallback the result callback called when response processing
+     *                       has been completed successfully or unsuccessfully.
+     */
+    void consumeResponse(HttpResponse response, EntityDetails entityDetails, HttpContext context,
+                         FutureCallback<T> resultCallback) throws HttpException, IOException;
+
+    /**
+     * Triggered to signal receipt of an intermediate (1xx) HTTP response.
+     *
+     * @param response the intermediate (1xx) HTTP response.
      * @param context the actual execution context.
      */
-    void sendRequest(RequestChannel channel, HttpContext context) throws HttpException, IOException;
+    void informationResponse(HttpResponse response, HttpContext context) throws HttpException, IOException;
 
     /**
-     * Determines whether the producer can consistently produce the same content
-     * after invocation of {@link ResourceHolder#releaseResources()}.
-     */
-    boolean isRepeatable();
-
-    /**
-     * Triggered to signal a failure in data generation.
+     * Triggered to signal a failure in data processing.
      *
      * @param cause the cause of the failure.
      */

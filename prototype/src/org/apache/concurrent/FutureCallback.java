@@ -24,16 +24,21 @@
  * <http://www.apache.org/>.
  *
  */
-
-package org.apache.http;
-
-import java.io.Closeable;
+package org.apache.concurrent;
 
 /**
- * 'Classic' {@link HttpResponse} message that can enclose {@link HttpEntity}.
+ * A callback interface that gets invoked upon completion of
+ * a {@link java.util.concurrent.Future}.
  *
- * @since 5.0
+ * @param <T> the future result type returned by this callback.
+ * @since 4.2
  */
-public interface ClassicHttpResponse extends HttpResponse, HttpEntityContainer, Closeable {
-    // empty
+public interface FutureCallback<T> {
+
+    void completed(T result);
+
+    void failed(Exception ex);
+
+    void cancelled();
+
 }

@@ -24,16 +24,16 @@
  * <http://www.apache.org/>.
  *
  */
-package org.apache.hc.client5.http.async;
+package org.apache.http.async;
 
 import java.util.concurrent.Future;
 
-import org.apache.hc.core5.concurrent.FutureCallback;
-import org.apache.hc.core5.http.nio.AsyncPushConsumer;
-import org.apache.hc.core5.http.nio.AsyncRequestProducer;
-import org.apache.hc.core5.http.nio.AsyncResponseConsumer;
-import org.apache.hc.core5.http.nio.HandlerFactory;
-import org.apache.hc.core5.http.protocol.HttpContext;
+import org.apache.concurrent.FutureCallback;
+import org.apache.http.nio.AsyncPushConsumer;
+import org.apache.http.nio.AsyncRequestProducer;
+import org.apache.http.nio.AsyncResponseConsumer;
+import org.apache.http.nio.HandlerFactory;
+import org.apache.http.protocol.HttpContext;
 
 /**
  * This interface represents only the most basic contract for HTTP request

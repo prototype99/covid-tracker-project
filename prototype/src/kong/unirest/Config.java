@@ -29,7 +29,7 @@ import kong.unirest.apache.ApacheAsyncClient;
 import kong.unirest.apache.ApacheClient;
 import org.apache.http.HttpRequestInterceptor;
 import org.apache.http.classic.HttpClient;
-import org.apache.http.nio.client.HttpAsyncClient;
+import org.apache.http.async.HttpAsyncClient;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;

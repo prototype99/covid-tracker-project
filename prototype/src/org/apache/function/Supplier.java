@@ -24,26 +24,16 @@
  * <http://www.apache.org/>.
  *
  */
-package org.apache.hc.core5.http.nio;
 
-import org.apache.hc.core5.annotation.Contract;
-import org.apache.hc.core5.annotation.ThreadingBehavior;
+package org.apache.function;
 
 /**
- * Abstract resource holder.
- * <p>
- * Implementations are expected to ensure that {@link #releaseResources()} methods is idempotent and is
- * safe to invoke multiple times.
- * </p>
- * <p>
- * Implementations are expected to be thread-safe.
- * </p>
+ * Abstract object supplier.
  *
  * @since 5.0
  */
-@Contract(threading = ThreadingBehavior.SAFE)
-public interface ResourceHolder {
+public interface Supplier<T> {
 
-    void releaseResources();
+    T get();
 
 }

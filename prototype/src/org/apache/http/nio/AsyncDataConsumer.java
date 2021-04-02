@@ -24,14 +24,14 @@
  * <http://www.apache.org/>.
  *
  */
-package org.apache.hc.core5.http.nio;
+package org.apache.http.nio;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.List;
 
-import org.apache.hc.core5.http.Header;
-import org.apache.hc.core5.http.HttpException;
+import org.apache.http.Header;
+import org.apache.http.HttpException;
 
 /**
  * Abstract asynchronous data consumer.

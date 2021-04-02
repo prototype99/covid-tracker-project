@@ -24,21 +24,26 @@
  * <http://www.apache.org/>.
  *
  */
-package org.apache.hc.core5.concurrent;
+package org.apache.http.nio;
+
+import org.apache.annotation.Contract;
+import org.apache.annotation.ThreadingBehavior;
 
 /**
- * A callback interface that gets invoked upon completion of
- * a {@link java.util.concurrent.Future}.
+ * Abstract resource holder.
+ * <p>
+ * Implementations are expected to ensure that {@link #releaseResources()} methods is idempotent and is
+ * safe to invoke multiple times.
+ * </p>
+ * <p>
+ * Implementations are expected to be thread-safe.
+ * </p>
  *
- * @param <T> the future result type returned by this callback.
- * @since 4.2
+ * @since 5.0
  */
-public interface FutureCallback<T> {
+@Contract(threading = ThreadingBehavior.SAFE)
+public interface ResourceHolder {
 
-    void completed(T result);
-
-    void failed(Exception ex);
-
-    void cancelled();
+    void releaseResources();
 
 }

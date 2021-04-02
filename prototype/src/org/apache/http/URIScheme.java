@@ -24,29 +24,37 @@
  * <http://www.apache.org/>.
  *
  */
-package org.apache.hc.core5.http.nio;
 
-import org.apache.hc.core5.http.HttpException;
-import org.apache.hc.core5.http.HttpRequest;
-import org.apache.hc.core5.http.protocol.HttpContext;
+package org.apache.http;
+
+import org.apache.util.Args;
 
 /**
- * Abstract handler factory.
- *
- * @param <T> handler type
+ * Enumerates supported URI schemes.
  *
  * @since 5.0
  */
-public interface HandlerFactory<T extends ResourceHolder> {
+public enum URIScheme {
 
-    /**
-     * Creates a new handler instance based on properties of
-     * an incoming request message..
-     *
-     * @param request the incoming reqquest head.
-     * @param context the actual execution context.
-     * @return handler
-     */
-    T create(HttpRequest request, HttpContext context) throws HttpException;
+    HTTP("http"), HTTPS("https");
+
+    public final String id;
+
+    URIScheme(final String id) {
+        this.id = Args.notBlank(id, "id");
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public boolean same(final String scheme) {
+        return id.equalsIgnoreCase(scheme);
+    }
+
+    @Override
+    public String toString() {
+        return id;
+    }
 
 }

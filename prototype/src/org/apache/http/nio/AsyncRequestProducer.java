@@ -24,38 +24,39 @@
  * <http://www.apache.org/>.
  *
  */
-package org.apache.hc.core5.http.nio;
+package org.apache.http.nio;
 
 import java.io.IOException;
 
-import org.apache.hc.core5.http.EntityDetails;
-import org.apache.hc.core5.http.HttpException;
-import org.apache.hc.core5.http.HttpRequest;
-import org.apache.hc.core5.http.HttpResponse;
-import org.apache.hc.core5.http.protocol.HttpContext;
+import org.apache.http.HttpException;
+import org.apache.http.protocol.HttpContext;
 
 /**
- * Abstract asynchronous push response consumer.
+ * Abstract asynchronous request producer.
  *
  * @since 5.0
  */
-public interface AsyncPushConsumer extends AsyncDataConsumer {
+public interface AsyncRequestProducer extends AsyncDataProducer {
 
     /**
-     * Triggered to signal receipt of a request message head used as a promise
-     * and the corresponding pushed response.
+     * Triggered to signal the ability of the underlying request channel
+     * to accept a request messages. The data producer can choose to send
+     * a request message immediately inside the call or asynchronously
+     * at some later point.
      *
-     * @param promise the request message head used as a promise.
-     * @param response the pushed response message.
-     * @param entityDetails the response entity details or {@code null} if the response
-     *                      does not enclose an entity.
+     * @param channel the request channel capable to accepting a request message.
      * @param context the actual execution context.
      */
-    void consumePromise(HttpRequest promise, HttpResponse response, EntityDetails entityDetails,
-                        HttpContext context) throws HttpException, IOException;
+    void sendRequest(RequestChannel channel, HttpContext context) throws HttpException, IOException;
 
     /**
-     * Triggered to signal a failure in data processing.
+     * Determines whether the producer can consistently produce the same content
+     * after invocation of {@link ResourceHolder#releaseResources()}.
+     */
+    boolean isRepeatable();
+
+    /**
+     * Triggered to signal a failure in data generation.
      *
      * @param cause the cause of the failure.
      */

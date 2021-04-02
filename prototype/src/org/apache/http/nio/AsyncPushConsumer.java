@@ -24,37 +24,41 @@
  * <http://www.apache.org/>.
  *
  */
+package org.apache.http.nio;
 
-package org.apache.hc.core5.http;
+import java.io.IOException;
 
-import org.apache.hc.core5.util.Args;
+import org.apache.http.EntityDetails;
+import org.apache.http.HttpException;
+import org.apache.http.HttpRequest;
+import org.apache.http.HttpResponse;
+import org.apache.http.protocol.HttpContext;
 
 /**
- * Enumerates supported URI schemes.
+ * Abstract asynchronous push response consumer.
  *
  * @since 5.0
  */
-public enum URIScheme {
+public interface AsyncPushConsumer extends AsyncDataConsumer {
 
-    HTTP("http"), HTTPS("https");
+    /**
+     * Triggered to signal receipt of a request message head used as a promise
+     * and the corresponding pushed response.
+     *
+     * @param promise the request message head used as a promise.
+     * @param response the pushed response message.
+     * @param entityDetails the response entity details or {@code null} if the response
+     *                      does not enclose an entity.
+     * @param context the actual execution context.
+     */
+    void consumePromise(HttpRequest promise, HttpResponse response, EntityDetails entityDetails,
+                        HttpContext context) throws HttpException, IOException;
 
-    public final String id;
-
-    URIScheme(final String id) {
-        this.id = Args.notBlank(id, "id");
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public boolean same(final String scheme) {
-        return id.equalsIgnoreCase(scheme);
-    }
-
-    @Override
-    public String toString() {
-        return id;
-    }
+    /**
+     * Triggered to signal a failure in data processing.
+     *
+     * @param cause the cause of the failure.
+     */
+    void failed(Exception cause);
 
 }

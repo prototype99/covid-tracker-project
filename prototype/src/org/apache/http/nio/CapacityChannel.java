@@ -24,12 +24,12 @@
  * <http://www.apache.org/>.
  *
  */
-package org.apache.hc.core5.http.nio;
+package org.apache.http.nio;
 
 import java.io.IOException;
 
-import org.apache.hc.core5.annotation.Contract;
-import org.apache.hc.core5.annotation.ThreadingBehavior;
+import org.apache.annotation.Contract;
+import org.apache.annotation.ThreadingBehavior;
 
 /**
  * Abstract capacity update channel.
