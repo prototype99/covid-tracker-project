@@ -48,7 +48,7 @@ public interface HttpResponse<T> {
      * @return Response Headers (map) with <b>same case</b> as server response.
      * For instance use <code>getHeaders().getFirst("Location")</code> and not <code>getHeaders().getFirst("location")</code> to get first header "Location"
      */
-    Headers getHeaders();
+//    Headers getHeaders();
 
     /**
      * @return the body
@@ -59,7 +59,7 @@ public interface HttpResponse<T> {
      * If the transformation to the body failed by an exception it will be kept here
      * @return a possible RuntimeException. Checked exceptions are wrapped in a UnirestException
      */
-    Optional<UnirestParsingException> getParsingError();
+//    Optional<UnirestParsingException> getParsingError();
 
     /**
      * Map the body into another type
@@ -122,5 +122,5 @@ public interface HttpResponse<T> {
      * return a cookie collection parse from the set-cookie header
      * @return a Cookies collection
      */
-    Cookies getCookies();
+//    Cookies getCookies();
 }

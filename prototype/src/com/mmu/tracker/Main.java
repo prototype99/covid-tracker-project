@@ -1,8 +1,8 @@
 package com.mmu.tracker;
 //import required libraries
 import kong.unirest.Unirest;
+import kong.unirest.HttpResponse;
 import javax.swing.*;
-import org.apache.http.HttpResponse;
 
 public class Main {
     //add form items, warnings are suppressed because they are actually needed for successful build
@@ -22,7 +22,7 @@ public class Main {
         //equivalent to Unirest.setTimeouts(0, 0);
         Unirest.config().socketTimeout(0)
                 .connectTimeout(0);
-        HttpResponse response = (HttpResponse) Unirest.get("https://api.covid19api.com/")
+        HttpResponse<String> response = Unirest.get("https://api.covid19api.com/")
                 .asString();
         System.out.println(response);
     }
