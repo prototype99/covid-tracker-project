@@ -198,7 +198,7 @@ public interface HttpRequest<R extends HttpRequest>  {
      * Executes the request and returns the response with the body mapped into a String
      * @return response
      */
-//    HttpResponse<String> asString();
+    HttpResponse<String> asString();
 
     /**
      * Executes the request asynchronously and returns the response with the body mapped into a String

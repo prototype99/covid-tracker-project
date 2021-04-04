@@ -68,14 +68,14 @@ public class Headers {
      * @param name the name of the header
      * @param value the value for the header
      */
-    public void replace(String name, String value) {
+/*    public void replace(String name, String value) {
         remove(name);
         add(name, value);
-    }
+    }*/
 
-    private void remove(String name) {
-        headers.removeIf(h -> isName(h, name));
-    }
+//    private void remove(String name) {
+//        headers.removeIf(h -> isName(h, name));
+//    }
 
     /**
      * Get the number of header keys.
@@ -90,12 +90,12 @@ public class Headers {
      * @param name name of the header element
      * @return a list of values
      */
-    public List<String> get(String name) {
+/*    public List<String> get(String name) {
         return headers.stream()
                 .filter(h -> isName(h, name))
                 .map(Header::getValue)
                 .collect(toList());
-    }
+    }*/
 
     /**
      * Add a bunch of headers at once
@@ -110,9 +110,9 @@ public class Headers {
      * @param name a header
      * @return if the headers contain this name.
      */
-    public boolean containsKey(String name) {
-        return this.headers.stream().anyMatch(h -> isName(h, name));
-    }
+//    public boolean containsKey(String name) {
+//        return this.headers.stream().anyMatch(h -> isName(h, name));
+//    }
 
     /**
      * Clear the headers!
@@ -126,14 +126,14 @@ public class Headers {
      * @param key the name of the header
      * @return the first value
      */
-    public String getFirst(String key) {
+/*    public String getFirst(String key) {
         return headers
                 .stream()
                 .filter(h -> isName(h, key))
                 .findFirst()
                 .map(Header::getValue)
                 .orElse("");
-    }
+    }*/
 
     /**
      * Get all of the headers
@@ -143,9 +143,9 @@ public class Headers {
         return new ArrayList<>(this.headers);
     }
 
-    private boolean isName(Header h, String name) {
-        return Util.nullToEmpty(name).equalsIgnoreCase(h.getName());
-    }
+//    private boolean isName(Header h, String name) {
+//        return Util.nullToEmpty(name).equalsIgnoreCase(h.getName());
+//    }
 
     void remove(String key, String value) {
         List<Header> header = headers.stream().
@@ -166,13 +166,13 @@ public class Headers {
         return sb.toString();
     }
 
-    public void cookie(Cookie cookie) {
-        headers.add(new Entry("cookie", cookie.toString()));
-    }
+//    public void cookie(Cookie cookie) {
+//        headers.add(new Entry("cookie", cookie.toString()));
+//    }
 
-    public void cookie(Collection<Cookie> cookies) {
-        cookies.forEach(this::cookie);
-    }
+//    public void cookie(Collection<Cookie> cookies) {
+//        cookies.forEach(this::cookie);
+//    }
 
     @Override
     public boolean equals(Object o) {

@@ -56,9 +56,9 @@ public class Config {
     private Optional<AsyncClient> asyncClient = Optional.empty();
     private Optional<ObjectMapper> objectMapper = Optional.of(new JsonObjectMapper());
 
-    private List<HttpRequestInterceptor> apacheinterceptors = new ArrayList<>();
+    private List<HttpRequestInterceptor> apacheinterceptors = new ArrayList<>(); */
     private Headers headers;
-    private Proxy proxy;*/
+    //private Proxy proxy;
     private int connectionTimeout;
     private int socketTimeout;
     private int maxTotal;
@@ -682,9 +682,9 @@ public class Config {
      *
      * @return Headers
      */
-//    public Headers getDefaultHeaders() {
-//        return headers;
-//    }
+    public Headers getDefaultHeaders() {
+        return headers;
+    }
 
     /**
      * Does the config have currently running clients? Find out here.
