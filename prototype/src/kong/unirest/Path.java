@@ -52,11 +52,11 @@ class Path {
         this(url, null);
     }
 
-    public void param(Map<String, Object> params) {
-        params.forEach((key, value) -> param(key, String.valueOf(value)));
-    }
+//    public void param(Map<String, Object> params) {
+//        params.forEach((key, value) -> param(key, String.valueOf(value)));
+//    }
 
-    public void param(String name, String value) {
+    /*public void param(String name, String value) {
         Matcher matcher = Pattern.compile("\\{" + name + "\\}").matcher(url);
         int count = 0;
         while (matcher.find()) {
@@ -66,22 +66,22 @@ class Path {
             throw new UnirestException("Can't find route parameter name \"" + name + "\"");
         }
         this.url = url.replaceAll("\\{" + name + "\\}", encodePath(value));
-    }
+    }*/
 
-    private String encodePath(String value) {
+    /*private String encodePath(String value) {
         if(value == null){
             return "";
         }
         return Util.encode(value).replaceAll("\\+", "%20");
-    }
+    }*/
 
-    public void queryString(String name, Collection<?> value){
+    /*public void queryString(String name, Collection<?> value){
         for (Object cur : value) {
             queryString(name, cur);
         }
-    }
+    }*/
 
-    public void queryString(String name, Object value) {
+    /*public void queryString(String name, Object value) {
         StringBuilder queryString = new StringBuilder();
         if (url.contains("?")) {
             queryString.append("&");
@@ -97,15 +97,15 @@ class Path {
             throw new UnirestException(e);
         }
         url += queryString.toString();
-    }
+    }*/
 
-    public void queryString(Map<String, Object> parameters) {
+    /*public void queryString(Map<String, Object> parameters) {
         if (parameters != null) {
             for (Map.Entry<String, Object> param : parameters.entrySet()) {
                 queryString(param.getKey(), param.getValue());
             }
         }
-    }
+    }*/
 
     @Override
     public String toString() {
