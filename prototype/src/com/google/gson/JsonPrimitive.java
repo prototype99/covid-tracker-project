@@ -20,7 +20,7 @@ import com.google.gson.internal.$Gson$Preconditions;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-import com.google.gson.internal.LazilyParsedNumber;
+//import com.google.gson.internal.LazilyParsedNumber;
 
 /**
  * A class representing a Json primitive value. A primitive value
@@ -120,10 +120,10 @@ public final class JsonPrimitive extends JsonElement {
    * @return get this element as a Number.
    * @throws NumberFormatException if the value contained is not a valid Number.
    */
-  @Override
+/*  @Override
   public Number getAsNumber() {
     return value instanceof String ? new LazilyParsedNumber((String) value) : (Number) value;
-  }
+  }*/
 
   /**
    * Check whether this primitive contains a String value.

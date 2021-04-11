@@ -25,7 +25,7 @@
 
 package kong.unirest;
 
-import com.google.gson.*;
+import com.google.gson.Gson;
 
 import java.lang.reflect.Type;
 import java.time.*;
@@ -44,7 +44,7 @@ public class JsonObjectMapper implements ObjectMapper {
         return getGson().fromJson(value, valueType);
     }
 
-    @Override
+   /* @Override
     public <T> T readValue(String value, GenericType<T> genericType) {
         return getGson().fromJson(value, genericType.getType());
     }
@@ -52,7 +52,7 @@ public class JsonObjectMapper implements ObjectMapper {
     @Override
     public String writeValue(Object value) {
         return getGson().toJson(value);
-    }
+    }*/
 
     private Gson getGson() {
         if (gson == null) {
@@ -70,15 +70,15 @@ public class JsonObjectMapper implements ObjectMapper {
         return gson;
     }
 
-    private abstract static class DateTimeAdapter<T> implements JsonSerializer<T>, JsonDeserializer<T> {
+    /*private abstract static class DateTimeAdapter<T> implements JsonSerializer<T>, JsonDeserializer<T> {
         static final DateTimeFormatter FORMATTER = DateTimeFormatter.ISO_OFFSET_DATE_TIME;
         static final List<DateTimeFormatter> FORMATS = Arrays.asList(
                 DateTimeFormatter.ISO_OFFSET_DATE_TIME,
                 DateTimeFormatter.ISO_DATE,
                 DateTimeFormatter.ISO_LOCAL_DATE_TIME
-        );
+        );*/
 
-        abstract T from(Long millies);
+       /* abstract T from(Long millies);
         abstract T from(TemporalAccessor dt);
 
         @Override
@@ -205,5 +205,5 @@ public class JsonObjectMapper implements ObjectMapper {
         LocalDate from(TemporalAccessor dt) {
             return LocalDate.from(dt);
         }
-    }
+    }*/
 }

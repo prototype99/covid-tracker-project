@@ -37,26 +37,26 @@ import java.util.concurrent.atomic.AtomicLongArray;
 
 import com.google.gson.internal.ConstructorConstructor;
 import com.google.gson.internal.Excluder;
-import com.google.gson.internal.GsonBuildConfig;
+//import com.google.gson.internal.GsonBuildConfig;
 import com.google.gson.internal.Primitives;
-import com.google.gson.internal.Streams;
+//import com.google.gson.internal.Streams;
 import com.google.gson.internal.bind.ArrayTypeAdapter;
 import com.google.gson.internal.bind.CollectionTypeAdapterFactory;
 import com.google.gson.internal.bind.DateTypeAdapter;
-import com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory;
+/*import com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory;
 import com.google.gson.internal.bind.JsonTreeReader;
-import com.google.gson.internal.bind.JsonTreeWriter;
+import com.google.gson.internal.bind.JsonTreeWriter;*/
 import com.google.gson.internal.bind.MapTypeAdapterFactory;
 import com.google.gson.internal.bind.ObjectTypeAdapter;
-import com.google.gson.internal.bind.ReflectiveTypeAdapterFactory;
+//import com.google.gson.internal.bind.ReflectiveTypeAdapterFactory;
 import com.google.gson.internal.bind.SqlDateTypeAdapter;
 import com.google.gson.internal.bind.TimeTypeAdapter;
 import com.google.gson.internal.bind.TypeAdapters;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
-import com.google.gson.stream.JsonWriter;
-import com.google.gson.stream.MalformedJsonException;
+/*import com.google.gson.stream.JsonWriter;
+import com.google.gson.stream.MalformedJsonException;*/
 
 /**
  * This is the main class for using Gson. Gson is typically used by first constructing a
@@ -111,7 +111,7 @@ public final class Gson {
   static final boolean DEFAULT_COMPLEX_MAP_KEYS = false;
   static final boolean DEFAULT_SPECIALIZE_FLOAT_VALUES = false;
 
-  private static final TypeToken<?> NULL_KEY_SURROGATE = TypeToken.get(Object.class);
+  /*private static final TypeToken<?> NULL_KEY_SURROGATE = TypeToken.get(Object.class);*/
   private static final String JSON_NON_EXECUTABLE_PREFIX = ")]}'\n";
 
   /**
@@ -121,15 +121,15 @@ public final class Gson {
    * lookup would stack overflow. We cheat by returning a proxy type adapter.
    * The proxy is wired up once the initial adapter has been created.
    */
-  private final ThreadLocal<Map<TypeToken<?>, FutureTypeAdapter<?>>> calls
-      = new ThreadLocal<Map<TypeToken<?>, FutureTypeAdapter<?>>>();
+  /*private final ThreadLocal<Map<TypeToken<?>, FutureTypeAdapter<?>>> calls
+      = new ThreadLocal<Map<TypeToken<?>, FutureTypeAdapter<?>>>();*/
 
   private final Map<TypeToken<?>, TypeAdapter<?>> typeTokenCache = new ConcurrentHashMap<TypeToken<?>, TypeAdapter<?>>();
 
   private final ConstructorConstructor constructorConstructor;
-  private final JsonAdapterAnnotationTypeAdapterFactory jsonAdapterFactory;
+  /*private final JsonAdapterAnnotationTypeAdapterFactory jsonAdapterFactory;
 
-  final List<TypeAdapterFactory> factories;
+  final List<TypeAdapterFactory> factories;*/
 
   final Excluder excluder;
   final FieldNamingStrategy fieldNamingStrategy;
@@ -285,7 +285,7 @@ public final class Gson {
    * instance.
    *
    * @return a GsonBuilder instance.
-   */
+   *//*
   public GsonBuilder newBuilder() {
     return new GsonBuilder(this);
   }
@@ -296,15 +296,15 @@ public final class Gson {
 
   public FieldNamingStrategy fieldNamingStrategy() {
     return fieldNamingStrategy;
-  }
+  }*/
 
-  public boolean serializeNulls() {
+/*  public boolean serializeNulls() {
     return serializeNulls;
   }
 
   public boolean htmlSafe() {
     return htmlSafe;
-  }
+  }*/
 
   private TypeAdapter<Number> doubleAdapter(boolean serializeSpecialFloatingPointValues) {
     if (serializeSpecialFloatingPointValues) {
@@ -318,7 +318,7 @@ public final class Gson {
         }
         return in.nextDouble();
       }
-      @Override public void write(JsonWriter out, Number value) throws IOException {
+      /*@Override public void write(JsonWriter out, Number value) throws IOException {
         if (value == null) {
           out.nullValue();
           return;
@@ -326,7 +326,7 @@ public final class Gson {
         double doubleValue = value.doubleValue();
         checkValidFloatingPoint(doubleValue);
         out.value(value);
-      }
+      }*/
     };
   }
 
@@ -342,7 +342,7 @@ public final class Gson {
         }
         return (float) in.nextDouble();
       }
-      @Override public void write(JsonWriter out, Number value) throws IOException {
+      /*@Override public void write(JsonWriter out, Number value) throws IOException {
         if (value == null) {
           out.nullValue();
           return;
@@ -350,7 +350,7 @@ public final class Gson {
         float floatValue = value.floatValue();
         checkValidFloatingPoint(floatValue);
         out.value(value);
-      }
+      }*/
     };
   }
 
@@ -374,21 +374,21 @@ public final class Gson {
         }
         return in.nextLong();
       }
-      @Override public void write(JsonWriter out, Number value) throws IOException {
+      /*@Override public void write(JsonWriter out, Number value) throws IOException {
         if (value == null) {
           out.nullValue();
           return;
         }
         out.value(value.toString());
-      }
+      }*/
     };
   }
 
   private static TypeAdapter<AtomicLong> atomicLongAdapter(final TypeAdapter<Number> longAdapter) {
     return new TypeAdapter<AtomicLong>() {
-      @Override public void write(JsonWriter out, AtomicLong value) throws IOException {
+      /*@Override public void write(JsonWriter out, AtomicLong value) throws IOException {
         longAdapter.write(out, value.get());
-      }
+      }*/
       @Override public AtomicLong read(JsonReader in) throws IOException {
         Number value = longAdapter.read(in);
         return new AtomicLong(value.longValue());
@@ -398,13 +398,13 @@ public final class Gson {
 
   private static TypeAdapter<AtomicLongArray> atomicLongArrayAdapter(final TypeAdapter<Number> longAdapter) {
     return new TypeAdapter<AtomicLongArray>() {
-      @Override public void write(JsonWriter out, AtomicLongArray value) throws IOException {
+      /*@Override public void write(JsonWriter out, AtomicLongArray value) throws IOException {
         out.beginArray();
         for (int i = 0, length = value.length(); i < length; i++) {
           longAdapter.write(out, value.get(i));
         }
         out.endArray();
-      }
+      }*/
       @Override public AtomicLongArray read(JsonReader in) throws IOException {
         List<Long> list = new ArrayList<Long>();
         in.beginArray();
@@ -568,7 +568,7 @@ public final class Gson {
    * @param src the object for which Json representation is to be created setting for Gson
    * @return Json representation of {@code src}.
    * @since 1.4
-   */
+   *//*
   public JsonElement toJsonTree(Object src) {
     if (src == null) {
       return JsonNull.INSTANCE;
@@ -576,7 +576,7 @@ public final class Gson {
     return toJsonTree(src, src.getClass());
   }
 
-  /**
+  *//**
    * This method serializes the specified object, including those of generic types, into its
    * equivalent representation as a tree of {@link JsonElement}s. This method must be used if the
    * specified object is a generic type. For non-generic objects, use {@link #toJsonTree(Object)}
@@ -591,14 +591,14 @@ public final class Gson {
    * </pre>
    * @return Json representation of {@code src}
    * @since 1.4
-   */
+   *//*
   public JsonElement toJsonTree(Object src, Type typeOfSrc) {
     JsonTreeWriter writer = new JsonTreeWriter();
     toJson(src, typeOfSrc, writer);
     return writer.get();
   }
 
-  /**
+  *//**
    * This method serializes the specified object into its equivalent Json representation.
    * This method should be used when the specified object is not a generic type. This method uses
    * {@link Class#getClass()} to get the type for the specified object, but the
@@ -610,13 +610,13 @@ public final class Gson {
    *
    * @param src the object for which Json representation is to be created setting for Gson
    * @return Json representation of {@code src}.
-   */
+   *//*
   public String toJson(Object src) {
     if (src == null) {
       return toJson(JsonNull.INSTANCE);
     }
     return toJson(src, src.getClass());
-  }
+  }*/
 
   /**
    * This method serializes the specified object, including those of generic types, into its
@@ -633,11 +633,11 @@ public final class Gson {
    * </pre>
    * @return Json representation of {@code src}
    */
-  public String toJson(Object src, Type typeOfSrc) {
+  /*public String toJson(Object src, Type typeOfSrc) {
     StringWriter writer = new StringWriter();
     toJson(src, typeOfSrc, writer);
     return writer.toString();
-  }
+  }*/
 
   /**
    * This method serializes the specified object into its equivalent Json representation.
@@ -653,7 +653,7 @@ public final class Gson {
    * @throws JsonIOException if there was a problem writing to the writer
    * @since 1.2
    */
-  public void toJson(Object src, Appendable writer) throws JsonIOException {
+  /*public void toJson(Object src, Appendable writer) throws JsonIOException {
     if (src != null) {
       toJson(src, src.getClass(), writer);
     } else {
@@ -661,7 +661,7 @@ public final class Gson {
     }
   }
 
-  /**
+  *//**
    * This method serializes the specified object, including those of generic types, into its
    * equivalent Json representation. This method must be used if the specified object is a generic
    * type. For non-generic objects, use {@link #toJson(Object, Appendable)} instead.
@@ -676,7 +676,7 @@ public final class Gson {
    * @param writer Writer to which the Json representation of src needs to be written.
    * @throws JsonIOException if there was a problem writing to the writer
    * @since 1.2
-   */
+   *//*
   public void toJson(Object src, Type typeOfSrc, Appendable writer) throws JsonIOException {
     try {
       JsonWriter jsonWriter = newJsonWriter(Streams.writerForAppendable(writer));
@@ -686,11 +686,11 @@ public final class Gson {
     }
   }
 
-  /**
+  *//**
    * Writes the JSON representation of {@code src} of type {@code typeOfSrc} to
    * {@code writer}.
    * @throws JsonIOException if there was a problem writing to the writer
-   */
+   *//*
   @SuppressWarnings("unchecked")
   public void toJson(Object src, Type typeOfSrc, JsonWriter writer) throws JsonIOException {
     TypeAdapter<?> adapter = getAdapter(TypeToken.get(typeOfSrc));
@@ -715,27 +715,27 @@ public final class Gson {
     }
   }
 
-  /**
+  *//**
    * Converts a tree of {@link JsonElement}s into its equivalent JSON representation.
    *
    * @param jsonElement root of a tree of {@link JsonElement}s
    * @return JSON String representation of the tree
    * @since 1.4
-   */
+   *//*
   public String toJson(JsonElement jsonElement) {
     StringWriter writer = new StringWriter();
     toJson(jsonElement, writer);
     return writer.toString();
   }
 
-  /**
+  *//**
    * Writes out the equivalent JSON for a tree of {@link JsonElement}s.
    *
    * @param jsonElement root of a tree of {@link JsonElement}s
    * @param writer Writer to which the Json representation needs to be written
    * @throws JsonIOException if there was a problem writing to the writer
    * @since 1.4
-   */
+   *//*
   public void toJson(JsonElement jsonElement, Appendable writer) throws JsonIOException {
     try {
       JsonWriter jsonWriter = newJsonWriter(Streams.writerForAppendable(writer));
@@ -745,9 +745,9 @@ public final class Gson {
     }
   }
 
-  /**
+  *//**
    * Returns a new JSON writer configured for the settings on this Gson instance.
-   */
+   *//*
   public JsonWriter newJsonWriter(Writer writer) throws IOException {
     if (generateNonExecutableJson) {
       writer.write(JSON_NON_EXECUTABLE_PREFIX);
@@ -760,7 +760,7 @@ public final class Gson {
     return jsonWriter;
   }
 
-  /**
+  *//**
    * Returns a new JSON reader configured for the settings on this Gson instance.
    */
   public JsonReader newJsonReader(Reader reader) {
@@ -772,7 +772,7 @@ public final class Gson {
   /**
    * Writes the JSON for {@code jsonElement} to {@code writer}.
    * @throws JsonIOException if there was a problem writing to the writer
-   */
+   *//*
   public void toJson(JsonElement jsonElement, JsonWriter writer) throws JsonIOException {
     boolean oldLenient = writer.isLenient();
     writer.setLenient(true);
@@ -795,7 +795,7 @@ public final class Gson {
     }
   }
 
-  /**
+  *//**
    * This method deserializes the specified Json into an object of the specified class. It is not
    * suitable to use if the specified class is a generic type since it will not have the generic
    * type information because of the Type Erasure feature of Java. Therefore, this method should not
@@ -813,7 +813,7 @@ public final class Gson {
    * @throws JsonSyntaxException if json is not a valid representation for an object of type
    * classOfT
    */
-  public <T> T fromJson(String json, Class<T> classOfT) throws JsonSyntaxException {
+  public <T> T fromJson(String json, Class<T> classOfT) /*throws JsonSyntaxException*/ {
     Object object = fromJson(json, (Type) classOfT);
     return Primitives.wrap(classOfT).cast(object);
   }
@@ -838,7 +838,7 @@ public final class Gson {
    * @throws JsonSyntaxException if json is not a valid representation for an object of type
    */
   @SuppressWarnings("unchecked")
-  public <T> T fromJson(String json, Type typeOfT) throws JsonSyntaxException {
+  public <T> T fromJson(String json, Type typeOfT) /*throws JsonSyntaxException*/ {
     if (json == null) {
       return null;
     }
@@ -865,7 +865,7 @@ public final class Gson {
    * @throws JsonSyntaxException if json is not a valid representation for an object of type
    * @since 1.2
    */
-  public <T> T fromJson(Reader json, Class<T> classOfT) throws JsonSyntaxException, JsonIOException {
+  public <T> T fromJson(Reader json, Class<T> classOfT) /*throws JsonSyntaxException, JsonIOException*/ {
     JsonReader jsonReader = newJsonReader(json);
     Object object = fromJson(jsonReader, classOfT);
     assertFullConsumption(object, jsonReader);
@@ -890,7 +890,7 @@ public final class Gson {
    * @throws JsonIOException if there was a problem reading from the Reader
    * @throws JsonSyntaxException if json is not a valid representation for an object of type
    * @since 1.2
-   */
+   *//*
   @SuppressWarnings("unchecked")
   public <T> T fromJson(Reader json, Type typeOfT) throws JsonIOException, JsonSyntaxException {
     JsonReader jsonReader = newJsonReader(json);
@@ -911,14 +911,14 @@ public final class Gson {
     }
   }
 
-  /**
+  *//**
    * Reads the next JSON value from {@code reader} and convert it to an object
    * of type {@code typeOfT}. Returns {@code null}, if the {@code reader} is at EOF.
    * Since Type is not parameterized by T, this method is type unsafe and should be used carefully
    *
    * @throws JsonIOException if there was a problem writing to the Reader
    * @throws JsonSyntaxException if json is not a valid representation for an object of type
-   */
+   *//*
   @SuppressWarnings("unchecked")
   public <T> T fromJson(JsonReader reader, Type typeOfT) throws JsonIOException, JsonSyntaxException {
     boolean isEmpty = true;
@@ -932,10 +932,10 @@ public final class Gson {
       T object = typeAdapter.read(reader);
       return object;
     } catch (EOFException e) {
-      /*
+      *//*
        * For compatibility with JSON 1.5 and earlier, we return null for empty
        * documents instead of throwing.
-       */
+       *//*
       if (isEmpty) {
         return null;
       }
@@ -954,7 +954,7 @@ public final class Gson {
     }
   }
 
-  /**
+  *//**
    * This method deserializes the Json read from the specified parse tree into an object of the
    * specified type. It is not suitable to use if the specified class is a generic type since it
    * will not have the generic type information because of the Type Erasure feature of Java.
@@ -970,13 +970,13 @@ public final class Gson {
    * or if {@code json} is empty.
    * @throws JsonSyntaxException if json is not a valid representation for an object of type typeOfT
    * @since 1.3
-   */
+   *//*
   public <T> T fromJson(JsonElement json, Class<T> classOfT) throws JsonSyntaxException {
     Object object = fromJson(json, (Type) classOfT);
     return Primitives.wrap(classOfT).cast(object);
   }
 
-  /**
+  *//**
    * This method deserializes the Json read from the specified parse tree into an object of the
    * specified type. This method is useful if the specified object is a generic type. For
    * non-generic objects, use {@link #fromJson(JsonElement, Class)} instead.
@@ -994,7 +994,7 @@ public final class Gson {
    * or if {@code json} is empty.
    * @throws JsonSyntaxException if json is not a valid representation for an object of type typeOfT
    * @since 1.3
-   */
+   *//*
   @SuppressWarnings("unchecked")
   public <T> T fromJson(JsonElement json, Type typeOfT) throws JsonSyntaxException {
     if (json == null) {
@@ -1036,5 +1036,5 @@ public final class Gson {
         .append(",instanceCreators:").append(constructorConstructor)
         .append("}")
         .toString();
-  }
+  }*/
 }

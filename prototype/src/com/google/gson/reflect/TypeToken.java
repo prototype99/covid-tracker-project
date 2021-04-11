@@ -107,10 +107,10 @@ public class TypeToken<T> {
    * @deprecated this implementation may be inconsistent with javac for types
    *     with wildcards.
    */
-  @Deprecated
+  /*@Deprecated
   public boolean isAssignableFrom(Class<?> cls) {
     return isAssignableFrom((Type) cls);
-  }
+  }*/
 
   /**
    * Check if this type is assignable from the given Type.
@@ -118,7 +118,7 @@ public class TypeToken<T> {
    * @deprecated this implementation may be inconsistent with javac for types
    *     with wildcards.
    */
-  @Deprecated
+  /*@Deprecated
   public boolean isAssignableFrom(Type from) {
     if (from == null) {
       return false;
@@ -142,22 +142,22 @@ public class TypeToken<T> {
     }
   }
 
-  /**
+  *//**
    * Check if this type is assignable from the given type token.
    *
    * @deprecated this implementation may be inconsistent with javac for types
    *     with wildcards.
-   */
+   *//*
   @Deprecated
   public boolean isAssignableFrom(TypeToken<?> token) {
     return isAssignableFrom(token.getType());
-  }
+  }*/
 
   /**
    * Private helper function that performs some assignability checks for
    * the provided GenericArrayType.
    */
-  private static boolean isAssignableFrom(Type from, GenericArrayType to) {
+  /*private static boolean isAssignableFrom(Type from, GenericArrayType to) {
     Type toGenericComponentType = to.getGenericComponentType();
     if (toGenericComponentType instanceof ParameterizedType) {
       Type t = from;
@@ -176,13 +176,13 @@ public class TypeToken<T> {
     // No generic defined on "to"; therefore, return true and let other
     // checks determine assignability
     return true;
-  }
+  }*/
 
   /**
    * Private recursive helper function to actually do the type-safe checking
    * of assignability.
    */
-  private static boolean isAssignableFrom(Type from, ParameterizedType to,
+  /*private static boolean isAssignableFrom(Type from, ParameterizedType to,
       Map<String, Type> typeVarMap) {
 
     if (from == null) {
@@ -229,7 +229,7 @@ public class TypeToken<T> {
     // Interfaces didn't work, try the superclass.
     Type sType = clazz.getGenericSuperclass();
     return isAssignableFrom(sType, to, new HashMap<String, Type>(typeVarMap));
-  }
+  }*/
 
   /**
    * Checks if two parameterized types are exactly equal, under the variable
@@ -276,11 +276,11 @@ public class TypeToken<T> {
 
   }
 
-  @Override public final int hashCode() {
+  /*@Override public final int hashCode() {
     return this.hashCode;
-  }
+  }*/
 
-  @Override public final boolean equals(Object o) {
+  /*@Override public final boolean equals(Object o) {
     return o instanceof TypeToken<?>
         && $Gson$Types.equals(type, ((TypeToken<?>) o).type);
   }
@@ -289,7 +289,7 @@ public class TypeToken<T> {
     return $Gson$Types.typeToString(type);
   }
 
-  /**
+  *//**
    * Gets type literal for the given {@code Type} instance.
    */
   public static TypeToken<?> get(Type type) {
@@ -306,15 +306,15 @@ public class TypeToken<T> {
   /**
    * Gets type literal for the parameterized type represented by applying {@code typeArguments} to
    * {@code rawType}.
-   */
+   *//*
   public static TypeToken<?> getParameterized(Type rawType, Type... typeArguments) {
     return new TypeToken<Object>($Gson$Types.newParameterizedTypeWithOwner(null, rawType, typeArguments));
   }
 
-  /**
+  *//**
    * Gets type literal for the array type whose elements are all instances of {@code componentType}.
-   */
+   *//*
   public static TypeToken<?> getArray(Type componentType) {
     return new TypeToken<Object>($Gson$Types.arrayOf(componentType));
-  }
+  }*/
 }

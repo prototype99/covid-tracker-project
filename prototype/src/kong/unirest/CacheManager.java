@@ -121,12 +121,12 @@ class CacheManager {
             return originalClient.getClient();
         }
 
-       /* @Override
+       @Override
         public <T> HttpResponse<T> request(HttpRequest request, Function<RawResponse, HttpResponse<T>> transformer) {
             return request(request, transformer, Object.class);
         }
 
-        @Override
+        /*@Override
         public <T> HttpResponse<T> request(HttpRequest request,
                                            Function<RawResponse, HttpResponse<T>> transformer,
                                            Class<?> responseType) {

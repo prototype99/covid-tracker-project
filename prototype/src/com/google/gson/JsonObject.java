@@ -37,14 +37,14 @@ public final class JsonObject extends JsonElement {
    * Creates a deep copy of this element and all its children
    * @since 2.8.2
    */
-  @Override
+/*  @Override
   public JsonObject deepCopy() {
     JsonObject result = new JsonObject();
     for (Map.Entry<String, JsonElement> entry : members.entrySet()) {
       result.add(entry.getKey(), entry.getValue().deepCopy());
     }
     return result;
-  }
+  }*/
 
   /**
    * Adds a member, which is a name-value pair, to self. The name must be a String, but the value
@@ -65,9 +65,9 @@ public final class JsonObject extends JsonElement {
    * @return the {@link JsonElement} object that is being removed.
    * @since 1.3
    */
-  public JsonElement remove(String property) {
+/*  public JsonElement remove(String property) {
     return members.remove(property);
-  }
+  }*/
 
   /**
    * Convenience method to add a primitive member. The specified value is converted to a
@@ -76,9 +76,9 @@ public final class JsonObject extends JsonElement {
    * @param property name of the member.
    * @param value the string value associated with the member.
    */
-  public void addProperty(String property, String value) {
+/*  public void addProperty(String property, String value) {
     add(property, value == null ? JsonNull.INSTANCE : new JsonPrimitive(value));
-  }
+  }*/
 
   /**
    * Convenience method to add a primitive member. The specified value is converted to a
@@ -87,9 +87,9 @@ public final class JsonObject extends JsonElement {
    * @param property name of the member.
    * @param value the number value associated with the member.
    */
-  public void addProperty(String property, Number value) {
+/*  public void addProperty(String property, Number value) {
     add(property, value == null ? JsonNull.INSTANCE : new JsonPrimitive(value));
-  }
+  }*/
 
   /**
    * Convenience method to add a boolean member. The specified value is converted to a
@@ -98,9 +98,9 @@ public final class JsonObject extends JsonElement {
    * @param property name of the member.
    * @param value the number value associated with the member.
    */
-  public void addProperty(String property, Boolean value) {
+/*  public void addProperty(String property, Boolean value) {
     add(property, value == null ? JsonNull.INSTANCE : new JsonPrimitive(value));
-  }
+  }*/
 
   /**
    * Convenience method to add a char member. The specified value is converted to a
@@ -109,9 +109,9 @@ public final class JsonObject extends JsonElement {
    * @param property name of the member.
    * @param value the number value associated with the member.
    */
-  public void addProperty(String property, Character value) {
+/*  public void addProperty(String property, Character value) {
     add(property, value == null ? JsonNull.INSTANCE : new JsonPrimitive(value));
-  }
+  }*/
 
   /**
    * Returns a set of members of this object. The set is ordered, and the order is in which the
@@ -119,9 +119,9 @@ public final class JsonObject extends JsonElement {
    *
    * @return a set of members of this object.
    */
-  public Set<Map.Entry<String, JsonElement>> entrySet() {
+/*  public Set<Map.Entry<String, JsonElement>> entrySet() {
     return members.entrySet();
-  }
+  }*/
 
   /**
    * Returns a set of members key values.
@@ -129,18 +129,18 @@ public final class JsonObject extends JsonElement {
    * @return a set of member keys as Strings
    * @since 2.8.1
    */
-  public Set<String> keySet() {
+/*  public Set<String> keySet() {
     return members.keySet();
-  }
+  }*/
 
   /**
    * Returns the number of key/value pairs in the object.
    *
    * @return the number of key/value pairs in the object.
    */
-  public int size() {
+/*  public int size() {
     return members.size();
-  }
+  }*/
 
   /**
    * Convenience method to check if a member with the specified name is present in this object.
@@ -148,46 +148,46 @@ public final class JsonObject extends JsonElement {
    * @param memberName name of the member that is being checked for presence.
    * @return true if there is a member with the specified name, false otherwise.
    */
-  public boolean has(String memberName) {
+ /* public boolean has(String memberName) {
     return members.containsKey(memberName);
   }
 
-  /**
+  *//**
    * Returns the member with the specified name.
    *
    * @param memberName name of the member that is being requested.
    * @return the member matching the name. Null if no such member exists.
-   */
+   *//*
   public JsonElement get(String memberName) {
     return members.get(memberName);
   }
 
-  /**
+  *//**
    * Convenience method to get the specified member as a JsonPrimitive element.
    *
    * @param memberName name of the member being requested.
    * @return the JsonPrimitive corresponding to the specified member.
-   */
+   *//*
   public JsonPrimitive getAsJsonPrimitive(String memberName) {
     return (JsonPrimitive) members.get(memberName);
   }
 
-  /**
+  *//**
    * Convenience method to get the specified member as a JsonArray.
    *
    * @param memberName name of the member being requested.
    * @return the JsonArray corresponding to the specified member.
-   */
+   *//*
   public JsonArray getAsJsonArray(String memberName) {
     return (JsonArray) members.get(memberName);
   }
 
-  /**
+  *//**
    * Convenience method to get the specified member as a JsonObject.
    *
    * @param memberName name of the member being requested.
    * @return the JsonObject corresponding to the specified member.
-   */
+   *//*
   public JsonObject getAsJsonObject(String memberName) {
     return (JsonObject) members.get(memberName);
   }
@@ -201,5 +201,5 @@ public final class JsonObject extends JsonElement {
   @Override
   public int hashCode() {
     return members.hashCode();
-  }
+  }*/
 }
