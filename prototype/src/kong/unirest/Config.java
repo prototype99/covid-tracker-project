@@ -52,8 +52,8 @@ public class Config {
     public static final int DEFAULT_CONNECT_TIMEOUT = 10000;
     public static final int DEFAULT_SOCKET_TIMEOUT = 60000;
 
-/*    private Optional<Client> client = Optional.empty();
-    private Optional<AsyncClient> asyncClient = Optional.empty();
+    private Optional<Client> client = Optional.empty();
+    /*private Optional<AsyncClient> asyncClient = Optional.empty();
     private Optional<ObjectMapper> objectMapper = Optional.of(new JsonObjectMapper());
 
     private List<HttpRequestInterceptor> apacheinterceptors = new ArrayList<>(); */
@@ -67,8 +67,8 @@ public class Config {
     private boolean cookieManagement;
     private boolean useSystemProperties;
     private String defaultResponseEncoding = StandardCharsets.UTF_8.name();
-/*    private Function<Config, AsyncClient> asyncBuilder;
-    private Function<Config, Client> clientBuilder;*/
+//   private Function<Config, AsyncClient> asyncBuilder;
+    private Function<Config, Client> clientBuilder;
     private boolean requestCompressionOn = true;
     private boolean automaticRetries;
     private boolean verifySsl = true;
@@ -84,7 +84,7 @@ public class Config {
 //    private CompoundInterceptor interceptor = new CompoundInterceptor();
     private HostnameVerifier hostnameVerifier;
     private String defaultBaseUrl;
-//    private CacheManager cache;
+    private CacheManager cache;
 
 //    public Config() {
 //        setDefaults();
@@ -736,7 +736,7 @@ public class Config {
      *
      * @return A synchronous Client
      */
-/*    public Client getClient() {
+    public Client getClient() {
         if (!client.isPresent()) {
             buildClient();
         }
@@ -755,7 +755,7 @@ public class Config {
         if (!client.isPresent()) {
             client = Optional.of(clientBuilder.apply(this));
         }
-    }*/
+    }
 
     /**
      * Return the current HttpAsyncClient. One will be build if it does

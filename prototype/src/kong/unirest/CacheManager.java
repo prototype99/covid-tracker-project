@@ -38,15 +38,15 @@ import java.util.stream.Stream;
 
 class CacheManager {
 
-    private final CacheWrapper wrapper = new CacheWrapper();
-    private final AsyncWrapper asyncWrapper = new AsyncWrapper();
-    private final Cache backingCache;
-    private final Cache.KeyGenerator keyGen;
+    /*private final CacheWrapper wrapper = new CacheWrapper();
+    private final AsyncWrapper asyncWrapper = new AsyncWrapper();*/
+    /*private final Cache backingCache;
+    private final Cache.KeyGenerator keyGen;*/
 
     private Client originalClient;
-    private AsyncClient originalAsync;
+//    private AsyncClient originalAsync;
 
-    public CacheManager() {
+   /* public CacheManager() {
         this(100, 0, HashKey::new);
     }
 
@@ -84,14 +84,14 @@ class CacheManager {
         HashKey(HttpRequest request, Boolean isAsync, Class<?> responseType) {
             this(Objects.hash(request.hashCode(), isAsync, responseType),
                  request.getCreationTime());
-        }
+        }*/
 
-        HashKey(int hash, Instant time) {
+      /*  HashKey(int hash, Instant time) {
             this.hash = hash;
             this.time = time;
-        }
+        }*/
 
-        @Override
+      /*  @Override
         public boolean equals(Object o) {
             if (this == o) {
                 return true;
@@ -219,6 +219,6 @@ class CacheManager {
             return size() > maxSize;
         }
 
-    }
+    }*/
 
 }

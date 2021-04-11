@@ -201,14 +201,14 @@ abstract class BaseRequest<R extends HttpRequest> implements HttpRequest<R> {
     public CompletableFuture<HttpResponse<Empty>> asEmptyAsync(Callback<Empty> callback) {
         return config.getAsyncClient()
                 .request(this, BasicResponse::new, wrap(callback), Empty.class);
-    }
+    }*/
 
     @Override
     public HttpResponse<String> asString() throws UnirestException {
         return config.getClient().request(this, r -> new StringResponse(r, responseEncoding), String.class);
     }
 
-    @Override
+    /*@Override
     public CompletableFuture<HttpResponse<String>> asStringAsync() {
         return config.getAsyncClient()
                 .request(this, r -> new StringResponse(r, responseEncoding), new CompletableFuture<>(), String.class);
