@@ -53,10 +53,10 @@ public class Config {
     public static final int DEFAULT_SOCKET_TIMEOUT = 60000;
 
     private Optional<Client> client = Optional.empty();
-    /*private Optional<AsyncClient> asyncClient = Optional.empty();
+    //private Optional<AsyncClient> asyncClient = Optional.empty();
     private Optional<ObjectMapper> objectMapper = Optional.of(new JsonObjectMapper());
 
-    private List<HttpRequestInterceptor> apacheinterceptors = new ArrayList<>(); */
+   // private List<HttpRequestInterceptor> apacheinterceptors = new ArrayList<>();
     private Headers headers;
     //private Proxy proxy;
     private int connectionTimeout;
@@ -865,9 +865,9 @@ public class Config {
      * @return a configured object mapper
      * @throws UnirestException if none has been configured.
      */
-/*    public ObjectMapper getObjectMapper() {
+    public ObjectMapper getObjectMapper() {
         return objectMapper.orElseThrow(() -> new UnirestException("No Object Mapper Configured. Please config one with Unirest.config().setObjectMapper"));
-    }*/
+    }
 
     private void validateClientsNotRunning() {
 /*        if (client.isPresent() || asyncClient.isPresent()) {

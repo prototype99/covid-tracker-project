@@ -25,10 +25,21 @@
 
 package kong.unirest;
 
-public interface ObjectMapper {
-	<T> T readValue(String value, Class<T> valueType);
-	default <T> T readValue(String value, GenericType<T> genericType){
-		throw new UnirestException("Please implement me");
-	}
-	String writeValue(Object value);
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+public interface RawResponse {
+    int getStatus();
+    String getStatusText();
+    Headers getHeaders();
+    InputStream getContent();
+    byte[] getContentAsBytes();
+    String getContentAsString();
+    String getContentAsString(String charset);
+    InputStreamReader getContentReader();
+    boolean hasContent();
+    String getContentType();
+    String getEncoding();
+    Config getConfig();
+//    HttpResponseSummary toSummary();
 }

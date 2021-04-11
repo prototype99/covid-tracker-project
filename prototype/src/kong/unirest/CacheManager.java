@@ -38,8 +38,8 @@ import java.util.stream.Stream;
 
 class CacheManager {
 
-    /*private final CacheWrapper wrapper = new CacheWrapper();
-    private final AsyncWrapper asyncWrapper = new AsyncWrapper();*/
+    private final CacheWrapper wrapper = new CacheWrapper();
+    //private final AsyncWrapper asyncWrapper = new AsyncWrapper();
     /*private final Cache backingCache;
     private final Cache.KeyGenerator keyGen;*/
 
@@ -61,14 +61,14 @@ class CacheManager {
         }else{
             this.keyGen = HashKey::new;
         }
-    }
+    }*/
 
     Client wrap(Client client) {
         this.originalClient = client;
         return wrapper;
     }
 
-    AsyncClient wrapAsync(AsyncClient client) {
+    /*AsyncClient wrapAsync(AsyncClient client) {
         this.originalAsync = client;
         return asyncWrapper;
     }
@@ -112,7 +112,7 @@ class CacheManager {
         public Instant getTime() {
             return time;
         }
-    }
+    }*/
 
     private class CacheWrapper implements Client {
 
@@ -121,7 +121,7 @@ class CacheManager {
             return originalClient.getClient();
         }
 
-        @Override
+       /* @Override
         public <T> HttpResponse<T> request(HttpRequest request, Function<RawResponse, HttpResponse<T>> transformer) {
             return request(request, transformer, Object.class);
         }
@@ -134,7 +134,7 @@ class CacheManager {
             Cache.Key hash = getHash(request, false, responseType);
             return backingCache.get(hash,
                     () -> originalClient.request(request, transformer, responseType));
-        }
+        }*/
 
         @Override
         public Stream<Exception> close() {
@@ -147,7 +147,7 @@ class CacheManager {
         }
     }
 
-    private class AsyncWrapper implements AsyncClient {
+   /* private class AsyncWrapper implements AsyncClient {
         @Override
         public <T> T getClient() {
             return originalAsync.getClient();

@@ -59,7 +59,7 @@ public interface HttpResponse<T> {
      * If the transformation to the body failed by an exception it will be kept here
      * @return a possible RuntimeException. Checked exceptions are wrapped in a UnirestException
      */
-//    Optional<UnirestParsingException> getParsingError();
+    Optional<UnirestParsingException> getParsingError();
 
     /**
      * Map the body into another type

@@ -25,21 +25,36 @@
 
 package kong.unirest;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
+public class BasicResponse<T> extends BaseResponse<T> {
+    private final T body;
 
-public interface RawResponse {
-    int getStatus();
-    String getStatusText();
-    Headers getHeaders();
-    InputStream getContent();
-    byte[] getContentAsBytes();
-    String getContentAsString();
-    String getContentAsString(String charset);
-    InputStreamReader getContentReader();
-    boolean hasContent();
-    String getContentType();
-    String getEncoding();
-    Config getConfig();
-    HttpResponseSummary toSummary();
+    BasicResponse(BaseResponse response, T body) {
+        super(response);
+        this.body = body;
+    }
+
+    /*public BasicResponse(RawResponse httpResponse, T body) {
+        super(httpResponse);
+        this.body = body;
+    }
+
+    public BasicResponse(RawResponse httpResponse) {
+        super(httpResponse);
+        this.body = null;
+    }*/
+
+    /*public BasicResponse(RawResponse httpResponse, String ogBody, RuntimeException ex) {
+        this(httpResponse, null);
+        setParsingException(ogBody, ex);
+    }*/
+
+    @Override
+    public T getBody() {
+        return body;
+    }
+
+    @Override
+    protected String getRawBody() {
+        return null;
+    }
 }

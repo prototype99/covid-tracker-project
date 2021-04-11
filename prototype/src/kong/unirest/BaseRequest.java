@@ -204,7 +204,7 @@ abstract class BaseRequest<R extends HttpRequest> implements HttpRequest<R> {
     }*/
 
     @Override
-    public HttpResponse<String> asString() throws UnirestException {
+    public HttpResponse<String> asString() /*throws UnirestException*/ {
         return config.getClient().request(this, r -> new StringResponse(r, responseEncoding), String.class);
     }
 

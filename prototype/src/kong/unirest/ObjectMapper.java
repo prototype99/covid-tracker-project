@@ -25,36 +25,10 @@
 
 package kong.unirest;
 
-public class BasicResponse<T> extends BaseResponse<T> {
-    private final T body;
-
-    BasicResponse(BaseResponse response, T body) {
-        super(response);
-        this.body = body;
-    }
-
-    public BasicResponse(RawResponse httpResponse, T body) {
-        super(httpResponse);
-        this.body = body;
-    }
-
-    public BasicResponse(RawResponse httpResponse) {
-        super(httpResponse);
-        this.body = null;
-    }
-
-    public BasicResponse(RawResponse httpResponse, String ogBody, RuntimeException ex) {
-        this(httpResponse, null);
-        setParsingException(ogBody, ex);
-    }
-
-    @Override
-    public T getBody() {
-        return body;
-    }
-
-    @Override
-    protected String getRawBody() {
-        return null;
-    }
+public interface ObjectMapper {
+	<T> T readValue(String value, Class<T> valueType);
+	/*default <T> T readValue(String value, GenericType<T> genericType){
+		throw new UnirestException("Please implement me");
+	}*/
+	String writeValue(Object value);
 }

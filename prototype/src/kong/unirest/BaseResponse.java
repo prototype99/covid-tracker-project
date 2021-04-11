@@ -36,7 +36,7 @@ abstract class BaseResponse<T> implements HttpResponse<T> {
     private final int statusCode;
     private Optional<UnirestParsingException> parsingerror = Optional.empty();
     private final Config config;
-    private Cookies cookies;
+//    private Cookies cookies;
 
 
     protected BaseResponse(RawResponse response) {
@@ -66,10 +66,10 @@ abstract class BaseResponse<T> implements HttpResponse<T> {
         return statusText;
     }
 
-    @Override
+    /*@Override
     public Headers getHeaders() {
         return headers;
-    }
+    }*/
 
     @Override
     public abstract T getBody();
@@ -156,13 +156,13 @@ abstract class BaseResponse<T> implements HttpResponse<T> {
         return this;
     }
 
-    @Override
+   /* @Override
     public Cookies getCookies() {
         if (cookies == null) {
             cookies = new Cookies(headers.get("set-cookie"));
         }
         return cookies;
-    }
+    }*/
 
 
     protected abstract String getRawBody();
