@@ -111,7 +111,7 @@ public final class Gson {
   static final boolean DEFAULT_COMPLEX_MAP_KEYS = false;
   static final boolean DEFAULT_SPECIALIZE_FLOAT_VALUES = false;
 
-  /*private static final TypeToken<?> NULL_KEY_SURROGATE = TypeToken.get(Object.class);*/
+  private static final TypeToken<?> NULL_KEY_SURROGATE = TypeToken.get(Object.class);
   private static final String JSON_NON_EXECUTABLE_PREFIX = ")]}'\n";
 
   /**
@@ -129,7 +129,7 @@ public final class Gson {
   private final ConstructorConstructor constructorConstructor;
   private final JsonAdapterAnnotationTypeAdapterFactory jsonAdapterFactory;
 
-  //final List<TypeAdapterFactory> factories;
+  final List<TypeAdapterFactory> factories;
 
   final Excluder excluder;
   final FieldNamingStrategy fieldNamingStrategy;

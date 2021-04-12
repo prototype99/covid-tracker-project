@@ -17,11 +17,11 @@
 package com.google.gson.internal;
 
 import com.google.gson.ExclusionStrategy;
-//import com.google.gson.FieldAttributes;
+import com.google.gson.FieldAttributes;
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.google.gson.TypeAdapterFactory;
-//import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.Since;
 import com.google.gson.annotations.Until;
 import com.google.gson.reflect.TypeToken;
@@ -148,7 +148,7 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
     };
   }
 
-  /*public boolean excludeField(Field field, boolean serialize) {
+  public boolean excludeField(Field field, boolean serialize) {
     if ((modifiers & field.getModifiers()) != 0) {
       return true;
     }
@@ -188,7 +188,7 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
     }
 
     return false;
-  }*/
+  }
 
   private boolean excludeClassChecks(Class<?> clazz) {
       if (version != Excluder.IGNORE_VERSIONS && !isValidVersion(clazz.getAnnotation(Since.class), clazz.getAnnotation(Until.class))) {
@@ -206,10 +206,10 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
       return false;
   }
 
- /* public boolean excludeClass(Class<?> clazz, boolean serialize) {
+  public boolean excludeClass(Class<?> clazz, boolean serialize) {
       return excludeClassChecks(clazz) ||
               excludeClassInStrategy(clazz, serialize);
-  }*/
+  }
 
   private boolean excludeClassInStrategy(Class<?> clazz, boolean serialize) {
       List<ExclusionStrategy> list = serialize ? serializationStrategies : deserializationStrategies;

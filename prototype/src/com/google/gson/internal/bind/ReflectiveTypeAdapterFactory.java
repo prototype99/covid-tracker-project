@@ -28,7 +28,7 @@ import com.google.gson.internal.ConstructorConstructor;
 import com.google.gson.internal.Excluder;
 import com.google.gson.internal.ObjectConstructor;
 import com.google.gson.internal.Primitives;
-//import com.google.gson.internal.reflect.ReflectionAccessor;
+import com.google.gson.internal.reflect.ReflectionAccessor;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
@@ -50,7 +50,7 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
   private final FieldNamingStrategy fieldNamingPolicy;
   private final Excluder excluder;
   private final JsonAdapterAnnotationTypeAdapterFactory jsonAdapterFactory;
-//  private final ReflectionAccessor accessor = ReflectionAccessor.getInstance();
+  private final ReflectionAccessor accessor = ReflectionAccessor.getInstance();
 
   public ReflectiveTypeAdapterFactory(ConstructorConstructor constructorConstructor,
       FieldNamingStrategy fieldNamingPolicy, Excluder excluder,
@@ -61,13 +61,13 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
     this.jsonAdapterFactory = jsonAdapterFactory;
   }
 
-//  public boolean excludeField(Field f, boolean serialize) {
-//    return excludeField(f, serialize, excluder);
-//  }
+  public boolean excludeField(Field f, boolean serialize) {
+    return excludeField(f, serialize, excluder);
+  }
 
-  /*static boolean excludeField(Field f, boolean serialize, Excluder excluder) {
+  static boolean excludeField(Field f, boolean serialize, Excluder excluder) {
     return !excluder.excludeClass(f.getType(), serialize) && !excluder.excludeField(f, serialize);
-  }*/
+  }
 
   /** first element holds the default name */
   private List<String> getFieldNames(Field f) {
