@@ -43,12 +43,12 @@ import com.google.gson.internal.Primitives;
 import com.google.gson.internal.bind.ArrayTypeAdapter;
 import com.google.gson.internal.bind.CollectionTypeAdapterFactory;
 import com.google.gson.internal.bind.DateTypeAdapter;
-/*import com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory;
-import com.google.gson.internal.bind.JsonTreeReader;
+import com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory;
+/*import com.google.gson.internal.bind.JsonTreeReader;
 import com.google.gson.internal.bind.JsonTreeWriter;*/
 import com.google.gson.internal.bind.MapTypeAdapterFactory;
 import com.google.gson.internal.bind.ObjectTypeAdapter;
-//import com.google.gson.internal.bind.ReflectiveTypeAdapterFactory;
+import com.google.gson.internal.bind.ReflectiveTypeAdapterFactory;
 import com.google.gson.internal.bind.SqlDateTypeAdapter;
 import com.google.gson.internal.bind.TimeTypeAdapter;
 import com.google.gson.internal.bind.TypeAdapters;
@@ -127,9 +127,9 @@ public final class Gson {
   private final Map<TypeToken<?>, TypeAdapter<?>> typeTokenCache = new ConcurrentHashMap<TypeToken<?>, TypeAdapter<?>>();
 
   private final ConstructorConstructor constructorConstructor;
-  /*private final JsonAdapterAnnotationTypeAdapterFactory jsonAdapterFactory;
+  private final JsonAdapterAnnotationTypeAdapterFactory jsonAdapterFactory;
 
-  final List<TypeAdapterFactory> factories;*/
+  //final List<TypeAdapterFactory> factories;
 
   final Excluder excluder;
   final FieldNamingStrategy fieldNamingStrategy;
@@ -568,7 +568,7 @@ public final class Gson {
    * @param src the object for which Json representation is to be created setting for Gson
    * @return Json representation of {@code src}.
    * @since 1.4
-   *//*
+   */
   public JsonElement toJsonTree(Object src) {
     if (src == null) {
       return JsonNull.INSTANCE;
@@ -576,7 +576,7 @@ public final class Gson {
     return toJsonTree(src, src.getClass());
   }
 
-  *//**
+  /**
    * This method serializes the specified object, including those of generic types, into its
    * equivalent representation as a tree of {@link JsonElement}s. This method must be used if the
    * specified object is a generic type. For non-generic objects, use {@link #toJsonTree(Object)}
@@ -591,14 +591,14 @@ public final class Gson {
    * </pre>
    * @return Json representation of {@code src}
    * @since 1.4
-   *//*
+   */
   public JsonElement toJsonTree(Object src, Type typeOfSrc) {
     JsonTreeWriter writer = new JsonTreeWriter();
     toJson(src, typeOfSrc, writer);
     return writer.get();
   }
 
-  *//**
+  /**
    * This method serializes the specified object into its equivalent Json representation.
    * This method should be used when the specified object is not a generic type. This method uses
    * {@link Class#getClass()} to get the type for the specified object, but the

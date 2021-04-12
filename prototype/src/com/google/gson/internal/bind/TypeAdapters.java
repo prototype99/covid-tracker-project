@@ -50,7 +50,7 @@ import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.TypeAdapter;
 import com.google.gson.TypeAdapterFactory;
-//import com.google.gson.annotations.SerializedName;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.internal.LazilyParsedNumber;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
@@ -770,7 +770,7 @@ public final class TypeAdapters {
   public static final TypeAdapterFactory JSON_ELEMENT_FACTORY
       = newTypeHierarchyFactory(JsonElement.class, JSON_ELEMENT);
 
-  /*private static final class EnumTypeAdapter<T extends Enum<T>> extends TypeAdapter<T> {
+  private static final class EnumTypeAdapter<T extends Enum<T>> extends TypeAdapter<T> {
     private final Map<String, T> nameToConstant = new HashMap<String, T>();
     private final Map<T, String> constantToName = new HashMap<T, String>();
 
@@ -800,12 +800,12 @@ public final class TypeAdapters {
       return nameToConstant.get(in.nextString());
     }
 
-    @Override public void write(JsonWriter out, T value) throws IOException {
+    /*@Override public void write(JsonWriter out, T value) throws IOException {
       out.value(value == null ? null : constantToName.get(value));
-    }
-  }*/
+    }*/
+  }
 
-  /*public static final TypeAdapterFactory ENUM_FACTORY = new TypeAdapterFactory() {
+  public static final TypeAdapterFactory ENUM_FACTORY = new TypeAdapterFactory() {
     @SuppressWarnings({"rawtypes", "unchecked"})
     @Override public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
       Class<? super T> rawType = typeToken.getRawType();
@@ -817,7 +817,7 @@ public final class TypeAdapters {
       }
       return (TypeAdapter<T>) new EnumTypeAdapter(rawType);
     }
-  };*/
+  };
 
   public static <TT> TypeAdapterFactory newFactory(
       final TypeToken<TT> type, final TypeAdapter<TT> typeAdapter) {

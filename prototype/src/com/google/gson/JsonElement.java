@@ -71,9 +71,9 @@ public abstract class JsonElement {
    * @return true if this element is of type {@link JsonNull}, false otherwise.
    * @since 1.2
    */
-/*  public boolean isJsonNull() {
+  public boolean isJsonNull() {
     return this instanceof JsonNull;
-  }*/
+  }
 
   /**
    * convenience method to get this element as a {@link JsonObject}. If the element is of some
