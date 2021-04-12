@@ -25,11 +25,11 @@
 
 package kong.unirest;
 
-/*import kong.unirest.apache.ApacheAsyncClient;
+import kong.unirest.apache.ApacheAsyncClient;
 import kong.unirest.apache.ApacheClient;
 import org.apache.http.HttpRequestInterceptor;
-import org.apache.http.classic.HttpClient;
-import org.apache.http.async.HttpAsyncClient;*/
+import org.apache.http.client.HttpClient;
+import org.apache.http.nio.client.HttpAsyncClient;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
@@ -53,12 +53,12 @@ public class Config {
     public static final int DEFAULT_SOCKET_TIMEOUT = 60000;
 
     private Optional<Client> client = Optional.empty();
-    //private Optional<AsyncClient> asyncClient = Optional.empty();
+    private Optional<AsyncClient> asyncClient = Optional.empty();
     private Optional<ObjectMapper> objectMapper = Optional.of(new JsonObjectMapper());
 
-   // private List<HttpRequestInterceptor> apacheinterceptors = new ArrayList<>();
+    private List<HttpRequestInterceptor> apacheinterceptors = new ArrayList<>();
     private Headers headers;
-    //private Proxy proxy;
+    private Proxy proxy;
     private int connectionTimeout;
     private int socketTimeout;
     private int maxTotal;
@@ -67,7 +67,7 @@ public class Config {
     private boolean cookieManagement;
     private boolean useSystemProperties;
     private String defaultResponseEncoding = StandardCharsets.UTF_8.name();
-//   private Function<Config, AsyncClient> asyncBuilder;
+    private Function<Config, AsyncClient> asyncBuilder;
     private Function<Config, Client> clientBuilder;
     private boolean requestCompressionOn = true;
     private boolean automaticRetries;
@@ -76,21 +76,21 @@ public class Config {
     private KeyStore keystore;
     private Supplier<String> keystorePassword = () -> null;
     private String cookieSpec;
-//    private UniMetric metrics = new NoopMetric();
+    private UniMetric metrics = new NoopMetric();
     private long ttl = -1;
     private SSLContext sslContext;
     private String[] ciphers;
     private String[] protocols;
-//    private CompoundInterceptor interceptor = new CompoundInterceptor();
+    private CompoundInterceptor interceptor = new CompoundInterceptor();
     private HostnameVerifier hostnameVerifier;
     private String defaultBaseUrl;
     private CacheManager cache;
 
-//    public Config() {
-//        setDefaults();
-//    }
+    public Config() {
+        setDefaults();
+    }
 
-/*    private void setDefaults() {
+    private void setDefaults() {
         apacheinterceptors.clear();
         proxy = null;
         cache = null;
@@ -119,7 +119,7 @@ public class Config {
             throw new UnirestException("It looks like you are using an older version of Apache Http Client. \n" +
                     "For security and performance reasons Unirest requires the most recent version. Please upgrade.", e);
         }
-    }*/
+    }
 
     /**
      * Set the HttpClient implementation to use for every synchronous request
@@ -127,11 +127,11 @@ public class Config {
      * @param httpClient Custom httpClient implementation
      * @return this config object
      */
-/*    @Deprecated // use httpClient(Function<Config, Client> httpClient) with the ApacheConfig.builder()
+    @Deprecated // use httpClient(Function<Config, Client> httpClient) with the ApacheConfig.builder()
     public Config httpClient(HttpClient httpClient) {
         client = Optional.of(new ApacheClient(httpClient, this, null));
         return this;
-    }*/
+    }
 
     /**
      * Set the HttpClient implementation to use for every synchronous request
@@ -139,10 +139,10 @@ public class Config {
      * @param httpClient Custom httpClient implementation
      * @return this config object
      */
-/*    public Config httpClient(Client httpClient) {
+    public Config httpClient(Client httpClient) {
         client = Optional.ofNullable(httpClient);
         return this;
-    }*/
+    }
 
     /**
      * Provide a builder for a client
@@ -150,10 +150,10 @@ public class Config {
      * @param httpClient Custom httpClient implementation
      * @return this config object
      */
-/*    public Config httpClient(Function<Config, Client> httpClient) {
+    public Config httpClient(Function<Config, Client> httpClient) {
         clientBuilder = httpClient;
         return this;
-    }*/
+    }
 
     /**
      * Set the asynchronous AbstractHttpAsyncClient implementation to use for every asynchronous request
@@ -162,11 +162,11 @@ public class Config {
      * @return this config object
      * @deprecated use asyncClient(AsyncClient value)
      */
-/*    @Deprecated
+    @Deprecated
     public Config asyncClient(HttpAsyncClient value) {
         this.asyncClient = Optional.of(new ApacheAsyncClient(value, this, null, null));
         return this;
-    }*/
+    }
 
     /**
      * Set the full async configuration including monitors. These will be shutDown on a Unirest.shudown()
@@ -174,10 +174,10 @@ public class Config {
      * @param value Custom AsyncConfig class. The actual AsyncHttpClient is required.
      * @return this config object
      */
-/*    public Config asyncClient(AsyncClient value) {
+    public Config asyncClient(AsyncClient value) {
         asyncClient = Optional.ofNullable(value);
         return this;
-    }*/
+    }
 
     /**
      * Set the full async configuration including monitors. These will be shutDown on a Unirest.shudown()
@@ -185,10 +185,10 @@ public class Config {
      * @param asyncClientBuilder A builder function for creating a AsyncClient
      * @return this config object
      */
-/*    public Config asyncClient(Function<Config, AsyncClient> asyncClientBuilder) {
+    public Config asyncClient(Function<Config, AsyncClient> asyncClientBuilder) {
         this.asyncBuilder = asyncClientBuilder;
         return this;
-    }*/
+    }
 
     /**
      * Set a proxy
@@ -196,11 +196,11 @@ public class Config {
      * @param value Proxy settings object.
      * @return this config object
      */
-/*    public Config proxy(Proxy value) {
+    public Config proxy(Proxy value) {
         validateClientsNotRunning();
         this.proxy = value;
         return this;
-    }*/
+    }
 
     /**
      * Set a proxy
@@ -209,9 +209,9 @@ public class Config {
      * @param port the port of the proxy server
      * @return this config object
      */
-/*    public Config proxy(String host, int port) {
+    public Config proxy(String host, int port) {
         return proxy(new Proxy(host, port));
-    }*/
+    }
 
     /**
      * Set an authenticated proxy
@@ -222,9 +222,9 @@ public class Config {
      * @param password password for authenticated proxy
      * @return this config object
      */
-/*    public Config proxy(String host, int port, String username, String password) {
+    public Config proxy(String host, int port, String username, String password) {
         return proxy(new Proxy(host, port, username, password));
-    }*/
+    }
 
     /**
      * Set the ObjectMapper implementation to use for Response to Object binding
@@ -232,10 +232,10 @@ public class Config {
      * @param om Custom implementation of ObjectMapper interface
      * @return this config object
      */
-/*    public Config setObjectMapper(ObjectMapper om) {
+    public Config setObjectMapper(ObjectMapper om) {
         this.objectMapper = Optional.ofNullable(om);
         return this;
-    }*/
+    }
 
     /**
      * Set a custom SSLContext.
@@ -244,11 +244,11 @@ public class Config {
      * @return this config object
      * @throws UnirestConfigException if a keystore was already configured.
      */
-/*    public Config sslContext(SSLContext ssl) {
+    public Config sslContext(SSLContext ssl) {
         verifySecurityConfig(this.keystore);
         this.sslContext = ssl;
         return this;
-    }*/
+    }
 
     /**
      * Set a custom HostnameVerifier
@@ -280,11 +280,11 @@ public class Config {
         return this;
     }
 
-/*    private void verifySecurityConfig(Object thing) {
+    private void verifySecurityConfig(Object thing) {
         if(thing != null){
             throw new UnirestConfigException("You may only configure a SSLContext OR a Keystore, but not both");
         }
-    }*/
+    }
 
     /**
      * Set a custom keystore
@@ -294,12 +294,12 @@ public class Config {
      * @return this config object
      * @throws UnirestConfigException if a SSLContext was already configured.
      */
-/*    public Config clientCertificateStore(KeyStore store, String password) {
+    public Config clientCertificateStore(KeyStore store, String password) {
         verifySecurityConfig(this.sslContext);
         this.keystore = store;
         this.keystorePassword = () -> password;
         return this;
-    }*/
+    }
 
     /**
      * Set a custom keystore via a file path. Must be a valid PKCS12 file
@@ -309,7 +309,7 @@ public class Config {
      * @return this config object
      * @throws UnirestConfigException if a SSLContext was already configured.
      */
-/*    public Config clientCertificateStore(String fileLocation, String password) {
+    public Config clientCertificateStore(String fileLocation, String password) {
         verifySecurityConfig(this.sslContext);
         try (InputStream keyStoreStream = Util.getFileInputStream(fileLocation)) {
             this.keystorePassword = () -> password;
@@ -319,15 +319,14 @@ public class Config {
             throw new UnirestConfigException(e);
         }
         return this;
-    }*/
+    }
 
     /**
      * Set the connection timeout
      *
      * @param inMillies The timeout until a connection with the server is established (in milliseconds). Default is 10000. Set to zero to disable the timeout.
      * @return this config object
-    */
-
+     */
     public Config connectTimeout(int inMillies) {
         validateClientsNotRunning();
         this.connectionTimeout = inMillies;
@@ -353,21 +352,21 @@ public class Config {
      * @param perRoute Defines a connection limit per one HTTP route (this can be considered a per target host limit). Default is 20.
      * @return this config object
      */
-/*    public Config concurrency(int total, int perRoute) {
+    public Config concurrency(int total, int perRoute) {
         validateClientsNotRunning();
         this.maxTotal = total;
         this.maxPerRoute = perRoute;
         return this;
-    }*/
+    }
 
     /**
      * Clear default headers
      * @return this config object
      */
-/*    public Config clearDefaultHeaders() {
+    public Config clearDefaultHeaders() {
         headers.clear();
         return this;
-    }*/
+    }
 
     /**
      * Default basic auth credentials
@@ -375,10 +374,10 @@ public class Config {
      * @param password the password
      * @return this config object
      */
- /*   public Config setDefaultBasicAuth(String username, String password) {
+    public Config setDefaultBasicAuth(String username, String password) {
         headers.replace("Authorization", Util.toBasicAuthValue(username, password));
         return this;
-    }*/
+    }
 
     /**
      * Set default header to appear on all requests
@@ -387,10 +386,10 @@ public class Config {
      * @param value The value of the header.
      * @return this config object
      */
-/*    public Config setDefaultHeader(String name, String value) {
+    public Config setDefaultHeader(String name, String value) {
         headers.replace(name, value);
         return this;
-    }*/
+    }
 
     /**
      * Set default header to appear on all requests, value is through a Supplier
@@ -400,10 +399,10 @@ public class Config {
      * @param value a supplier that will get called as part of the request.
      * @return this config object
      */
-/*    public Config setDefaultHeader(String name, Supplier<String> value) {
+    public Config setDefaultHeader(String name, Supplier<String> value) {
         headers.add(name, value);
         return this;
-    }*/
+    }
 
     /**
      * Add default header to appear on all requests
@@ -412,10 +411,10 @@ public class Config {
      * @param value The value of the header.
      * @return this config object
      */
-/*    public Config addDefaultHeader(String name, String value) {
+    public Config addDefaultHeader(String name, String value) {
         headers.add(name, value);
         return this;
-    }*/
+    }
 
     /**
      * Adds a default cookie to be added to all requests with this config
@@ -423,29 +422,29 @@ public class Config {
      * @param value the value of the cookie
      * @return this config object
      */
-//    public Config addDefaultCookie(String name, String value) {
-//        return addDefaultCookie(new Cookie(name, value));
-//    }
+    public Config addDefaultCookie(String name, String value) {
+        return addDefaultCookie(new Cookie(name, value));
+    }
 
     /**
      * Adds a default cookie to be added to all requests with this config
      * @param cookie the cookie
      * @return this config object
      */
-/*    public Config addDefaultCookie(Cookie cookie) {
+    public Config addDefaultCookie(Cookie cookie) {
         this.headers.cookie(cookie);
         return this;
-    }*/
+    }
 
     /**
      * Add a metric object for instrumentation
      * @param metric a UniMetric object
      * @return this config object
      */
-/*    public Config instrumentWith(UniMetric metric) {
+    public Config instrumentWith(UniMetric metric) {
         this.metrics = metric;
         return this;
-    }*/
+    }
 
     /**
      * Sets a global error handler by wrapping it in a default interceptor
@@ -457,7 +456,7 @@ public class Config {
      * @return this config object
      * @deprecated this is merging with the interceptor concept. see interceptor(Interceptor value)
      */
-/*    @Deprecated
+    @Deprecated
     public Config errorHandler(Consumer<HttpResponse<?>> consumer) {
         Optional<DefaultInterceptor> df = getDefaultInterceptor();
         df.ifPresent(d -> d.setConsumer(consumer));
@@ -465,18 +464,18 @@ public class Config {
                 "You attempted to set a custom error handler while also overriding the Unirest interceptor.\n" +
                 "please use the interceptor only. This function is deprecated"));
         return this;
-    }*/
+    }
 
     /**
      * Add a Interceptor which will be called before and after the request;
      * @param value The Interceptor
      * @return this config object
      */
-/*    public Config interceptor(Interceptor value) {
+    public Config interceptor(Interceptor value) {
         Objects.requireNonNull(value, "Interceptor may not be null");
         this.interceptor.register(value);
         return this;
-    }*/
+    }
 
     /**
      * Add a HttpRequestInterceptor to the clients. This can be called multiple times to add as many as you like.
@@ -486,12 +485,12 @@ public class Config {
      * @return this config object
      * @deprecated use the Unirest Interceptors rather than Apache
      */
-/*    @Deprecated
+    @Deprecated
     public Config addInterceptor(HttpRequestInterceptor value) {
         validateClientsNotRunning();
         apacheinterceptors.add(value);
         return this;
-    }*/
+    }
 
     /**
      * Allow the client to follow redirects. Defaults to TRUE
@@ -499,11 +498,11 @@ public class Config {
      * @param enable The name of the header.
      * @return this config object
      */
-/*    public Config followRedirects(boolean enable) {
+    public Config followRedirects(boolean enable) {
         validateClientsNotRunning();
         this.followRedirects = enable;
         return this;
-    }*/
+    }
 
     /**
      * Allow the client to manage cookies. Defaults to TRUE
@@ -511,11 +510,11 @@ public class Config {
      * @param enable The name of the header.
      * @return this config object
      */
-/*    public Config enableCookieManagement(boolean enable) {
+    public Config enableCookieManagement(boolean enable) {
         validateClientsNotRunning();
         this.cookieManagement = enable;
         return this;
-    }*/
+    }
 
     /**
      * Toggle verifying SSL/TLS certificates. Defaults to TRUE
@@ -586,24 +585,24 @@ public class Config {
      * @param value enable or disable response caching
      * @return this config object
      */
-/*    public Config cacheResponses(boolean value) {
+    public Config cacheResponses(boolean value) {
         if(value){
             this.cache = new CacheManager();
         } else {
             this.cache = null;
         }
         return this;
-    }*/
+    }
 
     /**
      * Enable Response Caching with custom options
      * @param value enable or disable response caching
      * @return this config object
      */
-/*    public Config cacheResponses(Cache.Builder value) {
+    public Config cacheResponses(Cache.Builder value) {
         this.cache = value.build();
         return this;
-    }*/
+    }
 
     /**
      * Set the default encoding that will be used for serialization into Strings.
@@ -652,14 +651,14 @@ public class Config {
      * @param value a bool is its true or not.
      * @return this config object
      */
-/*    public Config addShutdownHook(boolean value) {
+    public Config addShutdownHook(boolean value) {
         this.addShutdownHook = value;
         if (value) {
             client.ifPresent(Client::registerShutdownHook);
             asyncClient.ifPresent(AsyncClient::registerShutdownHook);
         }
         return this;
-    }*/
+    }
 
     /**
      * set a default base url for all routes.
@@ -691,19 +690,19 @@ public class Config {
      *
      * @return boolean
      */
-//    public boolean isRunning() {
-//        return client.isPresent() || asyncClient.isPresent();
-//    }
+    public boolean isRunning() {
+        return client.isPresent() || asyncClient.isPresent();
+    }
 
     /**
      * Shutdown the current config and re-init.
      *
      * @return this config
      */
-/*    public Config reset() {
+    public Config reset() {
         shutDown(false);
         return this;
-    }*/
+    }
 
 
     /**
@@ -712,7 +711,7 @@ public class Config {
      *
      * @param clearOptions should the current non-client settings be retained.
      */
-/*    public void shutDown(boolean clearOptions) {
+    public void shutDown(boolean clearOptions) {
         List<Exception> ex = Stream.concat(
                 client.map(Client::close).orElseGet(Stream::empty),
                 asyncClient.map(AsyncClient::close).orElseGet(Stream::empty)
@@ -728,7 +727,7 @@ public class Config {
         if (!ex.isEmpty()) {
             throw new UnirestException(ex);
         }
-    }*/
+    }
 
     /**
      * Return the current Client. One will be build if it does
@@ -763,7 +762,7 @@ public class Config {
      *
      * @return Apache HttpAsyncClient
      */
-/*    public AsyncClient getAsyncClient() {
+    public AsyncClient getAsyncClient() {
         if (!asyncClientIsReady()) {
             buildAsyncClient();
         }
@@ -795,7 +794,7 @@ public class Config {
         if (!value.isRunning()) {
             throw new UnirestConfigException("Attempted to get a new async client but it was not started. Please ensure it is");
         }
-    }*/
+    }
 
     // Accessors for unirest.
 
@@ -870,29 +869,29 @@ public class Config {
     }
 
     private void validateClientsNotRunning() {
-/*        if (client.isPresent() || asyncClient.isPresent()) {
+        if (client.isPresent() || asyncClient.isPresent()) {
             throw new UnirestConfigException(
                     "Http Clients are already built in order to build a new config execute Unirest.config().reset() before changing settings. \n" +
                             "This should be done rarely."
             );
-        }*/
+        }
     }
 
     /**
      * @return currently configured Apache HttpRequestInterceptors
      * @deprecated use Unirest Interceptors instead
      */
-/*    @Deprecated
+    @Deprecated
     public List<HttpRequestInterceptor> getInterceptor() {
         return apacheinterceptors;
-    }*/
+    }
 
     /**
      * @return the configured proxy configuration
      */
-//    public Proxy getProxy() {
-//        return proxy;
-//    }
+    public Proxy getProxy() {
+        return proxy;
+    }
 
     /**
      * @return if the system will pick up system properties (default is false)
@@ -949,9 +948,9 @@ public class Config {
     /**
      * @return the currently configured UniMetric object
      */
-//    public UniMetric getMetric() {
-//        return metrics;
-//    }
+    public UniMetric getMetric() {
+        return metrics;
+    }
 
     /**
      * @return the maximum life span of persistent connections regardless of their expiration setting.
@@ -963,20 +962,20 @@ public class Config {
     /**
      * @return the currently configured Interceptor
      */
-//    public Interceptor getUniInterceptor() {
-//        return interceptor;
-//    }
+    public Interceptor getUniInterceptor() {
+        return interceptor;
+    }
 
     /**
      * @return  The currently configred error handler
      * @deprecated use interceptors instead
      */
-/*    @Deprecated
+    @Deprecated
     public Consumer<HttpResponse<?>> getErrorHandler() {
         return getDefaultInterceptor()
                 .map(DefaultInterceptor::getConsumer)
                 .orElseGet(() -> r -> {});
-    }*/
+    }
 
     /**
      * @return the SSL connection configuration
@@ -985,12 +984,12 @@ public class Config {
         return sslContext;
     }
 
-/*    private Optional<DefaultInterceptor> getDefaultInterceptor() {
+    private Optional<DefaultInterceptor> getDefaultInterceptor() {
         return interceptor.getInterceptors().stream()
                 .filter(i -> i instanceof DefaultInterceptor)
                 .map(i -> (DefaultInterceptor)i)
                 .findFirst();
-    }*/
+    }
 
     /**
      * @return the current HostnameVerifier

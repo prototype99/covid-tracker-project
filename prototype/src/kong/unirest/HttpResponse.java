@@ -48,7 +48,7 @@ public interface HttpResponse<T> {
      * @return Response Headers (map) with <b>same case</b> as server response.
      * For instance use <code>getHeaders().getFirst("Location")</code> and not <code>getHeaders().getFirst("location")</code> to get first header "Location"
      */
-//    Headers getHeaders();
+    Headers getHeaders();
 
     /**
      * @return the body
@@ -122,5 +122,5 @@ public interface HttpResponse<T> {
      * return a cookie collection parse from the set-cookie header
      * @return a Cookies collection
      */
-//    Cookies getCookies();
+    Cookies getCookies();
 }

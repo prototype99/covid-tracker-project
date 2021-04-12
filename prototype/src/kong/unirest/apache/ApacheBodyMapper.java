@@ -28,11 +28,13 @@ package kong.unirest.apache;
 import kong.unirest.*;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
-import org.apache.http.entity.UrlEncodedFormEntity;
-import org.apache.http.entity.mime.*;
-import org.apache.http.io.entity.BasicHttpEntity;
-import org.apache.http.io.entity.ByteArrayEntity;
-import org.apache.http.io.entity.StringEntity;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.entity.BasicHttpEntity;
+import org.apache.http.entity.ByteArrayEntity;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.entity.mime.HttpMultipartMode;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.*;
 import org.apache.http.message.BasicNameValuePair;
 
 import java.io.File;
@@ -133,8 +135,8 @@ class ApacheBodyMapper {
         return cls.isAssignableFrom(value.getPartType());
     }
 
-    private ContentType toApacheType(String type) {
-        return ContentType.parse(type);
+    private org.apache.http.entity.ContentType toApacheType(String type) {
+        return org.apache.http.entity.ContentType.parse(type);
     }
 
     static List<NameValuePair> getList(Collection<BodyPart> parameters) {

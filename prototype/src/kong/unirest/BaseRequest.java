@@ -34,12 +34,12 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-//import static kong.unirest.CallbackFuture.wrap;
+import static kong.unirest.CallbackFuture.wrap;
 
 abstract class BaseRequest<R extends HttpRequest> implements HttpRequest<R> {
 
-//    private Instant creation = Util.now();
-//    private Optional<ObjectMapper> objectMapper = Optional.empty();
+    private Instant creation = Util.now();
+    private Optional<ObjectMapper> objectMapper = Optional.empty();
     private String responseEncoding;
     protected Headers headers = new Headers();
     protected final Config config;
@@ -47,10 +47,10 @@ abstract class BaseRequest<R extends HttpRequest> implements HttpRequest<R> {
     protected Path url;
     private Integer socketTimeout;
     private Integer connectTimeout;
-/*    private Proxy proxy;
-    private ProgressMonitor downloadMonitor;*/
+    private Proxy proxy;
+    private ProgressMonitor downloadMonitor;
 
-/*    BaseRequest(BaseRequest httpRequest) {
+    BaseRequest(BaseRequest httpRequest) {
         this.config = httpRequest.config;
         this.method = httpRequest.method;
         this.url = httpRequest.url;
@@ -59,7 +59,7 @@ abstract class BaseRequest<R extends HttpRequest> implements HttpRequest<R> {
         this.connectTimeout = httpRequest.connectTimeout;
         this.proxy = httpRequest.proxy;
         this.objectMapper = httpRequest.objectMapper;
-    }*/
+    }
 
     BaseRequest(Config config, HttpMethod method, String url) {
         this.config = config;
@@ -68,28 +68,28 @@ abstract class BaseRequest<R extends HttpRequest> implements HttpRequest<R> {
         headers.putAll(config.getDefaultHeaders());
     }
 
-/*    @Override
+    @Override
     public R routeParam(String name, String value) {
         url.param(name, value);
         return (R) this;
-    }*/
+    }
 
-/*    @Override
+    @Override
     public R routeParam(Map<String, Object> params) {
         url.param(params);
         return (R) this;
-    }*/
+    }
 
-/*    @Override
+    @Override
     public R basicAuth(String username, String password) {
         this.headers.replace("Authorization", Util.toBasicAuthValue(username, password));
         return (R) this;
-    }*/
+    }
 
-/*    @Override
+    @Override
     public R accept(String value) {
         return header(HeaderNames.ACCEPT, value);
-    }*/
+    }
 
     @Override
     public R responseEncoding(String encoding) {
@@ -97,19 +97,19 @@ abstract class BaseRequest<R extends HttpRequest> implements HttpRequest<R> {
         return (R) this;
     }
 
-/*    @Override
+    @Override
     public R header(String name, String value) {
         this.headers.add(name.trim(), value);
         return (R) this;
-    }*/
+    }
 
-/*    @Override
+    @Override
     public R headerReplace(String name, String value) {
         this.headers.replace(name, value);
         return (R) this;
-    }*/
+    }
 
-/*    @Override
+    @Override
     public R headers(Map<String, String> headerMap) {
         if (headerMap != null) {
             for (Map.Entry<String, String> entry : headerMap.entrySet()) {
@@ -117,43 +117,43 @@ abstract class BaseRequest<R extends HttpRequest> implements HttpRequest<R> {
             }
         }
         return (R) this;
-    }*/
+    }
 
-/*    @Override
+    @Override
     public R cookie(String name, String value) {
         this.headers.cookie(new Cookie(name, value));
         return (R) this;
-    }*/
+    }
 
-/*    @Override
+    @Override
     public R cookie(Cookie cookie) {
         this.headers.cookie(cookie);
         return (R) this;
-    }*/
+    }
 
-/*    @Override
+    @Override
     public R cookie(Collection<Cookie> cookies) {
         this.headers.cookie(cookies);
         return (R)this;
-    }*/
+    }
 
-/*    @Override
+    @Override
     public R queryString(String name, Collection<?> value) {
         url.queryString(name, value);
         return (R) this;
-    }*/
+    }
 
-/*    @Override
+    @Override
     public R queryString(String name, Object value) {
         url.queryString(name, value);
         return (R) this;
-    }*/
+    }
 
-/*    @Override
+    @Override
     public R queryString(Map<String, Object> parameters) {
         url.queryString(parameters);
         return (R) this;
-    }*/
+    }
 
     @Override
     public R socketTimeout(int millies) {
@@ -167,31 +167,31 @@ abstract class BaseRequest<R extends HttpRequest> implements HttpRequest<R> {
         return (R) this;
     }
 
-/*    @Override
+    @Override
     public R proxy(String host, int port) {
         this.proxy = new Proxy(host, port);
         return (R) this;
-    }*/
+    }
 
-/*    @Override
+    @Override
     public R withObjectMapper(ObjectMapper mapper) {
         Objects.requireNonNull(mapper, "ObjectMapper may not be null");
         this.objectMapper = Optional.of(mapper);
         return (R) this;
-    }*/
+    }
 
-/*    @Override
+    @Override
     public R downloadMonitor(ProgressMonitor monitor) {
         this.downloadMonitor = monitor;
         return (R) this;
-    }*/
+    }
 
-/*    @Override
+    @Override
     public HttpResponse asEmpty() {
         return config.getClient().request(this, BasicResponse::new, Empty.class);
-    }*/
+    }
 
-/*    @Override
+    @Override
     public CompletableFuture<HttpResponse<Empty>> asEmptyAsync() {
         return config.getAsyncClient()
                 .request(this, BasicResponse::new, new CompletableFuture<>(), Empty.class);
@@ -201,14 +201,14 @@ abstract class BaseRequest<R extends HttpRequest> implements HttpRequest<R> {
     public CompletableFuture<HttpResponse<Empty>> asEmptyAsync(Callback<Empty> callback) {
         return config.getAsyncClient()
                 .request(this, BasicResponse::new, wrap(callback), Empty.class);
-    }*/
+    }
 
     @Override
-    public HttpResponse<String> asString() /*throws UnirestException*/ {
+    public HttpResponse<String> asString() throws UnirestException {
         return config.getClient().request(this, r -> new StringResponse(r, responseEncoding), String.class);
     }
 
-    /*@Override
+    @Override
     public CompletableFuture<HttpResponse<String>> asStringAsync() {
         return config.getAsyncClient()
                 .request(this, r -> new StringResponse(r, responseEncoding), new CompletableFuture<>(), String.class);
@@ -368,13 +368,13 @@ abstract class BaseRequest<R extends HttpRequest> implements HttpRequest<R> {
     @Override
     public String getUrl() {
         return escape(url.toString());
-    }*/
+    }
 
     private String escape(String string) {
         return string.replaceAll(" ", "%20").replaceAll("\t", "%09");
     }
 
-/*    @Override
+    @Override
     public Headers getHeaders() {
         return headers;
     }
@@ -406,7 +406,7 @@ abstract class BaseRequest<R extends HttpRequest> implements HttpRequest<R> {
     @Override
     public Instant getCreationTime() {
         return creation;
-    }*/
+    }
 
     private <T> T valueOr(T x, Supplier<T> o) {
         if (x != null) {
@@ -415,7 +415,7 @@ abstract class BaseRequest<R extends HttpRequest> implements HttpRequest<R> {
         return o.get();
     }
 
-/*    Path getPath() {
+    Path getPath() {
         return url;
     }
 
@@ -436,6 +436,6 @@ abstract class BaseRequest<R extends HttpRequest> implements HttpRequest<R> {
     @Override
     public int hashCode() {
         return Objects.hash(headers, method, url);
-    }*/
+    }
 
 }

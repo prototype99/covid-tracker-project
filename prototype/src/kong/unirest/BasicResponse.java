@@ -33,7 +33,7 @@ public class BasicResponse<T> extends BaseResponse<T> {
         this.body = body;
     }
 
-    /*public BasicResponse(RawResponse httpResponse, T body) {
+    public BasicResponse(RawResponse httpResponse, T body) {
         super(httpResponse);
         this.body = body;
     }
@@ -41,12 +41,12 @@ public class BasicResponse<T> extends BaseResponse<T> {
     public BasicResponse(RawResponse httpResponse) {
         super(httpResponse);
         this.body = null;
-    }*/
+    }
 
-    /*public BasicResponse(RawResponse httpResponse, String ogBody, RuntimeException ex) {
+    public BasicResponse(RawResponse httpResponse, String ogBody, RuntimeException ex) {
         this(httpResponse, null);
         setParsingException(ogBody, ex);
-    }*/
+    }
 
     @Override
     public T getBody() {

@@ -41,17 +41,17 @@ public class Unirest {
      * Close the asynchronous client and its event loop. Use this method to close all the threads and allow an application to exit.
      * This will also clear any options returning Unirest to a default state
      */
-//    public static void shutDown() {
-//        shutDown(true);
-//    }
+    public static void shutDown() {
+        shutDown(true);
+    }
 
     /**
      * Close the asynchronous client and its event loop. Use this method to close all the threads and allow an application to exit.
      * @param clearOptions  indicates if options should be cleared. Note that the HttpClient, AsyncClient and thread monitors will not be retained after shutDown.
      */
-//    public static void shutDown(boolean clearOptions) {
-//        primaryInstance.shutDown(clearOptions);
-//    }
+    public static void shutDown(boolean clearOptions) {
+        primaryInstance.shutDown(clearOptions);
+    }
 
     /**
      * Start a GET HttpRequest which does not support a body from the primary config
@@ -67,54 +67,54 @@ public class Unirest {
      * @param url the endpoint to access. Can include placeholders for path params using curly braces {}
      * @return A HttpRequest builder
      */
-//    public static GetRequest head(String url) {
-//        return primaryInstance.head(url);
-//    }
+    public static GetRequest head(String url) {
+        return primaryInstance.head(url);
+    }
 
     /**
      * Start a OPTIONS HttpRequest which does not support a body from the primary config
      * @param url the endpoint to access. Can include placeholders for path params using curly braces {}
      * @return A HttpRequest builder
      */
-//    public static GetRequest options(String url) {
-//        return primaryInstance.options(url);
-//    }
+    public static GetRequest options(String url) {
+        return primaryInstance.options(url);
+    }
 
     /**
      * Start a POST HttpRequest which supports a body from the primary config
      * @param url the endpoint to access. Can include placeholders for path params using curly braces {}
      * @return A HttpRequest builder
      */
-//    public static HttpRequestWithBody post(String url) {
-//        return primaryInstance.post(url);
-//    }
+    public static HttpRequestWithBody post(String url) {
+        return primaryInstance.post(url);
+    }
 
     /**
      * Start a DELETE HttpRequest which supports a body from the primary config
      * @param url the endpoint to access. Can include placeholders for path params using curly braces {}
      * @return A HttpRequest builder
      */
-//    public static HttpRequestWithBody delete(String url) {
-//        return primaryInstance.delete(url);
-//    }
+    public static HttpRequestWithBody delete(String url) {
+        return primaryInstance.delete(url);
+    }
 
     /**
      * Start a PATCH HttpRequest which supports a body from the primary config
      * @param url the endpoint to access. Can include placeholders for path params using curly braces {}
      * @return A HttpRequest builder
      */
-//    public static HttpRequestWithBody patch(String url) {
-//        return primaryInstance.patch(url);
-//    }
+    public static HttpRequestWithBody patch(String url) {
+        return primaryInstance.patch(url);
+    }
 
     /**
      * Start a PUT HttpRequest which supports a body from the primary config
      * @param url the endpoint to access. Can include placeholders for path params using curly braces {}
      * @return A HttpRequest builder
      */
-//    public static HttpRequestWithBody put(String url) {
-//        return primaryInstance.put(url);
-//    }
+    public static HttpRequestWithBody put(String url) {
+        return primaryInstance.put(url);
+    }
 
     /**
      * Start a PATCH HttpRequest which supports a JSON Patch builder.
@@ -122,22 +122,22 @@ public class Unirest {
      * @param url the endpoint to access. Can include placeholders for path params using curly braces {}
      * @return A HttpRequest builder
      */
-//    public static JsonPatchRequest jsonPatch(String url) {
-//        return primaryInstance.jsonPatch(url);
-//    }
+    public static JsonPatchRequest jsonPatch(String url) {
+        return primaryInstance.jsonPatch(url);
+    }
 
-//    public static HttpRequestWithBody request(String method, String url) {
-//        return primaryInstance.request(method, url);
-//    }
+    public static HttpRequestWithBody request(String method, String url) {
+        return primaryInstance.request(method, url);
+    }
 
     /**
      * Does the config have currently running clients? Find out here.
      *
      * @return boolean
      */
-//    public static boolean isRunning() {
-//        return primaryInstance.isRunning();
-//    }
+    public static boolean isRunning() {
+        return primaryInstance.isRunning();
+    }
 
     /**
      * Spawn a new Unirest Instance with a new config.

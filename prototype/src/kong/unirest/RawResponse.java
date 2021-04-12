@@ -41,5 +41,5 @@ public interface RawResponse {
     String getContentType();
     String getEncoding();
     Config getConfig();
-//    HttpResponseSummary toSummary();
+    HttpResponseSummary toSummary();
 }

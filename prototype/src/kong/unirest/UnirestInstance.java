@@ -30,7 +30,7 @@ package kong.unirest;
  * and its clients where all the action happens.
  * This class is suitable for mocking.
  */
-public class UnirestInstance /*implements AutoCloseable*/ {
+public class UnirestInstance implements AutoCloseable {
 
     private final Config config;
 
@@ -53,18 +53,18 @@ public class UnirestInstance /*implements AutoCloseable*/ {
      * Close the asynchronous client and its event loop. Use this method to close all the threads and allow an application to exit.
      * This will also clear any options returning Unirest to a default state
      */
-//    public void shutDown() {
-//        shutDown(true);
-//    }
+    public void shutDown() {
+        shutDown(true);
+    }
 
     /**
      * Close the asynchronous client and its event loop. Use this method to close all the threads and allow an application to exit.
      *
      * @param clearOptions indicates if options should be cleared. Note that the HttpClient, AsyncClient and thread monitors will not be retained after shutDown.
      */
-//    public void shutDown(boolean clearOptions) {
-//        config.shutDown(clearOptions);
-//    }
+    public void shutDown(boolean clearOptions) {
+        config.shutDown(clearOptions);
+    }
 
     /**
      * Start a GET HttpRequest which does not support a body from the primary config
@@ -80,54 +80,54 @@ public class UnirestInstance /*implements AutoCloseable*/ {
      * @param url the endpoint to access. Can include placeholders for path params using curly braces {}
      * @return A HttpRequest builder
      */
-//    public GetRequest head(String url) {
-//        return new HttpRequestNoBody(config, HttpMethod.HEAD, url);
-//    }
+    public GetRequest head(String url) {
+        return new HttpRequestNoBody(config, HttpMethod.HEAD, url);
+    }
 
     /**
      * Start a OPTIONS HttpRequest which does not support a body from the primary config
      * @param url the endpoint to access. Can include placeholders for path params using curly braces {}
      * @return A HttpRequest builder
      */
-//    public GetRequest options(String url) {
-//        return new HttpRequestNoBody(config, HttpMethod.OPTIONS, url);
-//    }
+    public GetRequest options(String url) {
+        return new HttpRequestNoBody(config, HttpMethod.OPTIONS, url);
+    }
 
     /**
      * Start a POST HttpRequest which supports a body from the primary config
      * @param url the endpoint to access. Can include placeholders for path params using curly braces {}
      * @return A HttpRequest builder
      */
-//    public HttpRequestWithBody post(String url) {
-//        return new HttpRequestBody(config, HttpMethod.POST, url);
-//    }
+    public HttpRequestWithBody post(String url) {
+        return new HttpRequestBody(config, HttpMethod.POST, url);
+    }
 
     /**
      * Start a DELETE HttpRequest which supports a body from the primary config
      * @param url the endpoint to access. Can include placeholders for path params using curly braces {}
      * @return A HttpRequest builder
      */
-//    public HttpRequestWithBody delete(String url) {
-//        return new HttpRequestBody(config, HttpMethod.DELETE, url);
-//    }
+    public HttpRequestWithBody delete(String url) {
+        return new HttpRequestBody(config, HttpMethod.DELETE, url);
+    }
 
     /**
      * Start a PATCH HttpRequest which supports a body from the primary config
      * @param url the endpoint to access. Can include placeholders for path params using curly braces {}
      * @return A HttpRequest builder
      */
-//    public HttpRequestWithBody patch(String url) {
-//        return new HttpRequestBody(config, HttpMethod.PATCH, url);
-//    }
+    public HttpRequestWithBody patch(String url) {
+        return new HttpRequestBody(config, HttpMethod.PATCH, url);
+    }
 
     /**
      * Start a PUT HttpRequest which supports a body from the primary config
      * @param url the endpoint to access. Can include placeholders for path params using curly braces {}
      * @return A HttpRequest builder
      */
-//    public HttpRequestWithBody put(String url) {
-//        return new HttpRequestBody(config, HttpMethod.PUT, url);
-//    }
+    public HttpRequestWithBody put(String url) {
+        return new HttpRequestBody(config, HttpMethod.PUT, url);
+    }
 
     /**
      * Start a PATCH HttpRequest which supports a JSON Patch builder.
@@ -135,29 +135,29 @@ public class UnirestInstance /*implements AutoCloseable*/ {
      * @param url the endpoint to access. Can include placeholders for path params using curly braces {}
      * @return A HttpRequest builder
      */
-/*    public JsonPatchRequest jsonPatch(String url) {
+    public JsonPatchRequest jsonPatch(String url) {
         return new HttpRequestJsonPatch(config, url);
     }
 
     public HttpRequestWithBody request(String method, String url) {
         return new HttpRequestBody(config, HttpMethod.valueOf(method), url);
-    }*/
+    }
 
     /**
      * Does the config have currently running clients? Find out here.
      *
      * @return boolean
      */
-//    public boolean isRunning() {
-//        return config.isRunning();
-//    }
+    public boolean isRunning() {
+        return config.isRunning();
+    }
 
     /**
      * Wraps shutdown and will automatically be called when UnirestInstance is
      * used with try-with-resource. This will alleviate the need to manually
      * call shutDown as it will be done automatically.
      */
-//    public void close() {
-//        shutDown(true);
-//    }
+    public void close() {
+        shutDown(true);
+    }
 }

@@ -51,7 +51,7 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param value the value to replace the placeholder with
      * @return this request builder
      */
-//    R routeParam(String name, String value);
+    R routeParam(String name, String value);
 
     /**
      * add a route param map that replaces the matching {name}
@@ -63,7 +63,7 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param params a map of path params
      * @return this request builder
      */
-//    R routeParam(Map<String, Object> params);
+    R routeParam(Map<String, Object> params);
 
     /**
      * Basic auth credentials
@@ -71,14 +71,14 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param password the password
      * @return this request builder
      */
-//    R basicAuth(String username, String password);
+    R basicAuth(String username, String password);
 
     /**
      * The Accept header to send (e.g. application/json
      * @param value a valid mime type for the Accept header
      * @return this request builder
      */
-//    R accept(String value);
+    R accept(String value);
 
     /**
      * The encoding to expect the response to be for cases where the server fails to respond with the proper encoding
@@ -93,7 +93,7 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param value value for the header
      * @return this request builder
      */
-//    R header(String name, String value);
+    R header(String name, String value);
 
     /**
      * Replace a header value or add it if it doesn't exist
@@ -101,14 +101,14 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param value value for the header
      * @return this request builder
      */
-//    R headerReplace(String name, String value);
+    R headerReplace(String name, String value);
 
     /**
      * Add headers as a map
      * @param headerMap a map of headers
      * @return this request builder
      */
-//    R headers(Map<String, String> headerMap);
+    R headers(Map<String, String> headerMap);
 
     /**
      * Add a simple cookie header
@@ -116,21 +116,21 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param value the value of the cookie
      * @return this request builder
      */
-//    R cookie(String name, String value);
+    R cookie(String name, String value);
 
     /**
      * Add a simple cookie header
      * @param cookie a cookie
      * @return this request builder
      */
-//    R cookie(Cookie cookie);
+    R cookie(Cookie cookie);
 
     /**
      * Add a collection of cookie headers
      * @param cookies a cookie
      * @return this request builder
      */
-//    R cookie(Collection<Cookie> cookies);
+    R cookie(Collection<Cookie> cookies);
 
     /**
      * add a query param to the url. The value will be URL-Encoded
@@ -138,7 +138,7 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param value the value of the param
      * @return this request builder
      */
-//    R queryString(String name, Object value);
+    R queryString(String name, Object value);
 
     /**
      * Add multiple param with the same param name.
@@ -148,14 +148,14 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param value a collection of values
      * @return this request builder
      */
-//    R queryString(String name, Collection<?> value);
+    R queryString(String name, Collection<?> value);
 
     /**
      * Add query params as a map of name value pairs
      * @param parameters a map of params
      * @return this request builder
      */
-//    R queryString(Map<String, Object> parameters);
+    R queryString(Map<String, Object> parameters);
 
     /**
      * Pass a ObjectMapper for the request. This will override any globally
@@ -163,7 +163,7 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param mapper the ObjectMapper
      * @return this request builder
      */
-//    R withObjectMapper(ObjectMapper mapper);
+    R withObjectMapper(ObjectMapper mapper);
 
     /**
      * Set a socket timeout for this request
@@ -185,14 +185,14 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param port the proxy port
      * @return this request builder
      */
-//    R proxy(String host, int port);
+    R proxy(String host, int port);
 
     /**
      * sets a download monitor for monitoring the response. this could be used for drawing a progress bar
      * @param monitor a ProgressMonitor
      * @return this request builder
      */
-//    R downloadMonitor(ProgressMonitor monitor);
+    R downloadMonitor(ProgressMonitor monitor);
 
     /**
      * Executes the request and returns the response with the body mapped into a String
@@ -204,53 +204,53 @@ public interface HttpRequest<R extends HttpRequest>  {
      * Executes the request asynchronously and returns the response with the body mapped into a String
      * @return a CompletableFuture of a response
      */
-//    CompletableFuture<HttpResponse<String>> asStringAsync();
+    CompletableFuture<HttpResponse<String>> asStringAsync();
 
     /**
      * Executes the request asynchronously and returns the response with the body mapped into a String
      * @param callback a callback handler
      * @return a CompletableFuture of a response
      */
-//    CompletableFuture<HttpResponse<String>> asStringAsync(Callback<String> callback);
+    CompletableFuture<HttpResponse<String>> asStringAsync(Callback<String> callback);
 
     /**
      * Executes the request and returns the response with the body mapped into a byte[]
      * @return response
      */
-//    HttpResponse<byte[]> asBytes();
+    HttpResponse<byte[]> asBytes();
 
 
     /**
      * Executes the request asynchronously and returns the response with the body mapped into a byte[]
      * @return a CompletableFuture of a response
      */
-//    CompletableFuture<HttpResponse<byte[]>> asBytesAsync();
+    CompletableFuture<HttpResponse<byte[]>> asBytesAsync();
 
     /**
      * Executes the request asynchronously and returns the response with the body mapped into a byte[]
      * @param callback a callback handler
      * @return a CompletableFuture of a response
      */
-//    CompletableFuture<HttpResponse<byte[]>> asBytesAsync(Callback<byte[]> callback);
+    CompletableFuture<HttpResponse<byte[]>> asBytesAsync(Callback<byte[]> callback);
 
     /**
      * Executes the request and returns the response with the body mapped into a JsonNode
      * @return response
      */
-//    HttpResponse<JsonNode> asJson();
+    HttpResponse<JsonNode> asJson();
 
     /**
      * Executes the request asynchronously and returns the response with the body mapped into a JsonNode
      * @return a CompletableFuture of a response
      */
-//    CompletableFuture<HttpResponse<JsonNode>> asJsonAsync();
+    CompletableFuture<HttpResponse<JsonNode>> asJsonAsync();
 
     /**
      * Executes the request asynchronously and returns the response with the body mapped into a JsonNode
      * @param callback a callback handler
      * @return a CompletableFuture of a response
      */
-//    CompletableFuture<HttpResponse<JsonNode>> asJsonAsync(Callback<JsonNode> callback);
+    CompletableFuture<HttpResponse<JsonNode>> asJsonAsync(Callback<JsonNode> callback);
 
     /**
      * Executes the request and returns the response with the body mapped into T by a configured ObjectMapper
@@ -258,7 +258,7 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param <T> the return type
      * @return a response
      */
-//    <T> HttpResponse<T> asObject(Class<? extends T> responseClass);
+    <T> HttpResponse<T> asObject(Class<? extends T> responseClass);
 
     /**
      * Executes the request and returns the response with the body mapped into T by a configured ObjectMapper
@@ -266,7 +266,7 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param <T> the return type
      * @return a response
      */
-//    <T> HttpResponse<T> asObject(GenericType<T> genericType);
+    <T> HttpResponse<T> asObject(GenericType<T> genericType);
 
     /**
      * Execute the request and pass the raw response to a function for mapping.
@@ -276,7 +276,7 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param <T> The type of the response mapping
      * @return A HttpResponse containing T as the body
      */
-//    <T> HttpResponse<T> asObject(Function<RawResponse, T> function);
+    <T> HttpResponse<T> asObject(Function<RawResponse, T> function);
 
     /**
      * Executes the request asynchronously and returns response with the body mapped into T by a configured ObjectMapper
@@ -284,7 +284,7 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param <T> the return type
      * @return a CompletableFuture of a response
      */
-//    <T> CompletableFuture<HttpResponse<T>> asObjectAsync(Class<? extends T> responseClass);
+    <T> CompletableFuture<HttpResponse<T>> asObjectAsync(Class<? extends T> responseClass);
 
     /**
      * Executes the request asynchronously, mapping to a type via the configured object mapper and then passed to a callback handler.
@@ -293,7 +293,7 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param <T> the return type
      * @return a CompletableFuture of a HttpResponse containing the body of T
      */
-//    <T> CompletableFuture<HttpResponse<T>> asObjectAsync(Class<? extends T> responseClass, Callback<T> callback);
+    <T> CompletableFuture<HttpResponse<T>> asObjectAsync(Class<? extends T> responseClass, Callback<T> callback);
 
     /**
      * Executes the request asynchronously, and use a GenericType with the ObjectMapper
@@ -301,7 +301,7 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param <T> the type of the response
      * @return a CompletableFuture of a HttpResponse containing the body of T
      */
-//    <T> CompletableFuture<HttpResponse<T>> asObjectAsync(GenericType<T> genericType);
+    <T> CompletableFuture<HttpResponse<T>> asObjectAsync(GenericType<T> genericType);
 
     /**
      * Executes the request asynchronously, and use a GenericType with the ObjectMapper
@@ -310,7 +310,7 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param <T> the type of the response
      * @return a CompletableFuture of a HttpResponse containing the body of T
      */
-//    <T> CompletableFuture<HttpResponse<T>> asObjectAsync(GenericType<T> genericType, Callback<T> callback);
+    <T> CompletableFuture<HttpResponse<T>> asObjectAsync(GenericType<T> genericType, Callback<T> callback);
 
     /**
      * Executes the request asynchronously, and pass the raw response to a function for mapping.
@@ -320,7 +320,7 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param <T> the type of the response
      * @return a CompletableFuture of a HttpResponse containing the body of T
      */
-//    <T> CompletableFuture<HttpResponse<T>> asObjectAsync(Function<RawResponse, T> function);
+    <T> CompletableFuture<HttpResponse<T>> asObjectAsync(Function<RawResponse, T> function);
 
     /**
      * Executes the request and writes the contents into a file
@@ -328,7 +328,7 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param copyOptions options specifying how the copy should be done
      * @return a HttpResponse with the file containing the results
      */
-//    HttpResponse<File> asFile(String path, CopyOption... copyOptions);
+    HttpResponse<File> asFile(String path, CopyOption... copyOptions);
 
     /**
      * asynchronously executes the request and writes the contents into a file
@@ -336,7 +336,7 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param copyOptions options specifying how the copy should be done
      * @return a file containing the results
      */
-//    CompletableFuture<HttpResponse<File>> asFileAsync(String path, CopyOption... copyOptions);
+    CompletableFuture<HttpResponse<File>> asFileAsync(String path, CopyOption... copyOptions);
 
     /**
      * asynchronously executes the request and writes the contents into a file
@@ -345,7 +345,7 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param copyOptions options specifying how the copy should be done
      * @return a file containing the results
      */
-//    CompletableFuture<HttpResponse<File>> asFileAsync(String path, Callback<File> callback, CopyOption... copyOptions);
+    CompletableFuture<HttpResponse<File>> asFileAsync(String path, Callback<File> callback, CopyOption... copyOptions);
     /**
      * Allows for following paging links common in many APIs.
      * Each request will result in the same request (headers, etc) but will use the "next" link provided by the extract function.
@@ -355,27 +355,27 @@ public interface HttpRequest<R extends HttpRequest>  {
      * @param linkExtractor a function to extract a "next" link to follow. Retuning a null or empty string ends the paging
      * @return a PagedList of your type
      */
-//    <T> PagedList<T> asPaged(Function<HttpRequest, HttpResponse> mappingFunction,
-//                             Function<HttpResponse<T>, String> linkExtractor);
+    <T> PagedList<T> asPaged(Function<HttpRequest, HttpResponse> mappingFunction,
+                             Function<HttpResponse<T>, String> linkExtractor);
 
     /**
      * Executes the request and returns the response without parsing the body
      * @return the basic HttpResponse
      */
-//    HttpResponse asEmpty();
+    HttpResponse asEmpty();
 
     /**
      * Executes the request asynchronously and returns the response without parsing the body
      * @return a CompletableFuture of a HttpResponse
      */
-//    CompletableFuture<HttpResponse<Empty>> asEmptyAsync();
+    CompletableFuture<HttpResponse<Empty>> asEmptyAsync();
 
     /**
      * Executes the request asynchronously and returns a empty response which is passed to a callback
      * @param callback the callback* Executes the request asynchronously and returns the response without parsing the body
      * @return a CompletableFuture of a HttpResponse
      */
-//    CompletableFuture<HttpResponse<Empty>> asEmptyAsync(Callback<Empty> callback);
+    CompletableFuture<HttpResponse<Empty>> asEmptyAsync(Callback<Empty> callback);
 
 
     /**
@@ -384,7 +384,7 @@ public interface HttpRequest<R extends HttpRequest>  {
      * reading large responses
      * @param consumer a consumer function
      */
-//    void thenConsume(Consumer<RawResponse> consumer);
+    void thenConsume(Consumer<RawResponse> consumer);
 
     /**
      * Execute the request asynchronously and pass the raw response to a consumer.
@@ -392,52 +392,52 @@ public interface HttpRequest<R extends HttpRequest>  {
      * reading large responses
      * @param consumer a consumer function
      */
-//    void thenConsumeAsync(Consumer<RawResponse> consumer);
+    void thenConsumeAsync(Consumer<RawResponse> consumer);
 
     /**
      * @return The HTTP method of the request
      */
-//    HttpMethod getHttpMethod();
+    HttpMethod getHttpMethod();
 
     /**
      * @return The current URL string for the request
      */
-//    String getUrl();
+    String getUrl();
 
     /**
      * @return the current headers for the request
      */
-//    Headers getHeaders();
+    Headers getHeaders();
 
     /**
      * @return if the request has a body it will be here.
      */
-//    default Optional<Body> getBody(){
-//        return Optional.empty();
-//    }
+    default Optional<Body> getBody(){
+        return Optional.empty();
+    }
 
     /**
      * @return socket timeout for this request
      */
-//    int getSocketTimeout();
+    int getSocketTimeout();
 
     /**
      * @return the connect timeout for this request
      */
-//    int getConnectTimeout();
+    int getConnectTimeout();
 
     /**
      * @return the proxy for this request
      */
-//    Proxy getProxy();
+    Proxy getProxy();
 
     /**
      * @return a summary for the response, used in metrics
      */
-//    HttpRequestSummary toSummary();
+    HttpRequestSummary toSummary();
 
     /**
      * @return the instant the request object was created in UTC (not when it was sent).
      */
-//    Instant getCreationTime();
+    Instant getCreationTime();
 }
