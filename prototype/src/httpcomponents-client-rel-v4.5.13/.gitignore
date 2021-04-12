@@ -1,0 +1,10 @@
+bin
+.checkstyle
+.classpath
+.project
+.settings
+.clover
+.externalToolBuilders
+target
+.idea
+*.iml
