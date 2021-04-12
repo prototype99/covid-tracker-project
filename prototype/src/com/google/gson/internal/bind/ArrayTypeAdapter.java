@@ -30,7 +30,7 @@ import com.google.gson.internal.$Gson$Types;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
-//import com.google.gson.stream.JsonWriter;
+import com.google.gson.stream.JsonWriter;
 
 /**
  * Adapt an array of objects.
@@ -82,7 +82,7 @@ public final class ArrayTypeAdapter<E> extends TypeAdapter<Object> {
     return array;
   }
 
-  /*@SuppressWarnings("unchecked")
+  @SuppressWarnings("unchecked")
   @Override public void write(JsonWriter out, Object array) throws IOException {
     if (array == null) {
       out.nullValue();
@@ -95,5 +95,5 @@ public final class ArrayTypeAdapter<E> extends TypeAdapter<Object> {
       componentTypeAdapter.write(out, value);
     }
     out.endArray();
-  }*/
+  }
 }

@@ -16,8 +16,8 @@
 
 package com.google.gson.stream;
 
-/*import com.google.gson.internal.JsonReaderInternalAccess;
-import com.google.gson.internal.bind.JsonTreeReader;*/
+import com.google.gson.internal.JsonReaderInternalAccess;
+import com.google.gson.internal.bind.JsonTreeReader;
 import java.io.Closeable;
 import java.io.EOFException;
 import java.io.IOException;
@@ -990,7 +990,7 @@ public class JsonReader implements Closeable {
     while (true) {
       int p = pos;
       int l = limit;
-       //the index of the first character not yet appended to the builder.
+      /* the index of the first character not yet appended to the builder. */
       int start = p;
       while (p < l) {
         int c = buffer[p++];
@@ -1099,7 +1099,7 @@ public class JsonReader implements Closeable {
     do {
       int p = pos;
       int l = limit;
-       //the index of the first character not yet appended to the builder.
+      /* the index of the first character not yet appended to the builder. */
       while (p < l) {
         int c = buffer[p++];
         if (c == quote) {
@@ -1586,7 +1586,7 @@ public class JsonReader implements Closeable {
     pos += NON_EXECUTE_PREFIX.length;
   }
 
- /* static {
+  static {
     JsonReaderInternalAccess.INSTANCE = new JsonReaderInternalAccess() {
       @Override public void promoteNameToValue(JsonReader reader) throws IOException {
         if (reader instanceof JsonTreeReader) {
@@ -1609,5 +1609,5 @@ public class JsonReader implements Closeable {
         }
       }
     };
-  }*/
+  }
 }

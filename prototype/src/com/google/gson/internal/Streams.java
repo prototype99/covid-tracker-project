@@ -23,7 +23,7 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.internal.bind.TypeAdapters;
 import com.google.gson.stream.JsonReader;
-//import com.google.gson.stream.JsonWriter;
+import com.google.gson.stream.JsonWriter;
 import com.google.gson.stream.MalformedJsonException;
 import java.io.EOFException;
 import java.io.IOException;
@@ -68,9 +68,9 @@ public final class Streams {
   /**
    * Writes the JSON element to the writer, recursively.
    */
-  /*public static void write(JsonElement element, JsonWriter writer) throws IOException {
+  public static void write(JsonElement element, JsonWriter writer) throws IOException {
     TypeAdapters.JSON_ELEMENT.write(writer, element);
-  }*/
+  }
 
   public static Writer writerForAppendable(Appendable appendable) {
     return appendable instanceof Writer ? (Writer) appendable : new AppendableWriter(appendable);

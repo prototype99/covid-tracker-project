@@ -16,8 +16,8 @@
 
 package com.google.gson;
 
-/*import com.google.gson.internal.Streams;
-import com.google.gson.stream.JsonWriter;*/
+import com.google.gson.internal.Streams;
+import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.math.BigDecimal;
@@ -36,25 +36,25 @@ public abstract class JsonElement {
    * and nulls are not copied.
    * @since 2.8.2
    */
-//  public abstract JsonElement deepCopy();
+  public abstract JsonElement deepCopy();
 
   /**
    * provides check for verifying if this element is an array or not.
    *
    * @return true if this element is of type {@link JsonArray}, false otherwise.
    */
-/*  public boolean isJsonArray() {
+  public boolean isJsonArray() {
     return this instanceof JsonArray;
-  }*/
+  }
 
   /**
    * provides check for verifying if this element is a Json object or not.
    *
    * @return true if this element is of type {@link JsonObject}, false otherwise.
    */
-/*  public boolean isJsonObject() {
+  public boolean isJsonObject() {
     return this instanceof JsonObject;
-  }*/
+  }
 
   /**
    * provides check for verifying if this element is a primitive or not.
@@ -84,12 +84,12 @@ public abstract class JsonElement {
    * @return get this element as a {@link JsonObject}.
    * @throws IllegalStateException if the element is of another type.
    */
-/*  public JsonObject getAsJsonObject() {
+  public JsonObject getAsJsonObject() {
     if (isJsonObject()) {
       return (JsonObject) this;
     }
     throw new IllegalStateException("Not a JSON Object: " + this);
-  }*/
+  }
 
   /**
    * convenience method to get this element as a {@link JsonArray}. If the element is of some
@@ -100,12 +100,12 @@ public abstract class JsonElement {
    * @return get this element as a {@link JsonArray}.
    * @throws IllegalStateException if the element is of another type.
    */
-/*  public JsonArray getAsJsonArray() {
+  public JsonArray getAsJsonArray() {
     if (isJsonArray()) {
       return (JsonArray) this;
     }
     throw new IllegalStateException("Not a JSON Array: " + this);
-  }*/
+  }
 
   /**
    * convenience method to get this element as a {@link JsonPrimitive}. If the element is of some
@@ -133,12 +133,12 @@ public abstract class JsonElement {
    * @throws IllegalStateException if the element is of another type.
    * @since 1.2
    */
-/*  public JsonNull getAsJsonNull() {
+  public JsonNull getAsJsonNull() {
     if (isJsonNull()) {
       return (JsonNull) this;
     }
     throw new IllegalStateException("Not a JSON Null: " + this);
-  }*/
+  }
 
   /**
    * convenience method to get this element as a boolean value.
@@ -307,7 +307,7 @@ public abstract class JsonElement {
   /**
    * Returns a String representation of this element.
    */
-/*  @Override
+  @Override
   public String toString() {
     try {
       StringWriter stringWriter = new StringWriter();
@@ -318,5 +318,5 @@ public abstract class JsonElement {
     } catch (IOException e) {
       throw new AssertionError(e);
     }
-  }*/
+  }
 }

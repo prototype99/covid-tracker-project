@@ -23,7 +23,7 @@ import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
-//import com.google.gson.stream.JsonWriter;
+import com.google.gson.stream.JsonWriter;
 
 final class TypeAdapterRuntimeTypeWrapper<T> extends TypeAdapter<T> {
   private final Gson context;
@@ -41,7 +41,7 @@ final class TypeAdapterRuntimeTypeWrapper<T> extends TypeAdapter<T> {
     return delegate.read(in);
   }
 
- /* @SuppressWarnings({"rawtypes", "unchecked"})
+  @SuppressWarnings({"rawtypes", "unchecked"})
   @Override
   public void write(JsonWriter out, T value) throws IOException {
     // Order of preference for choosing type adapters
@@ -67,7 +67,7 @@ final class TypeAdapterRuntimeTypeWrapper<T> extends TypeAdapter<T> {
       }
     }
     chosen.write(out, value);
-  }*/
+  }
 
   /**
    * Finds a compatible runtime type if it is more specific

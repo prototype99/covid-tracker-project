@@ -26,11 +26,11 @@ import com.google.gson.internal.$Gson$Types;
 import com.google.gson.internal.ConstructorConstructor;
 import com.google.gson.internal.JsonReaderInternalAccess;
 import com.google.gson.internal.ObjectConstructor;
-//import com.google.gson.internal.Streams;
+import com.google.gson.internal.Streams;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
-//import com.google.gson.stream.JsonWriter;
+import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -195,7 +195,7 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
       return map;
     }
 
-   /* @Override public void write(JsonWriter out, Map<K, V> map) throws IOException {
+    @Override public void write(JsonWriter out, Map<K, V> map) throws IOException {
       if (map == null) {
         out.nullValue();
         return;
@@ -240,9 +240,9 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
         }
         out.endObject();
       }
-    }*/
+    }
 
-    /*private String keyToString(JsonElement keyElement) {
+    private String keyToString(JsonElement keyElement) {
       if (keyElement.isJsonPrimitive()) {
         JsonPrimitive primitive = keyElement.getAsJsonPrimitive();
         if (primitive.isNumber()) {
@@ -259,6 +259,6 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
       } else {
         throw new AssertionError();
       }
-    }*/
+    }
   }
 }

@@ -26,7 +26,7 @@ import com.google.gson.annotations.Since;
 import com.google.gson.annotations.Until;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
-//import com.google.gson.stream.JsonWriter;
+import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -93,7 +93,7 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
     return result;
   }
 
-  /*public Excluder withExclusionStrategy(ExclusionStrategy exclusionStrategy,
+  public Excluder withExclusionStrategy(ExclusionStrategy exclusionStrategy,
       boolean serialization, boolean deserialization) {
     Excluder result = clone();
     if (serialization) {
@@ -106,7 +106,7 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
       result.deserializationStrategies.add(exclusionStrategy);
     }
     return result;
-  }*/
+  }
 
   public <T> TypeAdapter<T> create(final Gson gson, final TypeToken<T> type) {
     Class<?> rawType = type.getRawType();
@@ -131,13 +131,13 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
         return delegate().read(in);
       }
 
-      /*@Override public void write(JsonWriter out, T value) throws IOException {
+      @Override public void write(JsonWriter out, T value) throws IOException {
         if (skipSerialize) {
           out.nullValue();
           return;
         }
         delegate().write(out, value);
-      }*/
+      }
 
       private TypeAdapter<T> delegate() {
         TypeAdapter<T> d = delegate;

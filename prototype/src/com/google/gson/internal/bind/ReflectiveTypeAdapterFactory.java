@@ -32,7 +32,7 @@ import com.google.gson.internal.reflect.ReflectionAccessor;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
-//import com.google.gson.stream.JsonWriter;
+import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Type;
@@ -118,14 +118,14 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
 
     final TypeAdapter<?> typeAdapter = mapped;
     return new ReflectiveTypeAdapterFactory.BoundField(name, serialize, deserialize) {
-      /*@SuppressWarnings({"unchecked", "rawtypes"}) // the type adapter and field type always agree
+      @SuppressWarnings({"unchecked", "rawtypes"}) // the type adapter and field type always agree
       @Override void write(JsonWriter writer, Object value)
           throws IOException, IllegalAccessException {
         Object fieldValue = field.get(value);
         TypeAdapter t = jsonAdapterPresent ? typeAdapter
             : new TypeAdapterRuntimeTypeWrapper(context, typeAdapter, fieldType.getType());
         t.write(writer, fieldValue);
-      }*/
+      }
       @Override void read(JsonReader reader, Object value)
           throws IOException, IllegalAccessException {
         Object fieldValue = typeAdapter.read(reader);
@@ -190,7 +190,7 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
       this.deserialized = deserialized;
     }
     abstract boolean writeField(Object value) throws IOException, IllegalAccessException;
-//    abstract void write(JsonWriter writer, Object value) throws IOException, IllegalAccessException;
+    abstract void write(JsonWriter writer, Object value) throws IOException, IllegalAccessException;
     abstract void read(JsonReader reader, Object value) throws IOException, IllegalAccessException;
   }
 
@@ -231,7 +231,7 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
       return instance;
     }
 
-    /*@Override public void write(JsonWriter out, T value) throws IOException {
+    @Override public void write(JsonWriter out, T value) throws IOException {
       if (value == null) {
         out.nullValue();
         return;
@@ -249,6 +249,6 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
         throw new AssertionError(e);
       }
       out.endObject();
-    }*/
+    }
   }
 }

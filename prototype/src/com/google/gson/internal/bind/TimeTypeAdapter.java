@@ -23,7 +23,7 @@ import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
-//import com.google.gson.stream.JsonWriter;
+import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.sql.Time;
 import java.text.DateFormat;
@@ -60,7 +60,7 @@ public final class TimeTypeAdapter extends TypeAdapter<Time> {
     }
   }
 
-  /*@Override public synchronized void write(JsonWriter out, Time value) throws IOException {
+  @Override public synchronized void write(JsonWriter out, Time value) throws IOException {
     out.value(value == null ? null : format.format(value));
-  }*/
+  }
 }

@@ -20,13 +20,13 @@ import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.TypeAdapter;
 import com.google.gson.TypeAdapterFactory;
-/*import com.google.gson.internal.JavaVersion;
-import com.google.gson.internal.PreJava9DateFormatProvider;*/
+import com.google.gson.internal.JavaVersion;
+import com.google.gson.internal.PreJava9DateFormatProvider;
 import com.google.gson.internal.bind.util.ISO8601Utils;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
-//import com.google.gson.stream.JsonWriter;
+import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -62,9 +62,9 @@ public final class DateTypeAdapter extends TypeAdapter<Date> {
     if (!Locale.getDefault().equals(Locale.US)) {
       dateFormats.add(DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.DEFAULT));
     }
-    /*if (JavaVersion.isJava9OrLater()) {
+    if (JavaVersion.isJava9OrLater()) {
       dateFormats.add(PreJava9DateFormatProvider.getUSDateTimeFormat(DateFormat.DEFAULT, DateFormat.DEFAULT));
-    }*/
+    }
   }
 
   @Override public Date read(JsonReader in) throws IOException {
@@ -88,14 +88,14 @@ public final class DateTypeAdapter extends TypeAdapter<Date> {
     }
   }
 
-  /*@Override public synchronized void write(JsonWriter out, Date value) throws IOException {
+  @Override public synchronized void write(JsonWriter out, Date value) throws IOException {
     if (value == null) {
       out.nullValue();
       return;
     }
     String dateFormatAsString = dateFormats.get(0).format(value);
     out.value(dateFormatAsString);
-  }*/
+  }
   
   
 }

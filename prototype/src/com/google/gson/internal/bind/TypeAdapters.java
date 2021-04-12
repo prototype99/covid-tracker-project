@@ -55,7 +55,7 @@ import com.google.gson.internal.LazilyParsedNumber;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
-//import com.google.gson.stream.JsonWriter;
+import com.google.gson.stream.JsonWriter;
 
 /**
  * Type adapters for basic types.
@@ -67,11 +67,11 @@ public final class TypeAdapters {
 
   @SuppressWarnings("rawtypes")
   public static final TypeAdapter<Class> CLASS = new TypeAdapter<Class>() {
-    /*@Override
+    @Override
     public void write(JsonWriter out, Class value) throws IOException {
       throw new UnsupportedOperationException("Attempted to serialize java.lang.Class: "
               + value.getName() + ". Forgot to register a type adapter?");
-    }*/
+    }
     @Override
     public Class read(JsonReader in) throws IOException {
       throw new UnsupportedOperationException(
@@ -118,14 +118,14 @@ public final class TypeAdapters {
       return bitset;
     }
 
-    /*@Override public void write(JsonWriter out, BitSet src) throws IOException {
+    @Override public void write(JsonWriter out, BitSet src) throws IOException {
       out.beginArray();
       for (int i = 0, length = src.length(); i < length; i++) {
         int value = (src.get(i)) ? 1 : 0;
         out.value(value);
       }
       out.endArray();
-    }*/
+    }
   }.nullSafe();
 
   public static final TypeAdapterFactory BIT_SET_FACTORY = newFactory(BitSet.class, BIT_SET);
@@ -143,10 +143,10 @@ public final class TypeAdapters {
       }
       return in.nextBoolean();
     }
-    /*@Override
+    @Override
     public void write(JsonWriter out, Boolean value) throws IOException {
       out.value(value);
-    }*/
+    }
   };
 
   /**
@@ -162,9 +162,9 @@ public final class TypeAdapters {
       return Boolean.valueOf(in.nextString());
     }
 
-    /*@Override public void write(JsonWriter out, Boolean value) throws IOException {
+    @Override public void write(JsonWriter out, Boolean value) throws IOException {
       out.value(value == null ? "null" : value.toString());
-    }*/
+    }
   };
 
   public static final TypeAdapterFactory BOOLEAN_FACTORY
@@ -184,13 +184,13 @@ public final class TypeAdapters {
         throw new JsonSyntaxException(e);
       }
     }
-    /*@Override
+    @Override
     public void write(JsonWriter out, Number value) throws IOException {
       out.value(value);
-    }*/
+    }
   };
 
- public static final TypeAdapterFactory BYTE_FACTORY
+  public static final TypeAdapterFactory BYTE_FACTORY
       = newFactory(byte.class, Byte.class, BYTE);
 
   public static final TypeAdapter<Number> SHORT = new TypeAdapter<Number>() {
@@ -206,10 +206,10 @@ public final class TypeAdapters {
         throw new JsonSyntaxException(e);
       }
     }
-    /*@Override
+    @Override
     public void write(JsonWriter out, Number value) throws IOException {
       out.value(value);
-    }*/
+    }
   };
 
   public static final TypeAdapterFactory SHORT_FACTORY
@@ -228,12 +228,12 @@ public final class TypeAdapters {
         throw new JsonSyntaxException(e);
       }
     }
-    /*@Override
+    @Override
     public void write(JsonWriter out, Number value) throws IOException {
       out.value(value);
-    }*/
+    }
   };
- public static final TypeAdapterFactory INTEGER_FACTORY
+  public static final TypeAdapterFactory INTEGER_FACTORY
       = newFactory(int.class, Integer.class, INTEGER);
 
   public static final TypeAdapter<AtomicInteger> ATOMIC_INTEGER = new TypeAdapter<AtomicInteger>() {
@@ -244,9 +244,9 @@ public final class TypeAdapters {
         throw new JsonSyntaxException(e);
       }
     }
-    /*@Override public void write(JsonWriter out, AtomicInteger value) throws IOException {
+    @Override public void write(JsonWriter out, AtomicInteger value) throws IOException {
       out.value(value.get());
-    }*/
+    }
   }.nullSafe();
   public static final TypeAdapterFactory ATOMIC_INTEGER_FACTORY =
       newFactory(AtomicInteger.class, TypeAdapters.ATOMIC_INTEGER);
@@ -255,9 +255,9 @@ public final class TypeAdapters {
     @Override public AtomicBoolean read(JsonReader in) throws IOException {
       return new AtomicBoolean(in.nextBoolean());
     }
-    /*@Override public void write(JsonWriter out, AtomicBoolean value) throws IOException {
+    @Override public void write(JsonWriter out, AtomicBoolean value) throws IOException {
       out.value(value.get());
-    }*/
+    }
   }.nullSafe();
   public static final TypeAdapterFactory ATOMIC_BOOLEAN_FACTORY =
       newFactory(AtomicBoolean.class, TypeAdapters.ATOMIC_BOOLEAN);
@@ -282,13 +282,13 @@ public final class TypeAdapters {
         }
         return array;
     }
-    /*@Override public void write(JsonWriter out, AtomicIntegerArray value) throws IOException {
+    @Override public void write(JsonWriter out, AtomicIntegerArray value) throws IOException {
       out.beginArray();
       for (int i = 0, length = value.length(); i < length; i++) {
         out.value(value.get(i));
       }
       out.endArray();
-    }*/
+    }
   }.nullSafe();
   public static final TypeAdapterFactory ATOMIC_INTEGER_ARRAY_FACTORY =
       newFactory(AtomicIntegerArray.class, TypeAdapters.ATOMIC_INTEGER_ARRAY);
@@ -306,10 +306,10 @@ public final class TypeAdapters {
         throw new JsonSyntaxException(e);
       }
     }
-    /*@Override
+    @Override
     public void write(JsonWriter out, Number value) throws IOException {
       out.value(value);
-    }*/
+    }
   };
 
   public static final TypeAdapter<Number> FLOAT = new TypeAdapter<Number>() {
@@ -321,10 +321,10 @@ public final class TypeAdapters {
       }
       return (float) in.nextDouble();
     }
-    /*@Override
+    @Override
     public void write(JsonWriter out, Number value) throws IOException {
       out.value(value);
-    }*/
+    }
   };
 
   public static final TypeAdapter<Number> DOUBLE = new TypeAdapter<Number>() {
@@ -336,10 +336,10 @@ public final class TypeAdapters {
       }
       return in.nextDouble();
     }
-    /*@Override
+    @Override
     public void write(JsonWriter out, Number value) throws IOException {
       out.value(value);
-    }*/
+    }
   };
 
   public static final TypeAdapter<Number> NUMBER = new TypeAdapter<Number>() {
@@ -357,10 +357,10 @@ public final class TypeAdapters {
         throw new JsonSyntaxException("Expecting number, got: " + jsonToken);
       }
     }
-    /*@Override
+    @Override
     public void write(JsonWriter out, Number value) throws IOException {
       out.value(value);
-    }*/
+    }
   };
 
   public static final TypeAdapterFactory NUMBER_FACTORY = newFactory(Number.class, NUMBER);
@@ -378,10 +378,10 @@ public final class TypeAdapters {
       }
       return str.charAt(0);
     }
-    /*@Override
+    @Override
     public void write(JsonWriter out, Character value) throws IOException {
       out.value(value == null ? null : String.valueOf(value));
-    }*/
+    }
   };
 
   public static final TypeAdapterFactory CHARACTER_FACTORY
@@ -395,16 +395,16 @@ public final class TypeAdapters {
         in.nextNull();
         return null;
       }
-      //coerce booleans to strings for backwards compatibility
+      /* coerce booleans to strings for backwards compatibility */
       if (peek == JsonToken.BOOLEAN) {
         return Boolean.toString(in.nextBoolean());
       }
       return in.nextString();
     }
-    /*@Override
+    @Override
     public void write(JsonWriter out, String value) throws IOException {
       out.value(value);
-    }*/
+    }
   };
   
   public static final TypeAdapter<BigDecimal> BIG_DECIMAL = new TypeAdapter<BigDecimal>() {
@@ -420,9 +420,9 @@ public final class TypeAdapters {
       }
     }
 
-    /*@Override public void write(JsonWriter out, BigDecimal value) throws IOException {
+    @Override public void write(JsonWriter out, BigDecimal value) throws IOException {
       out.value(value);
-    }*/
+    }
   };
   
   public static final TypeAdapter<BigInteger> BIG_INTEGER = new TypeAdapter<BigInteger>() {
@@ -438,9 +438,9 @@ public final class TypeAdapters {
       }
     }
 
-    /*@Override public void write(JsonWriter out, BigInteger value) throws IOException {
+    @Override public void write(JsonWriter out, BigInteger value) throws IOException {
       out.value(value);
-    }*/
+    }
   };
 
   public static final TypeAdapterFactory STRING_FACTORY = newFactory(String.class, STRING);
@@ -454,10 +454,10 @@ public final class TypeAdapters {
       }
       return new StringBuilder(in.nextString());
     }
-    /*@Override
+    @Override
     public void write(JsonWriter out, StringBuilder value) throws IOException {
       out.value(value == null ? null : value.toString());
-    }*/
+    }
   };
 
   public static final TypeAdapterFactory STRING_BUILDER_FACTORY =
@@ -472,10 +472,10 @@ public final class TypeAdapters {
       }
       return new StringBuffer(in.nextString());
     }
-    /*@Override
+    @Override
     public void write(JsonWriter out, StringBuffer value) throws IOException {
       out.value(value == null ? null : value.toString());
-    }*/
+    }
   };
 
   public static final TypeAdapterFactory STRING_BUFFER_FACTORY =
@@ -491,10 +491,10 @@ public final class TypeAdapters {
       String nextString = in.nextString();
       return "null".equals(nextString) ? null : new URL(nextString);
     }
-    /*@Override
+    @Override
     public void write(JsonWriter out, URL value) throws IOException {
       out.value(value == null ? null : value.toExternalForm());
-    }*/
+    }
   };
 
   public static final TypeAdapterFactory URL_FACTORY = newFactory(URL.class, URL);
@@ -513,10 +513,10 @@ public final class TypeAdapters {
         throw new JsonIOException(e);
       }
     }
-    /*@Override
+    @Override
     public void write(JsonWriter out, URI value) throws IOException {
       out.value(value == null ? null : value.toASCIIString());
-    }*/
+    }
   };
 
   public static final TypeAdapterFactory URI_FACTORY = newFactory(URI.class, URI);
@@ -531,10 +531,10 @@ public final class TypeAdapters {
       // regrettably, this should have included both the host name and the host address
       return InetAddress.getByName(in.nextString());
     }
-  /*  @Override
+    @Override
     public void write(JsonWriter out, InetAddress value) throws IOException {
       out.value(value == null ? null : value.getHostAddress());
-    }*/
+    }
   };
 
   public static final TypeAdapterFactory INET_ADDRESS_FACTORY =
@@ -549,10 +549,10 @@ public final class TypeAdapters {
       }
       return java.util.UUID.fromString(in.nextString());
     }
-    /*@Override
+    @Override
     public void write(JsonWriter out, UUID value) throws IOException {
       out.value(value == null ? null : value.toString());
-    }*/
+    }
   };
 
   public static final TypeAdapterFactory UUID_FACTORY = newFactory(UUID.class, UUID);
@@ -562,10 +562,10 @@ public final class TypeAdapters {
     public Currency read(JsonReader in) throws IOException {
       return Currency.getInstance(in.nextString());
     }
-//    @Override
-//    public void write(JsonWriter out, Currency value) throws IOException {
-//      out.value(value.getCurrencyCode());
-//    }
+    @Override
+    public void write(JsonWriter out, Currency value) throws IOException {
+      out.value(value.getCurrencyCode());
+    }
   }.nullSafe();
   public static final TypeAdapterFactory CURRENCY_FACTORY = newFactory(Currency.class, CURRENCY);
 
@@ -583,9 +583,9 @@ public final class TypeAdapters {
           return date != null ? new Timestamp(date.getTime()) : null;
         }
 
-        /*@Override public void write(JsonWriter out, Timestamp value) throws IOException {
+        @Override public void write(JsonWriter out, Timestamp value) throws IOException {
           dateTypeAdapter.write(out, value);
-        }*/
+        }
       };
     }
   };
@@ -632,7 +632,7 @@ public final class TypeAdapters {
       return new GregorianCalendar(year, month, dayOfMonth, hourOfDay, minute, second);
     }
 
-    /*@Override
+    @Override
     public void write(JsonWriter out, Calendar value) throws IOException {
       if (value == null) {
         out.nullValue();
@@ -652,7 +652,7 @@ public final class TypeAdapters {
       out.name(SECOND);
       out.value(value.get(Calendar.SECOND));
       out.endObject();
-    }*/
+    }
   };
 
   public static final TypeAdapterFactory CALENDAR_FACTORY =
@@ -687,10 +687,10 @@ public final class TypeAdapters {
         return new Locale(language, country, variant);
       }
     }
-    /*@Override
+    @Override
     public void write(JsonWriter out, Locale value) throws IOException {
       out.value(value == null ? null : value.toString());
-    }*/
+    }
   };
 
   public static final TypeAdapterFactory LOCALE_FACTORY = newFactory(Locale.class, LOCALE);
@@ -733,7 +733,7 @@ public final class TypeAdapters {
       }
     }
 
-   /* @Override public void write(JsonWriter out, JsonElement value) throws IOException {
+    @Override public void write(JsonWriter out, JsonElement value) throws IOException {
       if (value == null || value.isJsonNull()) {
         out.nullValue();
       } else if (value.isJsonPrimitive()) {
@@ -764,7 +764,7 @@ public final class TypeAdapters {
       } else {
         throw new IllegalArgumentException("Couldn't write " + value.getClass());
       }
-    }*/
+    }
   };
 
   public static final TypeAdapterFactory JSON_ELEMENT_FACTORY
@@ -800,9 +800,9 @@ public final class TypeAdapters {
       return nameToConstant.get(in.nextString());
     }
 
-    /*@Override public void write(JsonWriter out, T value) throws IOException {
+    @Override public void write(JsonWriter out, T value) throws IOException {
       out.value(value == null ? null : constantToName.get(value));
-    }*/
+    }
   }
 
   public static final TypeAdapterFactory ENUM_FACTORY = new TypeAdapterFactory() {
@@ -886,9 +886,9 @@ public final class TypeAdapters {
           return null;
         }
         return (TypeAdapter<T2>) new TypeAdapter<T1>() {
-          /*@Override public void write(JsonWriter out, T1 value) throws IOException {
+          @Override public void write(JsonWriter out, T1 value) throws IOException {
             typeAdapter.write(out, value);
-          }*/
+          }
 
           @Override public T1 read(JsonReader in) throws IOException {
             T1 result = typeAdapter.read(in);

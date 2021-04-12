@@ -25,7 +25,7 @@ import com.google.gson.internal.ObjectConstructor;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
-//import com.google.gson.stream.JsonWriter;
+import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.Collection;
@@ -86,7 +86,7 @@ public final class CollectionTypeAdapterFactory implements TypeAdapterFactory {
       return collection;
     }
 
-    /*@Override public void write(JsonWriter out, Collection<E> collection) throws IOException {
+    @Override public void write(JsonWriter out, Collection<E> collection) throws IOException {
       if (collection == null) {
         out.nullValue();
         return;
@@ -97,6 +97,6 @@ public final class CollectionTypeAdapterFactory implements TypeAdapterFactory {
         elementTypeAdapter.write(out, element);
       }
       out.endArray();
-    }*/
+    }
   }
 }

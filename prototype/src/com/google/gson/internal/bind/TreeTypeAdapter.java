@@ -29,7 +29,7 @@ import com.google.gson.internal.$Gson$Preconditions;
 import com.google.gson.internal.Streams;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
-//import com.google.gson.stream.JsonWriter;
+import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 
@@ -69,7 +69,7 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
     return deserializer.deserialize(value, typeToken.getType(), context);
   }
 
-  /*@Override public void write(JsonWriter out, T value) throws IOException {
+  @Override public void write(JsonWriter out, T value) throws IOException {
     if (serializer == null) {
       delegate().write(out, value);
       return;
@@ -80,7 +80,7 @@ public final class TreeTypeAdapter<T> extends TypeAdapter<T> {
     }
     JsonElement tree = serializer.serialize(value, typeToken.getType(), context);
     Streams.write(tree, out);
-  }*/
+  }
 
   private TypeAdapter<T> delegate() {
     TypeAdapter<T> d = delegate;

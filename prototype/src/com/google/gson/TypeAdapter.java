@@ -16,11 +16,11 @@
 
 package com.google.gson;
 
-/*import com.google.gson.internal.bind.JsonTreeWriter;
-import com.google.gson.internal.bind.JsonTreeReader;*/
+import com.google.gson.internal.bind.JsonTreeWriter;
+import com.google.gson.internal.bind.JsonTreeReader;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
-//import com.google.gson.stream.JsonWriter;
+import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
@@ -124,9 +124,9 @@ public abstract class TypeAdapter<T> {
    *
    * @param value the Java object to write. May be null.
    */
-  /*public abstract void write(JsonWriter out, T value) throws IOException;
+  public abstract void write(JsonWriter out, T value) throws IOException;
 
-  *//**
+  /**
    * Converts {@code value} to a JSON document and writes it to {@code out}.
    * Unlike Gson's similar {@link Gson#toJson(JsonElement, Appendable) toJson}
    * method, this write is strict. Create a {@link
@@ -136,13 +136,13 @@ public abstract class TypeAdapter<T> {
    *
    * @param value the Java object to convert. May be null.
    * @since 2.2
-   *//*
+   */
   public final void toJson(Writer out, T value) throws IOException {
     JsonWriter writer = new JsonWriter(out);
     write(writer, value);
   }
 
-  *//**
+  /**
    * This wrapper method is used to make a type adapter null tolerant. In general, a
    * type adapter is required to handle nulls in write and read methods. Here is how this
    * is typically done:<br>
@@ -184,13 +184,13 @@ public abstract class TypeAdapter<T> {
    */
   public final TypeAdapter<T> nullSafe() {
     return new TypeAdapter<T>() {
-      /*@Override public void write(JsonWriter out, T value) throws IOException {
+      @Override public void write(JsonWriter out, T value) throws IOException {
         if (value == null) {
           out.nullValue();
         } else {
           TypeAdapter.this.write(out, value);
         }
-      }*/
+      }
       @Override public T read(JsonReader reader) throws IOException {
         if (reader.peek() == JsonToken.NULL) {
           reader.nextNull();
@@ -211,7 +211,7 @@ public abstract class TypeAdapter<T> {
    * @param value the Java object to convert. May be null.
    * @since 2.2
    */
- /* public final String toJson(T value) {
+  public final String toJson(T value) {
     StringWriter stringWriter = new StringWriter();
     try {
       toJson(stringWriter, value);
@@ -221,13 +221,13 @@ public abstract class TypeAdapter<T> {
     return stringWriter.toString();
   }
 
-  *//**
+  /**
    * Converts {@code value} to a JSON tree.
    *
    * @param value the Java object to convert. May be null.
    * @return the converted JSON tree. May be {@link JsonNull}.
    * @since 2.2
-   *//*
+   */
   public final JsonElement toJsonTree(T value) {
     try {
       JsonTreeWriter jsonWriter = new JsonTreeWriter();
@@ -236,7 +236,7 @@ public abstract class TypeAdapter<T> {
     } catch (IOException e) {
       throw new JsonIOException(e);
     }
-  }*/
+  }
 
   /**
    * Reads one JSON value (an array, object, string, number, boolean or null)
@@ -279,12 +279,12 @@ public abstract class TypeAdapter<T> {
    * @param jsonTree the Java object to convert. May be {@link JsonNull}.
    * @since 2.2
    */
-  /*public final T fromJsonTree(JsonElement jsonTree) {
+  public final T fromJsonTree(JsonElement jsonTree) {
     try {
       JsonReader jsonReader = new JsonTreeReader(jsonTree);
       return read(jsonReader);
     } catch (IOException e) {
       throw new JsonIOException(e);
     }
-  }*/
+  }
 }
