@@ -37,15 +37,15 @@ import java.util.concurrent.atomic.AtomicLongArray;
 
 import com.google.gson.internal.ConstructorConstructor;
 import com.google.gson.internal.Excluder;
-//import com.google.gson.internal.GsonBuildConfig;
+import com.google.gson.internal.GsonBuildConfig;
 import com.google.gson.internal.Primitives;
 //import com.google.gson.internal.Streams;
 import com.google.gson.internal.bind.ArrayTypeAdapter;
 import com.google.gson.internal.bind.CollectionTypeAdapterFactory;
 import com.google.gson.internal.bind.DateTypeAdapter;
 import com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory;
-/*import com.google.gson.internal.bind.JsonTreeReader;
-import com.google.gson.internal.bind.JsonTreeWriter;*/
+//import com.google.gson.internal.bind.JsonTreeReader;
+//import com.google.gson.internal.bind.JsonTreeWriter;
 import com.google.gson.internal.bind.MapTypeAdapterFactory;
 import com.google.gson.internal.bind.ObjectTypeAdapter;
 import com.google.gson.internal.bind.ReflectiveTypeAdapterFactory;
@@ -121,8 +121,8 @@ public final class Gson {
    * lookup would stack overflow. We cheat by returning a proxy type adapter.
    * The proxy is wired up once the initial adapter has been created.
    */
-  /*private final ThreadLocal<Map<TypeToken<?>, FutureTypeAdapter<?>>> calls
-      = new ThreadLocal<Map<TypeToken<?>, FutureTypeAdapter<?>>>();*/
+  private final ThreadLocal<Map<TypeToken<?>, FutureTypeAdapter<?>>> calls
+      = new ThreadLocal<Map<TypeToken<?>, FutureTypeAdapter<?>>>();
 
   private final Map<TypeToken<?>, TypeAdapter<?>> typeTokenCache = new ConcurrentHashMap<TypeToken<?>, TypeAdapter<?>>();
 
@@ -1001,7 +1001,7 @@ public final class Gson {
       return null;
     }
     return (T) fromJson(new JsonTreeReader(json), typeOfT);
-  }
+  }*/
 
   static class FutureTypeAdapter<T> extends TypeAdapter<T> {
     private TypeAdapter<T> delegate;
@@ -1020,15 +1020,15 @@ public final class Gson {
       return delegate.read(in);
     }
 
-    @Override public void write(JsonWriter out, T value) throws IOException {
+    /*@Override public void write(JsonWriter out, T value) throws IOException {
       if (delegate == null) {
         throw new IllegalStateException();
       }
       delegate.write(out, value);
-    }
+    }*/
   }
 
-  @Override
+ /* @Override
   public String toString() {
     return new StringBuilder("{serializeNulls:")
         .append(serializeNulls)
