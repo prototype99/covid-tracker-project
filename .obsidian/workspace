@@ -7,8 +7,11 @@
         "id": "f1fdb388f88d564a",
         "type": "leaf",
         "state": {
-          "type": "graph",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "countryDayOneTotalRoute.md",
+            "mode": "preview"
+          }
         }
       }
     ],
@@ -17,38 +20,48 @@
   "left": {
     "id": "37ecec5f479a20ca",
     "type": "split",
-    "children": [],
+    "children": [
+      {
+        "id": "02a01b464c5bee3b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9574258cd9f67ab7",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "41bf56a676d04c3b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
     "direction": "horizontal",
-    "width": 170,
-    "collapsed": true
+    "width": 170
   },
   "right": {
     "id": "93695e2cb251453e",
     "type": "split",
-    "children": [
-      {
-        "id": "f2b668384279b737",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "c242f95283130c41",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          }
-        ]
-      }
-    ],
+    "children": [],
     "direction": "horizontal",
     "width": 300,
     "collapsed": true
@@ -57,13 +70,13 @@
   "lastOpenFiles": [
     "countryDayOneTotalRoute.md",
     "covid19api.md",
+    "countryDayOneRoute.md",
+    "countriesRoute.md",
+    "countryStatusTotalRoute.md",
     "summaryRoute.md",
     "liveCountryStatusRoute.md",
     "liveCountryStatusAfterDateRoute.md",
     "liveCountryRoute.md",
-    "countryTotalRoute.md",
-    "countryStatusTotalRoute.md",
-    "countryStatusRoute.md",
-    "countryStatusLiveRoute.md"
+    "countryTotalRoute.md"
   ]
 }
