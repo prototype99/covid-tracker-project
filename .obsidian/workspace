@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "lib.md",
-            "mode": "source"
+            "file": "covid19api.md",
+            "mode": "preview"
           }
         }
       }
@@ -39,7 +39,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "lib.md",
+                "file": "covid19api.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -59,6 +59,7 @@
   },
   "active": "f1fdb388f88d564a",
   "lastOpenFiles": [
+    "covid19api.md",
     "lib.md",
     "assignment-spec.pdf",
     "technology-researcher.md",
@@ -67,7 +68,6 @@
     "meeting2.md",
     "meetings.md",
     "meeting0.md",
-    "meeting1.md",
-    "covid19api.md"
+    "meeting1.md"
   ]
 }
