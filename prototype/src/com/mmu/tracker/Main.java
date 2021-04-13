@@ -22,7 +22,7 @@ public class Main {
         //equivalent to Unirest.setTimeouts(0, 0); in older unirest-java
         Unirest.config().socketTimeout(0).connectTimeout(0);
         //use if documentation is missing
-        print("");
+        //print("");
     }
     static void print(String apiRequest) {
         HttpResponse<String> response = Unirest.get("https://api.covid19api.com/" + apiRequest).asString();
