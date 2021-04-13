@@ -1,0 +1,3 @@
+    "Name": "Get List Of Cases Per Country Per Province By Case Type From The First Recorded Case, updated with latest live count",
+    "Description": "Returns all cases by case type for a country from the first recorded case with the latest record being the live count. Country must be the country_slug from /countries. Cases must be one of: confirmed, recovered, deaths",
+    "Path": "/dayone/country/:country/status/:status/live"
