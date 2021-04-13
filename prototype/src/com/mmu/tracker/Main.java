@@ -24,6 +24,7 @@ public class Main {
                 .connectTimeout(0);
         HttpResponse<String> response = Unirest.get("https://api.covid19api.com/")
                 .asString();
-        System.out.println(response);
+        //we must use getbody to get the part we care about
+        System.out.println(response.getBody());
     }
 }
