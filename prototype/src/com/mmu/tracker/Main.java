@@ -20,8 +20,7 @@ public class Main {
         frame.pack();
         frame.setVisible(true);
         //equivalent to Unirest.setTimeouts(0, 0); in older unirest-java
-        Unirest.config().socketTimeout(0)
-                .connectTimeout(0);
+        Unirest.config().socketTimeout(0).connectTimeout(0);
         //use if documentation is missing
         print("");
     }
