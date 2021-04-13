@@ -23,11 +23,11 @@ public class Main {
         Unirest.config().socketTimeout(0)
                 .connectTimeout(0);
         //use if documentation is missing
-        HttpResponse<String> response = Unirest.get("https://api.covid19api.com/").asString();
-        //we must use getbody to get the part we care about
-        //System.out.println(response.getBody());
+        print("");
     }
-    void print(String apiRequest) {
-
+    static void print(String apiRequest) {
+        HttpResponse<String> response = Unirest.get("https://api.covid19api.com/" + apiRequest).asString();
+        //we must use getbody to get the part we care about
+        System.out.println(response.getBody());
     }
 }
