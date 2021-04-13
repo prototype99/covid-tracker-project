@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "countryDayOneTotalRoute.md",
+            "file": "covid19api.md",
             "mode": "preview"
           }
         }
@@ -31,7 +31,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#Path/dayone",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -51,12 +51,11 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 170
+    "width": 226
   },
   "right": {
     "id": "93695e2cb251453e",
@@ -68,15 +67,15 @@
   },
   "active": "f1fdb388f88d564a",
   "lastOpenFiles": [
-    "countryDayOneTotalRoute.md",
     "covid19api.md",
     "countryDayOneRoute.md",
-    "countriesRoute.md",
-    "countryStatusTotalRoute.md",
-    "summaryRoute.md",
-    "liveCountryStatusRoute.md",
-    "liveCountryStatusAfterDateRoute.md",
     "liveCountryRoute.md",
-    "countryTotalRoute.md"
+    "countryRoute.md",
+    "countryStatusRoute.md",
+    "countryStatusDayOneTotalRoute.md",
+    "countryStatusDayOneRoute.md",
+    "countryDayOneTotalRoute.md",
+    "countryStatusDayOneLiveRoute.md",
+    "countryStatusLiveRoute.md"
   ]
 }

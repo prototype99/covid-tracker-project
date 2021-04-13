@@ -4,18 +4,8 @@ api that covers the [world](global.md). Unknown as of yet what the input will be
 ##### available methods:
 - [countriesRoute](countriesRoute.md)
 - [countryDayOneRoute](countryDayOneRoute.md)
-- [countryDayOneTotalRoute](countryDayOneTotalRoute.md)
-- [countryRoute](countryRoute.md)
-- [countryStatusDayOneLiveRoute](countryStatusDayOneLiveRoute.md)
 - [countryStatusDayOneRoute](countryStatusDayOneRoute.md)
-- [countryStatusDayOneTotalRoute](countryStatusDayOneTotalRoute.md)
-- [countryStatusLiveRoute](countryStatusLiveRoute.md)
-- [countryStatusRoute](countryStatusRoute.md)
-- [countryStatusTotalRoute](countryStatusTotalRoute.md)
-- [countryTotalRoute](countryTotalRoute.md)
 - [liveCountryRoute](liveCountryRoute.md)
-- [liveCountryStatusAfterDateRoute](liveCountryStatusAfterDateRoute.md)
-- [liveCountryStatusRoute](liveCountryStatusRoute.md)
 - [summaryRoute](summaryRoute.md)
 ##### available data:
 - #cases

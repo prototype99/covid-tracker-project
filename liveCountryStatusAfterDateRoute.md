@@ -1,3 +1,0 @@
-    "Name": "Get a Time Series Of Cases Per Country Per Province By Case Type After A Date",
-    "Description": "Returns all live cases by case type for a country after a given date. These records are pulled every 10 minutes and are ungrouped. Country must be the country_slug from /countries. Cases must be one of: confirmed, recovered, deaths",
-    "Path": "/live/country/:country/status/:status/date/:date"
