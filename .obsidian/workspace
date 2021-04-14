@@ -4,14 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "f1fdb388f88d564a",
+        "id": "aaa77fb03f424a87",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "countriesRoute.md",
-            "mode": "preview"
-          }
+          "type": "graph",
+          "state": {}
         }
       }
     ],
@@ -31,7 +28,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#Path/dayone",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,8 +62,9 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "f1fdb388f88d564a",
+  "active": "aaa77fb03f424a87",
   "lastOpenFiles": [
+    "project.md",
     "countriesRoute.md",
     "covid19api.md",
     "countryDayOneRoute.md",
@@ -75,7 +73,6 @@
     "countryStatusRoute.md",
     "countryStatusDayOneTotalRoute.md",
     "countryStatusDayOneRoute.md",
-    "countryDayOneTotalRoute.md",
-    "countryStatusDayOneLiveRoute.md"
+    "countryDayOneTotalRoute.md"
   ]
 }
