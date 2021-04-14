@@ -16,7 +16,6 @@ api that covers the [world](global.md). Unknown as of yet what the input will be
 - #json
 ##### can filter by:
 - #area
-- #date
 ##### supported languages are:
 - #C
 - #C-sharp 

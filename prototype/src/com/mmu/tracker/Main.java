@@ -23,7 +23,9 @@ public class Main {
         Unirest.config().socketTimeout(0).connectTimeout(0);
         //use if documentation is missing
         //print("");
+        print("summary");
     }
+    //function to review output. do not start apirequest with a slash!
     static void print(String apiRequest) {
         HttpResponse<String> response = Unirest.get("https://api.covid19api.com/" + apiRequest).asString();
         //we must use getbody to get the part we care about
