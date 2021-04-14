@@ -1,0 +1,6 @@
+//this class stores api data. data should not be stored long term as it could lead to misinformation
+package com.mmu.tracker;
+
+public class Record {
+    String countryExternalName, countryInternalName, countryCode;
+}

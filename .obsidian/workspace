@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "covid19api.md",
+            "file": "countriesRoute.md",
             "mode": "preview"
           }
         }
@@ -67,6 +67,7 @@
   },
   "active": "f1fdb388f88d564a",
   "lastOpenFiles": [
+    "countriesRoute.md",
     "covid19api.md",
     "countryDayOneRoute.md",
     "liveCountryRoute.md",
@@ -75,7 +76,6 @@
     "countryStatusDayOneTotalRoute.md",
     "countryStatusDayOneRoute.md",
     "countryDayOneTotalRoute.md",
-    "countryStatusDayOneLiveRoute.md",
-    "countryStatusLiveRoute.md"
+    "countryStatusDayOneLiveRoute.md"
   ]
 }

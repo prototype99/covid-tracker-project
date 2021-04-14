@@ -23,7 +23,7 @@ public class Main {
         Unirest.config().socketTimeout(0).connectTimeout(0);
         //use if documentation is missing
         //print("");
-        print("summary");
+        print("countries");
     }
     //function to review output. do not start apirequest with a slash!
     static void print(String apiRequest) {
