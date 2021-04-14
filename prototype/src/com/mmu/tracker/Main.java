@@ -13,7 +13,7 @@ public class Main {
     private JButton goButton;
     private JPanel mainPanel;
     @SuppressWarnings("unused")
-    private JTextField searchBar;
+    private JComboBox searchBar;
 
     public Main() {
         goButton.addActionListener(new ActionListener() {
