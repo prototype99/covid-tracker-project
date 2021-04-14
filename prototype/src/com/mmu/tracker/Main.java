@@ -26,7 +26,7 @@ public class Main {
         //print("");
         //print("countries");
         HttpResponse<JsonNode> response = Unirest.get("https://api.covid19api.com/countries").asJson();
-        System.out.println(response.getBody());
+        System.out.println(response.getBody().getArray().getJSONObject(0));
     }
     //function to review output. do not start apirequest with a slash!
     static void print(String apiRequest) {
