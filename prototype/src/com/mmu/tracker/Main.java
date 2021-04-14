@@ -14,6 +14,7 @@ public class Main {
     private JPanel mainPanel;
     @SuppressWarnings("unused")
     private JComboBox searchBar;
+    private JButton refreshButton;
 
     public Main() {
         goButton.addActionListener(new ActionListener() {
