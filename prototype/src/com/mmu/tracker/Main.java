@@ -24,13 +24,13 @@ public class Main {
         Unirest.config().socketTimeout(0).connectTimeout(0);
         //use if documentation is missing
         //print("");
-        //print("countries");
-        HttpResponse<JsonNode> response = Unirest.get("https://api.covid19api.com/countries").asJson();
-        System.out.println(response.getBody().getArray().getJSONObject(0));
+        print("countries");
+        /*HttpResponse<JsonNode> response = Unirest.get("https://api.covid19api.com/countries").asJson();
+        System.out.println(response.getBody().getArray().getJSONObject(0));*/
     }
     //function to review output. do not start apirequest with a slash!
     static void print(String apiRequest) {
-        HttpResponse<String> response = Unirest.get("https://api.covid19api.com/" + apiRequest).asString();
+        HttpResponse<JsonNode> response = Unirest.get("https://api.covid19api.com/" + apiRequest).asJson();
         //we must use getbody to get the part we care about
         System.out.println(response.getBody());
     }
