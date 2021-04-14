@@ -34,12 +34,18 @@ public class Main {
         //convert spaces to hyphens
         //delete brackets
         //reject 1 letter and 3 letter input
+        //remove ", Republic of China", taiwan is a free country
         return false;
     }
-    //function to review output. do not start apirequest with a slash!
-    static void print(String apiRequest) {
+    //do not start apirequest with a slash!
+    static JsonNode download(String apiRequest){
+        //retrieve data from online api
         HttpResponse<JsonNode> response = Unirest.get("https://api.covid19api.com/" + apiRequest).asJson();
         //we must use getbody to get the part we care about
-        System.out.println(response.getBody());
+        return response.getBody();
+    }
+    //test function to review output. do not start apirequest with a slash!
+    static void print(String apiRequest) {
+        System.out.println(download(apiRequest));
     }
 }
