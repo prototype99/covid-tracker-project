@@ -1,5 +1,6 @@
 package com.mmu.tracker;
 //import required libraries
+import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 import kong.unirest.HttpResponse;
 import javax.swing.*;
@@ -23,7 +24,9 @@ public class Main {
         Unirest.config().socketTimeout(0).connectTimeout(0);
         //use if documentation is missing
         //print("");
-        print("countries");
+        //print("countries");
+        HttpResponse<JsonNode> response = Unirest.get("https://api.covid19api.com/countries").asJson();
+        System.out.println(response.getBody());
     }
     //function to review output. do not start apirequest with a slash!
     static void print(String apiRequest) {
