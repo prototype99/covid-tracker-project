@@ -28,6 +28,14 @@ public class Main {
         /*HttpResponse<JsonNode> response = Unirest.get("https://api.covid19api.com/countries").asJson();
         System.out.println(response.getBody().getArray().getJSONObject(0));*/
     }
+    //future function to validate user input
+    static boolean isValid(){
+        //convert case
+        //convert spaces to hyphens
+        //delete brackets
+        //reject 1 letter and 3 letter input
+        return false;
+    }
     //function to review output. do not start apirequest with a slash!
     static void print(String apiRequest) {
         HttpResponse<JsonNode> response = Unirest.get("https://api.covid19api.com/" + apiRequest).asJson();
