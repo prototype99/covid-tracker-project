@@ -24,9 +24,8 @@ public class Main {
         Unirest.config().socketTimeout(0).connectTimeout(0);
         //use if documentation is missing
         //print("");
-        print("countries");
-        /*HttpResponse<JsonNode> response = Unirest.get("https://api.covid19api.com/countries").asJson();
-        System.out.println(response.getBody().getArray().getJSONObject(0));*/
+//        print("countries");
+        System.out.println(download("countries").getArray().getJSONObject(0));
     }
     //future function to validate user input
     static boolean isValid(){
