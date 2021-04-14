@@ -4,6 +4,8 @@ import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 import kong.unirest.HttpResponse;
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Main {
     //add form items, warnings are suppressed because they are actually needed for successful build
@@ -12,6 +14,16 @@ public class Main {
     private JPanel mainPanel;
     @SuppressWarnings("unused")
     private JTextField searchBar;
+
+    public Main() {
+        goButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.out.println("aww yeah press me harder");
+            }
+        });
+    }
+
     //main code block
     public static void main(String[] args) {
         //load and display the form
@@ -25,7 +37,7 @@ public class Main {
         //use if documentation is missing
         //print("");
 //        print("countries");
-        System.out.println(download("countries").getArray().getJSONObject(0));
+//        System.out.println(download("countries").getArray().getJSONObject(0));
     }
     //future function to validate user input
     static boolean isValid(){
