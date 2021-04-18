@@ -1,4 +1,3 @@
-//TODO: actionlistener for combobox
 package com.mmu.tracker;
 //import required libraries
 import kong.unirest.JsonNode;
@@ -13,6 +12,17 @@ public class Main {
     @SuppressWarnings("unused")
     private JComboBox searchBar;
     private JButton refreshButton;
+
+    //code for form interactions
+    public Main() {
+        //just a basic listener for now to prove it's possible
+        searchBar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.out.println(searchBar.getSelectedItem());
+            }
+        });
+    }
 
     //main code block
     public static void main(String[] args) {
