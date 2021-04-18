@@ -13,7 +13,8 @@ public class Main {
     private JComboBox searchBar;
     private JButton refreshButton;
 
-    //code for form interactions
+    /*combobox code inspired by https://kodejava.org/how-do-i-set-and-get-the-selected-item-in-jcombobox/
+    code for form interactions*/
     public Main() {
         //just a basic listener for now to prove it's possible
         searchBar.addActionListener(new ActionListener() {
