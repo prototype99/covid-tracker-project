@@ -37,7 +37,7 @@ public class Main {
         Unirest.config().socketTimeout(0).connectTimeout(0);
         //use if documentation is missing
         //print("");
-//        print("countries");
+        print("summary");
 //        System.out.println(download("countries").getArray().getJSONObject(0));
     }
     //future function to validate user input

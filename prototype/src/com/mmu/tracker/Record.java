@@ -2,5 +2,5 @@
 package com.mmu.tracker;
 
 public class Record {
-    String countryExternalName, countryInternalName, countryCode;
+    String countryCode, countryExternalName, countryInternalName;
 }
