@@ -1,4 +1,4 @@
-//TODO: actionlistener for combobox, maybe abolish go button
+//TODO: actionlistener for combobox
 package com.mmu.tracker;
 //import required libraries
 import kong.unirest.JsonNode;
@@ -9,22 +9,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Main {
-    //add form items, warnings are suppressed because they are actually needed for successful build
-    @SuppressWarnings("unused")
-    private JButton goButton;
     private JPanel mainPanel;
     @SuppressWarnings("unused")
     private JComboBox searchBar;
     private JButton refreshButton;
-
-    public Main() {
-        goButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                System.out.println("aww yeah press me harder");
-            }
-        });
-    }
 
     //main code block
     public static void main(String[] args) {
