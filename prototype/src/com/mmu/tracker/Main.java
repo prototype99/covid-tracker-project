@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class Main {
-    ArrayList<CovidRecord> data = new ArrayList<CovidRecord>();
+    ArrayList<CovidRecord> data = new ArrayList<>();
     private JPanel mainPanel;
     @SuppressWarnings("unused")
     private JComboBox searchBar;
