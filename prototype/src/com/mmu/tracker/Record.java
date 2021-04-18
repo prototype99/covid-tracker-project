@@ -3,5 +3,6 @@ package com.mmu.tracker;
 
 public class Record {
     String countryCode, countryExternalName, countryInternalName;
+    int caseAll, caseNew, deathAll, deathNew, recoveryAll, recoveryNew;
     //case = confirmed - (death + recovery )
 }
