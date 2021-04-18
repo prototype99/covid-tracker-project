@@ -7,8 +7,11 @@
         "id": "aaa77fb03f424a87",
         "type": "leaf",
         "state": {
-          "type": "graph",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "project.md",
+            "mode": "preview"
+          }
         }
       }
     ],
@@ -57,7 +60,31 @@
   "right": {
     "id": "93695e2cb251453e",
     "type": "split",
-    "children": [],
+    "children": [
+      {
+        "id": "3e8f96f7e231ecfd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "630f144b243cf2b7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "project.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
     "direction": "horizontal",
     "width": 300,
     "collapsed": true
