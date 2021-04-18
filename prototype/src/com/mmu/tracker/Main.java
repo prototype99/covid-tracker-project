@@ -6,8 +6,10 @@ import kong.unirest.HttpResponse;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class Main {
+    ArrayList<CovidRecord> data = new ArrayList<CovidRecord>();
     private JPanel mainPanel;
     @SuppressWarnings("unused")
     private JComboBox searchBar;
