@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class Main {
-    ArrayList<CovidRecord> data = new ArrayList<>();
+    static ArrayList<CovidRecord> data;
     private JPanel mainPanel;
     @SuppressWarnings("unused")
     private JComboBox searchBar;
@@ -57,9 +57,10 @@ public class Main {
         return response.getBody();
     }
     static void loadData(JSONArray j){
-        //iterate through the crew
+        data  = new ArrayList<>();
+        //iterate through the countries
         for (int i = 0;i<j.length();i++) {
-            //add currently loaded crew member to temporary list
+            //add currently loaded country to temporary list
             System.out.println(j.getJSONObject(i));
         }
     }
