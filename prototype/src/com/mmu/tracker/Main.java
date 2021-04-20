@@ -3,6 +3,7 @@ package com.mmu.tracker;
 import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 import kong.unirest.HttpResponse;
+import kong.unirest.json.JSONArray;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -39,7 +40,9 @@ public class Main {
         Unirest.config().socketTimeout(0).connectTimeout(0);
         //use if documentation is missing
         //print("");
-        print("summary");
+//        print("countries");
+        //set up the combobox
+        loadCountries();
 //        System.out.println(download("countries").getArray().getJSONObject(0));
     }
     //future function to validate user input
@@ -57,6 +60,9 @@ public class Main {
         HttpResponse<JsonNode> response = Unirest.get("https://api.covid19api.com/" + apiRequest).asJson();
         //we must use getbody to get the part we care about
         return response.getBody();
+    }
+    static void loadCountries(){
+
     }
     //test function to review output. do not start apirequest with a slash!
     static void print(String apiRequest) {
