@@ -39,7 +39,7 @@ public class Main {
         //equivalent to Unirest.setTimeouts(0, 0); in older unirest-java
         Unirest.config().socketTimeout(0).connectTimeout(0);
         //set up the combobox
-        loadCountries(download("countries").getArray());
+        loadData(download("summary").getObject().getJSONArray("Countries"));
 //        System.out.println(download("countries").getArray().getJSONObject(0));
     }
     //future function to validate user input
@@ -58,7 +58,7 @@ public class Main {
         //we must use getbody to get the part we care about
         return response.getBody();
     }
-    static void loadCountries(JSONArray j){
+    static void loadData(JSONArray j){
         //iterate through the crew
         for (int i = 0;i<j.length();i++) {
             //add currently loaded crew member to temporary list
