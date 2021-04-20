@@ -3,6 +3,7 @@ package com.mmu.tracker;
 import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 import kong.unirest.HttpResponse;
+import kong.unirest.json.JSONArray;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,7 +39,7 @@ public class Main {
         //equivalent to Unirest.setTimeouts(0, 0); in older unirest-java
         Unirest.config().socketTimeout(0).connectTimeout(0);
         //set up the combobox
-        loadCountries();
+        loadCountries(download("countries").getArray());
 //        System.out.println(download("countries").getArray().getJSONObject(0));
     }
     //future function to validate user input
@@ -57,8 +58,12 @@ public class Main {
         //we must use getbody to get the part we care about
         return response.getBody();
     }
-    static void loadCountries(){
-
+    static void loadCountries(JSONArray j){
+        //iterate through the crew
+        for (int i = 0;i<j.length();i++) {
+            //add currently loaded crew member to temporary list
+            System.out.println(j.getJSONObject(i));
+        }
     }
     //test function to review output. do not start apirequest with a slash!
     static void print(String apiRequest) {
