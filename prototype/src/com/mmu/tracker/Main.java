@@ -61,7 +61,7 @@ public class Main {
         //iterate through the countries
         for (int i = 0;i<j.length();i++) {
             //add currently loaded country to temporary list
-            System.out.println(j.getJSONObject(i));
+            data.add(new CovidRecord(j.getJSONObject(i)));
         }
     }
     //test function to review output. do not start apirequest with a slash!
