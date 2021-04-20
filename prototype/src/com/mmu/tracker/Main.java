@@ -3,7 +3,6 @@ package com.mmu.tracker;
 import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 import kong.unirest.HttpResponse;
-import kong.unirest.json.JSONArray;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,9 +37,6 @@ public class Main {
         frame.setVisible(true);
         //equivalent to Unirest.setTimeouts(0, 0); in older unirest-java
         Unirest.config().socketTimeout(0).connectTimeout(0);
-        //use if documentation is missing
-        //print("");
-//        print("countries");
         //set up the combobox
         loadCountries();
 //        System.out.println(download("countries").getArray().getJSONObject(0));
@@ -51,7 +47,7 @@ public class Main {
         //convert spaces to hyphens
         //delete brackets
         //reject 1 letter and 3 letter input
-        //remove ", Republic of China", taiwan is a free country
+        //remove ", Republic of China", taiwan is an independant country
         return false;
     }
     //do not start apirequest with a slash!
@@ -67,5 +63,9 @@ public class Main {
     //test function to review output. do not start apirequest with a slash!
     static void print(String apiRequest) {
         System.out.println(download(apiRequest));
+    }
+    //if you need help with using the api
+    static void help() {
+        print("");
     }
 }
