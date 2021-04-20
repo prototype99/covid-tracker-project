@@ -38,9 +38,7 @@ public class Main {
         frame.setVisible(true);
         //equivalent to Unirest.setTimeouts(0, 0); in older unirest-java
         Unirest.config().socketTimeout(0).connectTimeout(0);
-        //set up the combobox
         loadData(download("summary").getObject().getJSONArray("Countries"));
-//        System.out.println(download("countries").getArray().getJSONObject(0));
     }
     //future function to validate user input
     static boolean isValid(){
