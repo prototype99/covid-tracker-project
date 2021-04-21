@@ -13,7 +13,7 @@ public class Main {
     static ArrayList<CovidRecord> data;
     private JPanel mainPanel;
     @SuppressWarnings("unused")
-    private JComboBox searchBar;
+    private JComboBox<String> searchBar;
     @SuppressWarnings("unused")
     private JButton refreshButton;
     /*combobox code inspired by https://kodejava.org/how-do-i-set-and-get-the-selected-item-in-jcombobox/
@@ -85,6 +85,9 @@ public class Main {
                     j.getString("Date"), deathAll, deathNew, recoveryAll, recoveryNew,
                     (j.getInt("TotalConfirmed") - (deathAll + recoveryAll)), (j.getInt(
                             "NewConfirmed") - (deathNew + recoveryNew))));
+//            searchBar.addItem(countryCode);
+//            searchBar.addItem(countryExternalName);
+//            searchBar.addItem(countryInternalName);
         }
     }
     //test function to review output. do not start apirequest with a slash!
