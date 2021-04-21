@@ -15,8 +15,8 @@ public class Main {
     private SearchBar<String> searchBar;
     @SuppressWarnings("unused")
     private JButton refreshButton;
-    /*combobox code inspired by https://kodejava.org/how-do-i-set-and-get-the-selected-item-in-jcombobox/
-    code for form interactions*/
+    /*combobox code inspired by:
+    https://kodejava.org/how-do-i-set-and-get-the-selected-item-in-jcombobox/*/
     public Main() {
         //equivalent to Unirest.setTimeouts(0, 0); in older unirest-java
         Unirest.config().socketTimeout(0).connectTimeout(0);
