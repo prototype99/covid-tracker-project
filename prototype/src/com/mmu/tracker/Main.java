@@ -12,7 +12,7 @@ public class Main {
     static ArrayList<CovidRecord> data;
     private JPanel mainPanel;
     @SuppressWarnings("unused")
-    private JComboBox<String> searchBar;
+    private SearchBar<String> searchBar;
     @SuppressWarnings("unused")
     private JButton refreshButton;
     /*combobox code inspired by https://kodejava.org/how-do-i-set-and-get-the-selected-item-in-jcombobox/
@@ -58,7 +58,7 @@ public class Main {
         try {
             //get data
             top = download("summary").getObject().getJSONArray("Countries");
-        } catch (JSONException j) {
+        } catch (JSONException | NullPointerException e) {
             System.out.println("json parsing failed, is data correct?");
             top = new JSONArray();
         }
