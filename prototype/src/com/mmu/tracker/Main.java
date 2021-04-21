@@ -14,6 +14,7 @@ public class Main {
     private JPanel mainPanel;
     @SuppressWarnings("unused")
     private JComboBox searchBar;
+    @SuppressWarnings("unused")
     private JButton refreshButton;
 
     /*combobox code inspired by https://kodejava.org/how-do-i-set-and-get-the-selected-item-in-jcombobox/
