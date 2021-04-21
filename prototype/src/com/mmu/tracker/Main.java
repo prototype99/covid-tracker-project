@@ -25,6 +25,13 @@ public class Main {
                 System.out.println(searchBar.getSelectedItem());
             }
         });
+        //refresh data in case it's too old
+        refreshButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                loadData();
+            }
+        });
     }
     //main code block
     public static void main(String[] args) {
@@ -36,7 +43,7 @@ public class Main {
         frame.setVisible(true);
         //equivalent to Unirest.setTimeouts(0, 0); in older unirest-java
         Unirest.config().socketTimeout(0).connectTimeout(0);
-        loadData(download("summary").getObject().getJSONArray("Countries"));
+        loadData();
     }
     //future function to validate user input
     static boolean isValid(){
@@ -54,7 +61,8 @@ public class Main {
         //we must use getbody to get the part we care about
         return response.getBody();
     }
-    static void loadData(JSONArray j){
+    static void loadData(){
+        JSONArray j = download("summary").getObject().getJSONArray("Countries");
         data  = new ArrayList<>();
         //iterate through the countries
         for (int i = 0;i<j.length();i++) {
