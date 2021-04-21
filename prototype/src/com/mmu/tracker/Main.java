@@ -8,7 +8,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
 public class Main {
     static ArrayList<CovidRecord> data;
     private JPanel mainPanel;
@@ -16,7 +15,6 @@ public class Main {
     private JComboBox searchBar;
     @SuppressWarnings("unused")
     private JButton refreshButton;
-
     /*combobox code inspired by https://kodejava.org/how-do-i-set-and-get-the-selected-item-in-jcombobox/
     code for form interactions*/
     public Main() {
@@ -28,7 +26,6 @@ public class Main {
             }
         });
     }
-
     //main code block
     public static void main(String[] args) {
         //load and display the form
