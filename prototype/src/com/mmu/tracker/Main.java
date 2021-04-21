@@ -69,7 +69,9 @@ public class Main {
         data  = new ArrayList<>();
         //iterate through the countries
         for (int i = 0;i<top.length();i++) {
+            //retrieve an individual country
             JSONObject j = top.getJSONObject(i);
+            //we need these stored in memory because they're used twice
             String countryCode = j.getString("CountryCode");
             String countryExternalName = j.getString("Country");
             String countryInternalName = j.getString("Slug");
@@ -78,7 +80,7 @@ public class Main {
             int deathNew = j.getInt("NewDeaths");
             int recoveryAll = j.getInt("TotalRecovered");
             int recoveryNew = j.getInt("NewRecovered");
-            //add currently loaded country to temporary list
+            //add currently loaded country to list
             data.add(new CovidRecord(countryCode, countryExternalName, countryInternalName,
                     j.getString("Date"), deathAll, deathNew, recoveryAll, recoveryNew,
                     (j.getInt("TotalConfirmed") - (deathAll + recoveryAll)), (j.getInt(
