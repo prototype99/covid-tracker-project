@@ -1,5 +1,7 @@
 /*original source of code:
-https://www.tutorialspoint.com/how-can-we-implement-auto-complete-jcombobox-in-java*/
+https://www.tutorialspoint.com/how-can-we-implement-auto-complete-jcombobox-in-java
+potential source of other solutions:
+https://stackoverflow.com/questions/13681977/jcombobox-autocomplete*/
 package com.mmu.tracker;
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicComboBoxEditor;
