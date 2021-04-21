@@ -70,8 +70,19 @@ public class Main {
         //iterate through the countries
         for (int i = 0;i<top.length();i++) {
             JSONObject j = top.getJSONObject(i);
+            String countryCode = j.getString("CountryCode");
+            String countryExternalName = j.getString("Country");
+            String countryInternalName = j.getString("Slug");
+            //we have to store these for calculating the case variables
+            int deathAll = j.getInt("TotalDeaths");
+            int deathNew = j.getInt("NewDeaths");
+            int recoveryAll = j.getInt("TotalRecovered");
+            int recoveryNew = j.getInt("NewRecovered");
             //add currently loaded country to temporary list
-            data.add(new CovidRecord(j));
+            data.add(new CovidRecord(countryCode, countryExternalName, countryInternalName,
+                    j.getString("Date"), deathAll, deathNew, recoveryAll, recoveryNew,
+                    (j.getInt("TotalConfirmed") - (deathAll + recoveryAll)), (j.getInt(
+                            "NewConfirmed") - (deathNew + recoveryNew))));
         }
     }
     //test function to review output. do not start apirequest with a slash!
