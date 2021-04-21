@@ -59,7 +59,7 @@ public class Main {
             //get data
             top = download("summary").getObject().getJSONArray("Countries");
         } catch (JSONException | NullPointerException e) {
-            System.out.println("json parsing failed, is data correct?");
+            System.out.println("json parsing failed, is data correct?\ntry clicking refresh");
             top = new JSONArray();
         }
         //initialise array
