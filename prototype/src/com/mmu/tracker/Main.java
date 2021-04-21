@@ -4,6 +4,7 @@ import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 import kong.unirest.HttpResponse;
 import kong.unirest.json.JSONArray;
+import kong.unirest.json.JSONObject;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -62,12 +63,15 @@ public class Main {
         return response.getBody();
     }
     static void loadData(){
-        JSONArray j = download("summary").getObject().getJSONArray("Countries");
+        //get data
+        JSONArray top = download("summary").getObject().getJSONArray("Countries");
+        //initialise array
         data  = new ArrayList<>();
         //iterate through the countries
-        for (int i = 0;i<j.length();i++) {
+        for (int i = 0;i<top.length();i++) {
+            JSONObject j = top.getJSONObject(i);
             //add currently loaded country to temporary list
-            data.add(new CovidRecord(j.getJSONObject(i)));
+            data.add(new CovidRecord(j));
         }
     }
     //test function to review output. do not start apirequest with a slash!
