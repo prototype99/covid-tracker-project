@@ -22,8 +22,10 @@ public class Main {
         Unirest.config().socketTimeout(0).connectTimeout(0);
         //we load the data here to avoid hell
         loadData(searchBar);
-        //just a basic listener for now to prove it's possible
-        searchBar.addActionListener(actionEvent -> System.out.println(searchBar.getSelectedItem()));
+        //query the data
+        searchBar.addActionListener(actionEvent -> loadCountry(
+                searchBar.getSelectedItem().toString()
+        ));
         //refresh data in case it's too old
         refreshButton.addActionListener(actionEvent -> loadData(searchBar));
     }
@@ -86,6 +88,9 @@ public class Main {
             searchBar.addItem(countryExternalName);
             searchBar.addItem(countryInternalName);
         }
+    }
+    static void loadCountry(String s){
+        
     }
     //test function to review output. do not start apirequest with a slash!
     static void print(String apiRequest) {
