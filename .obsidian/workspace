@@ -7,8 +7,10 @@
         "id": "aaa77fb03f424a87",
         "type": "leaf",
         "state": {
-          "type": "graph",
-          "state": {}
+          "type": "pdf",
+          "state": {
+            "file": "doc/assignment-spec.pdf"
+          }
         }
       }
     ],
@@ -68,6 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "doc/assignment-spec.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,6 +90,7 @@
   },
   "active": "aaa77fb03f424a87",
   "lastOpenFiles": [
+    "doc/assignment-spec.pdf",
     "sb.md",
     "team-leader.md",
     "designs.md",
@@ -95,7 +99,6 @@
     "aa.md",
     "user-ambassador.md",
     "user-survey.md",
-    "failed.md",
-    "meetings.md"
+    "failed.md"
   ]
 }
