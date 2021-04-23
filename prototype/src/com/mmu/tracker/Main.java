@@ -106,15 +106,43 @@ public class Main {
             searchBar.addItem(countryInternalName);
         }
     }
-    static void loadCountry(String s, JLabel lblRecoveryAll, JLabel lblRecoveryNew, JLabel lblCaseAll, JLabel lblCaseNew, JLabel lblDeathAll, JLabel lblDeathNew){
-        if(s.length() < 2 || s.length() == 3){
-            lblRecoveryAll.setText("input");
-            lblCaseAll.setText("is");
-            lblDeathAll.setText("invalid");
-            lblRecoveryNew.setText("please");
-            lblCaseNew.setText("try");
-            lblDeathNew.setText("again");
+    static void loadCountry(String s, JLabel lblRecoveryAll, JLabel lblRecoveryNew,
+                            JLabel lblCaseAll, JLabel lblCaseNew, JLabel lblDeathAll,
+                            JLabel lblDeathNew){
+        boolean found = false;
+        if(s.length() == 2){
+            for(CovidRecord c : data){
+                if(c.countryCode.equalsIgnoreCase(s)){
+                    inputSuccess(lblRecoveryAll, lblRecoveryNew, lblCaseAll, lblCaseNew,
+                            lblDeathAll, lblDeathNew, c);
+                }
+            }
+        } else if(!found) {
+            inputFailure(lblRecoveryAll, lblRecoveryNew, lblCaseAll, lblCaseNew, lblDeathAll,
+                    lblDeathNew);
         }
+    }
+    static void inputFailure(JLabel lblRecoveryAll, JLabel lblRecoveryNew, JLabel lblCaseAll,
+                             JLabel lblCaseNew, JLabel lblDeathAll, JLabel lblDeathNew){
+        lblRecoveryAll.setText("input");
+        lblCaseAll.setText("is");
+        lblDeathAll.setText("invalid");
+        lblRecoveryNew.setText("please");
+        lblCaseNew.setText("try");
+        lblDeathNew.setText("again");
+    }
+    static void inputSuccess(JLabel lblRecoveryAll, JLabel lblRecoveryNew, JLabel lblCaseAll,
+                             JLabel lblCaseNew, JLabel lblDeathAll, JLabel lblDeathNew,
+                             CovidRecord c){
+        /*useful reading material:
+        https://www.educative.io/edpresso/how-to-convert-an-integer-to-a-string-in-java
+        https://stackoverflow.com/questions/3335737/integer-tostringint-i-vs-string-valueofint-i*/
+        lblRecoveryAll.setText(Integer.toString(c.recoveryAll));
+        lblCaseAll.setText(Integer.toString(c.caseAll));
+        lblDeathAll.setText(Integer.toString(c.deathAll));
+        lblRecoveryNew.setText("+" + c.recoveryNew);
+        lblCaseNew.setText("+" + c.caseNew);
+        lblDeathNew.setText("+" + c.deathNew);
     }
     //test function to review output. do not start apirequest with a slash!
     static void print(String apiRequest) {
