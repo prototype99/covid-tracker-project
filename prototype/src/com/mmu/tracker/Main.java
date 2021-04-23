@@ -56,14 +56,6 @@ public class Main {
         frame.pack();
         frame.setVisible(true);
     }
-    //future function to validate user input
-    static boolean isValid(){
-        //convert case
-        //convert spaces to hyphens
-        //delete brackets
-        //remove ", Republic of China", taiwan is an independant country
-        return false;
-    }
     //do not start apirequest with a slash!
     static JsonNode download(String apiRequest){
         //retrieve data from online api
