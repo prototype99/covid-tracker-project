@@ -102,13 +102,17 @@ public class Main {
                     (j.getInt("TotalConfirmed") - (deathAll + recoveryAll)), (j.getInt(
                             "NewConfirmed") - (deathNew + recoveryNew))));
             searchBar.addItem(countryCode);
-            searchBar.addItem(countryExternalName);
             searchBar.addItem(countryInternalName);
+            //keep dropdown list clean
+            if(!countryExternalName.equalsIgnoreCase(countryInternalName)){
+                searchBar.addItem(countryExternalName);
+            }
         }
     }
     static void loadCountry(String s, JLabel lblRecoveryAll, JLabel lblRecoveryNew,
                             JLabel lblCaseAll, JLabel lblCaseNew, JLabel lblDeathAll,
                             JLabel lblDeathNew){
+        //sentinel value, basically
         boolean found = false;
         if(s.length() == 2){
             for(CovidRecord c : data){
