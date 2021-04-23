@@ -15,6 +15,19 @@ public class Main {
     private SearchBar<String> searchBar;
     @SuppressWarnings("unused")
     private JButton refreshButton;
+    @SuppressWarnings("unused")
+    private JLabel lblRecoveryAll;
+    @SuppressWarnings("unused")
+    private JLabel lblRecoveryNew;
+    @SuppressWarnings("unused")
+    private JLabel lblCaseAll;
+    @SuppressWarnings("unused")
+    private JLabel lblCaseNew;
+    @SuppressWarnings("unused")
+    private JLabel lblDeathAll;
+    @SuppressWarnings("unused")
+    private JLabel lblDeathNew;
+
     /*combobox code inspired by:
     https://kodejava.org/how-do-i-set-and-get-the-selected-item-in-jcombobox/*/
     public Main() {

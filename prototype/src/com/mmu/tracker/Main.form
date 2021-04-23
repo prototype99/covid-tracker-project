@@ -44,7 +44,7 @@
             <properties/>
             <border type="none" title="Recoveries" title-justification="2"/>
             <children>
-              <component id="eef2b" class="javax.swing.JLabel">
+              <component id="eef2b" class="javax.swing.JLabel" binding="lblRecoveryAll">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -52,7 +52,7 @@
                   <text value="No"/>
                 </properties>
               </component>
-              <component id="dd38b" class="javax.swing.JLabel">
+              <component id="dd38b" class="javax.swing.JLabel" binding="lblRecoveryNew">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -70,7 +70,7 @@
             <properties/>
             <border type="none" title="Cases" title-justification="2"/>
             <children>
-              <component id="98ecc" class="javax.swing.JLabel">
+              <component id="98ecc" class="javax.swing.JLabel" binding="lblCaseAll">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -78,7 +78,7 @@
                   <text value="Search"/>
                 </properties>
               </component>
-              <component id="fea70" class="javax.swing.JLabel">
+              <component id="fea70" class="javax.swing.JLabel" binding="lblCaseNew">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -96,7 +96,7 @@
             <properties/>
             <border type="none" title="Deaths" title-justification="2"/>
             <children>
-              <component id="80a28" class="javax.swing.JLabel">
+              <component id="80a28" class="javax.swing.JLabel" binding="lblDeathAll">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -104,7 +104,7 @@
                   <text value="Made"/>
                 </properties>
               </component>
-              <component id="b4e2d" class="javax.swing.JLabel">
+              <component id="b4e2d" class="javax.swing.JLabel" binding="lblDeathNew">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
