@@ -106,16 +106,18 @@ public class Main {
     static void loadCountry(String s, JLabel lblRecoveryAll, JLabel lblRecoveryNew,
                             JLabel lblCaseAll, JLabel lblCaseNew, JLabel lblDeathAll,
                             JLabel lblDeathNew){
-        //sentinel value, basically
+        //sentinel value
         boolean found = false;
         if(s.length() == 2){
             for(CovidRecord c : data){
                 if(c.countryCode.equalsIgnoreCase(s)){
                     inputSuccess(lblRecoveryAll, lblRecoveryNew, lblCaseAll, lblCaseNew,
                             lblDeathAll, lblDeathNew, c);
+                    found = true;
                 }
             }
-        } else if(!found) {
+        }
+        if(!found) {
             inputFailure(lblRecoveryAll, lblRecoveryNew, lblCaseAll, lblCaseNew, lblDeathAll,
                     lblDeathNew);
         }
