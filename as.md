@@ -1,1 +1,0 @@
-They are the [lead report writer](lead-writer.md) and tentatively the [lead tester](lead-tester.md) depending on response during [meeting 1](meeting1.md)

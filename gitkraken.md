@@ -1,1 +1,0 @@
-An excellent [git client](git-client.md) beloved by many. Free for public [repositories](repository.md) just like ours. I want to use this, I'm just too busy to switch.

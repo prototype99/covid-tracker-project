@@ -1,1 +1,0 @@
-conducted research into [apis](apis.md) and [libraries](lib.md), applied [obsidian](obsidian.md) for enhanced documentation

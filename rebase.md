@@ -1,1 +1,0 @@
-This is the act of replacing the history of a [branch](branch.md) with another [branch](branch.md), almost like replacing the base of a branch, I guess.

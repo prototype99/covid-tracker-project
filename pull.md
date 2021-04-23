@@ -1,1 +1,0 @@
-Basically how you make sure you have the latest [commits](commit.md) from other people. if the [git client](git-client.md) asks you what you prefer, choose [rebase](rebase.md) mode

@@ -1,1 +1,0 @@
-free for public and private [repositories](repository.md) if you use the latest version. [sb](sb.md) uses this if that helps you choose

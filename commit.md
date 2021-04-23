@@ -1,1 +1,0 @@
-This is a change you've made, if you're working on files locally, make sure to [push](push.md) your commits so they're on the [repository](repository.md) rather than your [cloned][clone.md] copy!

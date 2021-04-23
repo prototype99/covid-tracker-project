@@ -1,1 +1,0 @@
-This is basically a synonym for downloading a [git](git) [repository](repository.md)
