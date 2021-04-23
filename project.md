@@ -12,3 +12,6 @@ remove go button because users will probably know to press enter
 ###### Fourth prototype (0.6) :
 update form so it can display all the data
 ![prototype3](prototype3.png)
+###### Initial (1.0) :
+we can now display all data, technically a complete product
+![release0](release0.png)
