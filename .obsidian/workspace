@@ -7,11 +7,8 @@
         "id": "aaa77fb03f424a87",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "project.md",
-            "mode": "preview"
-          }
+          "type": "graph",
+          "state": {}
         }
       }
     ],
@@ -71,7 +68,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "project.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,6 +87,7 @@
   },
   "active": "aaa77fb03f424a87",
   "lastOpenFiles": [
+    "README.md",
     "project.md",
     "countriesRoute.md",
     "covid19api.md",
@@ -99,7 +96,6 @@
     "countryRoute.md",
     "countryStatusRoute.md",
     "countryStatusDayOneTotalRoute.md",
-    "countryStatusDayOneRoute.md",
-    "countryDayOneTotalRoute.md"
+    "countryStatusDayOneRoute.md"
   ]
 }
