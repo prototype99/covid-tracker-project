@@ -37,7 +37,12 @@ public class Main {
         loadData(searchBar);
         //query the data
         searchBar.addActionListener(actionEvent -> loadCountry(
-                searchBar.getSelectedItem().toString()
+                searchBar.getSelectedItem().toString(),
+                lblRecoveryAll,
+                lblRecoveryNew,
+                lblCaseAll,
+                lblCaseNew, lblDeathAll,
+                lblDeathNew
         ));
         //refresh data in case it's too old
         refreshButton.addActionListener(actionEvent -> loadData(searchBar));
@@ -56,7 +61,6 @@ public class Main {
         //convert case
         //convert spaces to hyphens
         //delete brackets
-        //reject 1 letter and 3 letter input
         //remove ", Republic of China", taiwan is an independant country
         return false;
     }
@@ -102,8 +106,15 @@ public class Main {
             searchBar.addItem(countryInternalName);
         }
     }
-    static void loadCountry(String s){
-        
+    static void loadCountry(String s, JLabel lblRecoveryAll, JLabel lblRecoveryNew, JLabel lblCaseAll, JLabel lblCaseNew, JLabel lblDeathAll, JLabel lblDeathNew){
+        if(s.length() < 2 || s.length() == 3){
+            lblRecoveryAll.setText("input");
+            lblCaseAll.setText("is");
+            lblDeathAll.setText("invalid");
+            lblRecoveryNew.setText("please");
+            lblCaseNew.setText("try");
+            lblDeathNew.setText("again");
+        }
     }
     //test function to review output. do not start apirequest with a slash!
     static void print(String apiRequest) {
