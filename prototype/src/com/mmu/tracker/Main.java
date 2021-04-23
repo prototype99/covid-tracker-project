@@ -8,6 +8,8 @@ import kong.unirest.json.JSONException;
 import kong.unirest.json.JSONObject;
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Objects;
+
 public class Main {
     static ArrayList<CovidRecord> data;
     private JPanel mainPanel;
@@ -37,7 +39,7 @@ public class Main {
         loadData(searchBar);
         //query the data
         searchBar.addActionListener(actionEvent -> loadCountry(
-                searchBar.getSelectedItem().toString(),
+                Objects.requireNonNull(searchBar.getSelectedItem()).toString(),
                 lblRecoveryAll,
                 lblRecoveryNew,
                 lblCaseAll,
