@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "aaa77fb03f424a87",
+        "id": "6d2976f1205abe41",
         "type": "leaf",
         "state": {
           "type": "pdf",
           "state": {
-            "file": "doc/assignment-spec.pdf"
+            "file": "doc/projects-list.pdf"
           }
         }
       }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "doc/assignment-spec.pdf",
+                "file": "doc/projects-list.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,8 +88,10 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "aaa77fb03f424a87",
+  "active": "6d2976f1205abe41",
   "lastOpenFiles": [
+    "doc/projects-list.pdf",
+    "doc/design-sb-annotated.png",
     "doc/assignment-spec.pdf",
     "sb.md",
     "team-leader.md",
@@ -97,8 +99,6 @@
     "lib.md",
     "technology-researcher.md",
     "aa.md",
-    "user-ambassador.md",
-    "user-survey.md",
-    "failed.md"
+    "user-ambassador.md"
   ]
 }

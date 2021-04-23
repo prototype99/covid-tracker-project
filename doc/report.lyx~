@@ -119,38 +119,6 @@ Without a list of locations the user may feel frustrated that they can't
  guess the stored name for their desired location correctly.
 \end_layout
 
-\begin_layout Subsubsection
-Recent data
-\end_layout
-
-\begin_layout Standard
-\begin_inset Quotes eld
-\end_inset
-
-it has been most governments’ intentions to ensure that the latest data
- and statistics are publicly available
-\begin_inset Quotes erd
-\end_inset
-
- implies that the data should ideally be new.
-\end_layout
-
-\begin_layout Subsubsection
-Open source repository
-\end_layout
-
-\begin_layout Standard
-The project description mentions that government's intend data to be 
-\begin_inset Quotes eld
-\end_inset
-
-publicly available
-\begin_inset Quotes erd
-\end_inset
-
-, this is most easily done by releasing the source code to the public.
-\end_layout
-
 \begin_layout Subsection
 Could have
 \end_layout
