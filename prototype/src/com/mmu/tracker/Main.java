@@ -52,7 +52,7 @@ public class Main {
     //main code block
     public static void main(String[] args) {
         //load and display the form
-        JFrame frame = new JFrame("COVIDASH");
+        JFrame frame = new JFrame("TriCovid");
         frame.setContentPane(new Main().mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
