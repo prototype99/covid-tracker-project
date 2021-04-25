@@ -84,7 +84,7 @@ Seirra Blake
 \end_layout
 
 \begin_layout Section
-Requirements analysis
+Implemented requirements
 \end_layout
 
 \begin_layout Standard
@@ -197,6 +197,60 @@ These are requirements that are welcome extras but by no means a necessity.
 \end_layout
 
 \begin_layout Subsubsection
+Automatic text completion
+\end_layout
+
+\begin_layout Standard
+This may conflict with the location map, but it is probably easier to implement.
+\end_layout
+
+\begin_layout Subsection
+Won't have
+\end_layout
+
+\begin_layout Standard
+These are things the project will not have.
+\end_layout
+
+\begin_layout Subsubsection
+Vaccination data
+\end_layout
+
+\begin_layout Standard
+It is too soon to get data on vaccinations, this can be reviewed at a later
+ date.
+\end_layout
+
+\begin_layout Subsubsection
+Hyper detailed data
+\end_layout
+
+\begin_layout Standard
+This comes at an extra monetary cost which I am not prepared to front.
+\end_layout
+
+\begin_layout Subsubsection
+An app
+\end_layout
+
+\begin_layout Standard
+I have no idea where to begin making a mobile app.
+ Mobile users can make do with a website, this could be revisited later.
+\end_layout
+
+\begin_layout Section
+Unimplemented requirements
+\end_layout
+
+\begin_layout Subsection
+Could have
+\end_layout
+
+\begin_layout Standard
+These are requirements that are welcome extras but by no means a necessity.
+\end_layout
+
+\begin_layout Subsubsection
 Location map
 \end_layout
 
@@ -229,40 +283,6 @@ A website
 \begin_layout Standard
 This could be done and would be more multi-platform, however I feel much
  more comfortable with making a java application.
-\end_layout
-
-\begin_layout Subsection
-Won't have
-\end_layout
-
-\begin_layout Standard
-These are things the project will not have.
-\end_layout
-
-\begin_layout Subsubsection
-Vaccination data
-\end_layout
-
-\begin_layout Standard
-It is too soon to get data on vaccinations, this can be reviewed at a later
- date.
-\end_layout
-
-\begin_layout Subsubsection
-Hyper detailed data
-\end_layout
-
-\begin_layout Standard
-This comes at an extra cost which I am not prepared to front.
-\end_layout
-
-\begin_layout Subsubsection
-An app
-\end_layout
-
-\begin_layout Standard
-I have no idea where to begin making a mobile app.
- Mobile users can make do with a website, this could be revisited later.
 \end_layout
 
 \begin_layout Section
