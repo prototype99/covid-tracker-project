@@ -101,6 +101,26 @@ These are requirements that are required for the project to even be considered
  a valid solution.
 \end_layout
 
+\begin_layout Subsubsection
+API-sourced data
+\end_layout
+
+\begin_layout Standard
+The expected deliverable must source data from an accountable source.
+ The UK government API is suggested but not listed as a requirement.
+ Research found what appeared to be a more appropriate alternative API.
+\end_layout
+
+\begin_layout Subsubsection
+Ability to filter data
+\end_layout
+
+\begin_layout Standard
+The expected deliverable must be able to retrieve a subset of the data source.
+ Given the context of the API in use, the ability to filter by country would
+ seem most logical.
+\end_layout
+
 \begin_layout Subsection
 Should have
 \end_layout
@@ -207,7 +227,7 @@ A website
 \end_layout
 
 \begin_layout Standard
-This could be done and would be more multiplatform, however I feel much
+This could be done and would be more multi-platform, however I feel much
  more comfortable with making a java application.
 \end_layout
 
@@ -249,12 +269,41 @@ I have no idea where to begin making a mobile app.
 Stakeholders
 \end_layout
 
+\begin_layout Standard
+These are those whom the project will affect, the success of the project
+ depends on appeasing them.
+\end_layout
+
+\begin_layout Subsection
+User
+\end_layout
+
+\begin_layout Standard
+This is the one using the program.
+ They want it to be functional, trustworthy and easy to use.
+\end_layout
+
+\begin_layout Subsection
+Developer
+\end_layout
+
+\begin_layout Standard
+This is the one who creates the project.
+ What the user wants may be at odds with what they can easily do.
+ Most of the project's compromises will probably be directly accountable
+ with what the developer can or can't do within the given time limit.
+\end_layout
+
 \begin_layout Subsection
 Government
 \end_layout
 
-\begin_layout Subsection
-Users
+\begin_layout Standard
+It is never actually specifically said which government, so one could assume
+ it is all governments that exist.
+ The government is an important stakeholder because they would have the
+ power to close down the project if they felt it was doing more harm than
+ good to the users.
 \end_layout
 
 \end_body
