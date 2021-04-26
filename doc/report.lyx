@@ -126,8 +126,8 @@ As illustrated in figure 1, one of the first things that was done was to
  analyse the specification.
  I found this helpful as it got me thinking about what was being asked of
  me.
- My only criticism is that I did not notice the requirements hidden inside
- the 
+ My only criticism of my analysis is that I did not notice the requirements
+ hidden inside the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -143,8 +143,8 @@ Implemented requirements
 \end_layout
 
 \begin_layout Standard
-This project has an array of requirements, what follows is an analysis of
- those requirements.
+TriCovid has an array of requirements, what follows is an analysis of those
+ requirements.
 \end_layout
 
 \begin_layout Subsection
@@ -152,7 +152,7 @@ Must have
 \end_layout
 
 \begin_layout Standard
-These are requirements that are required for the project to even be considered
+These are requirements that are required for TriCovid to even be considered
  a valid solution.
 \end_layout
 
@@ -161,7 +161,7 @@ API-sourced data
 \end_layout
 
 \begin_layout Standard
-The expected deliverable must source data from an accountable source.
+TriCovid must source data from an accountable source.
  The UK government API is suggested but not listed as a requirement.
  Research found what appeared to be a more appropriate alternative API.
 \end_layout
@@ -171,9 +171,9 @@ Ability to filter data
 \end_layout
 
 \begin_layout Standard
-The expected deliverable must be able to retrieve a subset of the data source.
- Given the context of the API in use, the ability to filter by country would
- seem most logical.
+TriCovid must be able to retrieve a subset of the data source.
+ Given the abilities of the API in use, the ability to filter by country
+ would seem most logical.
 \end_layout
 
 \begin_layout Subsection
@@ -181,8 +181,8 @@ Should have
 \end_layout
 
 \begin_layout Standard
-These are requirements that a user would probably expect the project to
- have before they will acknowledge it as a solution.
+These are requirements that a user would probably expect TriCovid to have
+ before they will acknowledge it as a solution.
 \end_layout
 
 \begin_layout Subsubsection
@@ -215,7 +215,7 @@ Open source repository
 \end_layout
 
 \begin_layout Standard
-The project description mentions that government's intend data to be 
+TriCovid's specification mentions that government's intend data to be 
 \begin_inset Quotes eld
 \end_inset
 
@@ -231,7 +231,7 @@ Blunt, unapologetic inclusion of death tolls
 \end_layout
 
 \begin_layout Standard
-The project description mentions the government's intentions 
+TriCovid's specification mentions the government's intentions 
 \begin_inset Quotes eld
 \end_inset
 
@@ -240,7 +240,7 @@ to help the general public understand both the severity of the current situation
 \end_inset
 
 .
- This implies that the software is meant to do the same thing.
+ This implies that TriCovid is meant to do the same thing.
 \end_layout
 
 \begin_layout Subsection
@@ -264,7 +264,7 @@ Won't have
 \end_layout
 
 \begin_layout Standard
-These are things the project will not have.
+These are things TriCovid will not have.
 \end_layout
 
 \begin_layout Subsubsection
@@ -290,11 +290,31 @@ An app
 
 \begin_layout Standard
 I have no idea where to begin making a mobile app.
- Mobile users can make do with a website, this could be revisited later.
+ Mobile users can make do with the website, this could be revisited later.
 \end_layout
 
 \begin_layout Section
 Unimplemented requirements
+\end_layout
+
+\begin_layout Subsection
+Should have
+\end_layout
+
+\begin_layout Standard
+These are requirements that a user would probably expect TriCovid to have
+ before they will acknowledge it as a solution.
+\end_layout
+
+\begin_layout Subsubsection
+UK government API support
+\end_layout
+
+\begin_layout Standard
+This would allow TriCovid to function as a full desktop alternative to the
+ website, rather than just being a completely separate application.
+ This would require a dual API construction, however would greatly benefit
+ the UK user-base.
 \end_layout
 
 \begin_layout Subsection
@@ -315,23 +335,6 @@ This is something that might be nice as a more visual way to select locations,
 \end_layout
 
 \begin_layout Subsubsection
-Automatic text completion
-\end_layout
-
-\begin_layout Standard
-This may conflict with the location map, but it is probably easier to implement.
-\end_layout
-
-\begin_layout Subsubsection
-Extended UK locations
-\end_layout
-
-\begin_layout Standard
-This would require a dual API construction, however would greatly benefit
- the UK user-base.
-\end_layout
-
-\begin_layout Subsubsection
 A website
 \end_layout
 
@@ -345,8 +348,8 @@ Stakeholders
 \end_layout
 
 \begin_layout Standard
-These are those whom the project will affect, the success of the project
- depends on appeasing them.
+These are those whom TriCovid will affect, the success of TriCovid depends
+ on appeasing them.
 \end_layout
 
 \begin_layout Subsection
@@ -354,7 +357,7 @@ User
 \end_layout
 
 \begin_layout Standard
-This is the one using the program.
+This is all users of TriCovid.
  They want it to be functional, trustworthy and easy to use.
 \end_layout
 
@@ -363,10 +366,10 @@ Developer
 \end_layout
 
 \begin_layout Standard
-This is the one who creates the project.
+This is me.
  What the user wants may be at odds with what they can easily do.
  Most of the project's compromises will probably be directly accountable
- with what the developer can or can't do within the given time limit.
+ with what I can or can't do within the given time limit.
 \end_layout
 
 \begin_layout Subsection
@@ -374,19 +377,19 @@ Government
 \end_layout
 
 \begin_layout Standard
-It is never actually specifically said which government, so one could assume
- it is all governments that exist.
+It is never actually specifically said which government, so I assume it
+ is all governments that exist.
  The government is an important stakeholder because they would have the
- power to close down the project if they felt it was doing more harm than
- good to the users.
+ power to close down TriCovid if they felt it was doing more harm than good
+ to the users.
 \end_layout
 
 \begin_layout Section
-Accessing the project
+Accessing TriCovid code and documentation
 \end_layout
 
 \begin_layout Standard
-The project can be accessed at 
+TriCovid can be accessed at 
 \begin_inset Flex URL
 status open
 
@@ -405,8 +408,8 @@ Required skills
 \end_layout
 
 \begin_layout Standard
-A number of skills are required to continue working on the project, these
- are detailed below.
+A number of skills are required to continue working on TriCovid, these are
+ detailed below.
 \end_layout
 
 \begin_layout Subsection
@@ -414,8 +417,7 @@ Must have
 \end_layout
 
 \begin_layout Standard
-Note that many of these required skills can be changed by rewriting the
- program.
+Note that many of these required skills can be changed by rewriting TriCovid.
 \end_layout
 
 \begin_layout Subsubsection
@@ -423,8 +425,8 @@ Java 8
 \end_layout
 
 \begin_layout Standard
-This program is written in java 8, so it is imperative that the developers
- understand the language.
+TriCovid is written in java 8, so it is imperative that the developers understan
+d the language.
 \end_layout
 
 \begin_layout Subsubsection
@@ -432,8 +434,8 @@ Swing UI
 \end_layout
 
 \begin_layout Standard
-This program leverages swing to draw the whole UI, therefore any developer
- must have an understanding of swing.
+TriCovid leverages swing to draw the whole UI, therefore any developer must
+ have an understanding of swing.
 \end_layout
 
 \begin_layout Subsection
@@ -442,7 +444,7 @@ Should have
 
 \begin_layout Standard
 These are skills that are heavily recommended, but technically not necessary
- to work on the project.
+ to work on TriCovid.
 \end_layout
 
 \begin_layout Subsubsection
@@ -468,7 +470,7 @@ Intellij IDEA
 \end_layout
 
 \begin_layout Standard
-The project is written using Intellij, therefore any developer should know
+TriCovid is written using Intellij, therefore any developer should know
  how to use it, especially as part of the form code is constructed using
  the integrated GUI designer.
 \end_layout
@@ -483,7 +485,7 @@ GitHub
 
 \begin_layout Standard
 Any prospective developer could have experience in GitHub specifically.
- This project is hosted on GitHub, so knowing the platform may be beneficial.
+ TriCovid is hosted on GitHub, so knowing the platform may be beneficial.
 \end_layout
 
 \begin_layout Subsubsection
@@ -491,7 +493,7 @@ Obsidian
 \end_layout
 
 \begin_layout Standard
-The project documentation centres around highly linked markdown, therefore
+TriCovid's documentation centres around highly linked markdown, therefore
  obsidian is a beneficial tool because it will visualise the linkage of
  files.
 \end_layout
@@ -501,7 +503,7 @@ Experience with minor libraries
 \end_layout
 
 \begin_layout Standard
-The project contains some minor libraries to operate.
+TriCovid contains some minor libraries to operate.
  Whilst it is perfectly possible to infer the usage of them, it may be prove
  beneficial.
 \end_layout
