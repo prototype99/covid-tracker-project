@@ -1,4 +1,3 @@
-##### mention obsidian
 ##### mention gitkraken
 ##### walk through program:
 - libraries
