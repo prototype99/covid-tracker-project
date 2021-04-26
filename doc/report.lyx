@@ -381,5 +381,130 @@ It is never actually specifically said which government, so one could assume
  good to the users.
 \end_layout
 
+\begin_layout Section
+Accessing the project
+\end_layout
+
+\begin_layout Standard
+The project can be accessed at 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://github.com/prototype99/tricovid/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Required skills
+\end_layout
+
+\begin_layout Standard
+A number of skills are required to continue working on the project, these
+ are detailed below.
+\end_layout
+
+\begin_layout Subsection
+Must have
+\end_layout
+
+\begin_layout Standard
+Note that many of these required skills can be changed by rewriting the
+ program.
+\end_layout
+
+\begin_layout Subsubsection
+Java 8
+\end_layout
+
+\begin_layout Standard
+This program is written in java 8, so it is imperative that the developers
+ understand the language.
+\end_layout
+
+\begin_layout Subsubsection
+Swing UI
+\end_layout
+
+\begin_layout Standard
+This program leverages swing to draw the whole UI, therefore any developer
+ must have an understanding of swing.
+\end_layout
+
+\begin_layout Subsection
+Should have
+\end_layout
+
+\begin_layout Standard
+These are skills that are heavily recommended, but technically not necessary
+ to work on the project.
+\end_layout
+
+\begin_layout Subsubsection
+Git
+\end_layout
+
+\begin_layout Standard
+Any prospective developer should know how to work with git repositories
+ to ensure an optimum workflow and a healthy long term code-base.
+\end_layout
+
+\begin_layout Subsubsection
+Markdown
+\end_layout
+
+\begin_layout Standard
+Any prospective developer should know markdown in order to know how to properly
+ contribute to the documentation.
+\end_layout
+
+\begin_layout Subsubsection
+Intellij IDEA
+\end_layout
+
+\begin_layout Standard
+The project is written using Intellij, therefore any developer should know
+ how to use it, especially as part of the form code is constructed using
+ the integrated GUI designer.
+\end_layout
+
+\begin_layout Subsection
+Could have
+\end_layout
+
+\begin_layout Subsubsection
+GitHub
+\end_layout
+
+\begin_layout Standard
+Any prospective developer could have experience in GitHub specifically.
+ This project is hosted on GitHub, so knowing the platform may be beneficial.
+\end_layout
+
+\begin_layout Subsubsection
+Obsidian
+\end_layout
+
+\begin_layout Standard
+The project documentation centres around highly linked markdown, therefore
+ obsidian is a beneficial tool because it will visualise the linkage of
+ files.
+\end_layout
+
+\begin_layout Subsubsection
+Experience with minor libraries
+\end_layout
+
+\begin_layout Standard
+The project contains some minor libraries to operate.
+ Whilst it is perfectly possible to infer the usage of them, it may be prove
+ beneficial.
+\end_layout
+
 \end_body
 \end_document
