@@ -84,6 +84,61 @@ Seirra Blake
 \end_layout
 
 \begin_layout Section
+Specification analysis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename project-spec-annotated.png
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+An annotated version of the project spec exploring what is being asked
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As illustrated in figure 1, one of the first things that was done was to
+ analyse the specification.
+ I found this helpful as it got me thinking about what was being asked of
+ me.
+ My only criticism is that I did not notice the requirements hidden inside
+ the 
+\begin_inset Quotes eld
+\end_inset
+
+expected deliverables
+\begin_inset Quotes erd
+\end_inset
+
+ section originally.
+\end_layout
+
+\begin_layout Section
 Implemented requirements
 \end_layout
 
