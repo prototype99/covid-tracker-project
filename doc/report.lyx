@@ -404,6 +404,21 @@ https://github.com/prototype99/tricovid/
 \end_layout
 
 \begin_layout Section
+Etymology
+\end_layout
+
+\begin_layout Standard
+At one point TriCovid becoming a separate project was considered a possibility.
+ Portmanteaus were considered, however it felt morally dubious to do such
+ a thing, as it may trivialise a serious situation.
+ After a while TriCovid was chosen, as a harmless reference to the fact
+ it displays three different metrics.
+ When the request to separate was rejected the decision was made to keep
+ the name, as TriCovid appears to be a very different experience when compared
+ to the website.
+\end_layout
+
+\begin_layout Section
 Libraries
 \end_layout
 
