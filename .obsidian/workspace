@@ -9,7 +9,7 @@
         "state": {
           "type": "pdf",
           "state": {
-            "file": "doc/projects-list.pdf"
+            "file": "doc/assignment-spec.pdf"
           }
         }
       }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "doc/projects-list.pdf",
+                "file": "doc/assignment-spec.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,9 +90,9 @@
   },
   "active": "6d2976f1205abe41",
   "lastOpenFiles": [
+    "doc/assignment-spec.pdf",
     "doc/projects-list.pdf",
     "doc/design-sb-annotated.png",
-    "doc/assignment-spec.pdf",
     "sb.md",
     "team-leader.md",
     "designs.md",

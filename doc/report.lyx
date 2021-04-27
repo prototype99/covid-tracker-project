@@ -404,6 +404,55 @@ https://github.com/prototype99/tricovid/
 \end_layout
 
 \begin_layout Section
+Libraries
+\end_layout
+
+\begin_layout Standard
+These help the program function without wasting time writing code someone
+ already made.
+\end_layout
+
+\begin_layout Subsection
+Unirest-java-3.11.07
+\end_layout
+
+\begin_layout Standard
+On the API documentation this is one of the suggested options to access
+ it, I chose this because it looked easier.
+ The API documentation seems to be based on unirest-java-2, however migration
+ was easy enough.
+ This version number was chosen because it seemed like a good balance between
+ new and old.
+\end_layout
+
+\begin_layout Subsection
+Apache httpcomponents-4
+\end_layout
+
+\begin_layout Standard
+These are dependencies of unirest-java, they help facilitate the connection.
+ I tried to make it work with the newer 5 series however it failed, so I
+ used the latest 4 series.
+\end_layout
+
+\begin_layout Subsection
+Google gson
+\end_layout
+
+\begin_layout Standard
+This is a dependency of unirest-java used to power the json parsing.
+\end_layout
+
+\begin_layout Subsection
+Apache commons-logging-1.2
+\end_layout
+
+\begin_layout Standard
+This is a dependency of Apache httpcomponents.
+ it is probably possible to make this not be required.
+\end_layout
+
+\begin_layout Section
 Required skills
 \end_layout
 
@@ -499,13 +548,13 @@ TriCovid's documentation centres around highly linked markdown, therefore
 \end_layout
 
 \begin_layout Subsubsection
-Experience with minor libraries
+Experience with libraries
 \end_layout
 
 \begin_layout Standard
-TriCovid contains some minor libraries to operate.
- Whilst it is perfectly possible to infer the usage of them, it may be prove
- beneficial.
+TriCovid contains some libraries to operate.
+ Whilst it is perfectly possible to infer the usage of them, it may prove
+ to be beneficial.
 \end_layout
 
 \end_body
