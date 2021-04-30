@@ -2,7 +2,7 @@
 
 This is intended purely for entertainment purposes and coding practice. Do not use this as a primary source of information, the source appears to have accuracy issues
 
-University [project](project.md) working on making a covid-19 tracker.
+University project working on making a covid-19 tracker.
 
 Best viewed in [obsidian](obsidian.md)!
 

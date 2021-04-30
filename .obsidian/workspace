@@ -4,13 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "6d2976f1205abe41",
+        "id": "47db78075754dffd",
         "type": "leaf",
         "state": {
-          "type": "markdown",
+          "type": "pdf",
           "state": {
-            "file": "doc/project.md",
-            "mode": "preview"
+            "file": "doc/assignment-spec.pdf"
           }
         }
       }
@@ -71,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "doc/project.md",
+                "file": "doc/assignment-spec.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,17 +88,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "6d2976f1205abe41",
+  "active": "47db78075754dffd",
   "lastOpenFiles": [
-    "doc/project.md",
     "doc/assignment-spec.pdf",
     "doc/projects-list.pdf",
+    "doc/getting-started.md",
+    "README.md",
+    "doc/project.md",
     "doc/design-sb-annotated.png",
     "sb.md",
     "team-leader.md",
     "designs.md",
-    "lib.md",
-    "technology-researcher.md",
-    "aa.md"
+    "lib.md"
   ]
 }

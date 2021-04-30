@@ -293,6 +293,15 @@ I have no idea where to begin making a mobile app.
  Mobile users can make do with the website, this could be revisited later.
 \end_layout
 
+\begin_layout Subsubsection
+Offline mode
+\end_layout
+
+\begin_layout Standard
+Users should not be using old data to assess covid19.
+ As a result there is no offline mode.
+\end_layout
+
 \begin_layout Section
 Unimplemented requirements
 \end_layout
@@ -315,6 +324,15 @@ This would allow TriCovid to function as a full desktop alternative to the
  website, rather than just being a completely separate application.
  This would require a dual API construction, however would greatly benefit
  the UK user-base.
+\end_layout
+
+\begin_layout Subsubsection
+Clear display of date
+\end_layout
+
+\begin_layout Standard
+This is important because there is a risk users may forget they have old
+ data and make uninformed decisions based on it.
 \end_layout
 
 \begin_layout Subsection
@@ -341,6 +359,16 @@ A website
 \begin_layout Standard
 This could be done and would be more multi-platform, however I feel much
  more comfortable with making a java application.
+\end_layout
+
+\begin_layout Subsubsection
+Clear display of debug info
+\end_layout
+
+\begin_layout Standard
+It would not hurt to have display of the API and application version, so
+ that in the event of an issue users can verify that they have the latest
+ version.
 \end_layout
 
 \begin_layout Section
@@ -452,7 +480,283 @@ The only other design to follow was an unrealistically high detail design.
 \end_layout
 
 \begin_layout Section
-Prototyping
+Versions
+\end_layout
+
+\begin_layout Standard
+These are notable versions that display key differences.
+\end_layout
+
+\begin_layout Subsection
+First prototype (0.1)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename prototype0.png
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Version 0.1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Three labels prepared to accommodate all three kinds of data.
+\end_layout
+
+\begin_layout Subsection
+Second prototype (0.3)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename prototype1.png
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Version 0.3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Switch to using a combo-box, add a refresh button because it appears temporarily
+ storing data is necessary.
+\end_layout
+
+\begin_layout Subsection
+Third prototype (0.4)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename prototype2.png
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Version 0.4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Remove go button because users will probably know to press enter.
+\end_layout
+
+\begin_layout Subsection
+Fourth prototype (0.6)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename prototype3.png
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Version 0.6
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Update form so it can display all the data
+\end_layout
+
+\begin_layout Subsection
+Initial (1.0)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename release0.png
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Version 1.0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+TriCovid can now fetch and display all data, technically a complete product
+\end_layout
+
+\begin_layout Subsection
+Rebrand (1.1)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename release1.png
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Version 1.1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Due to the fact it behaves like a functionally separate product, it was
+ decided it was best to rename TriCovid.
 \end_layout
 
 \begin_layout Section
@@ -539,7 +843,7 @@ This is a dependency of Apache httpcomponents.
 \end_layout
 
 \begin_layout Section
-Required skills
+Required skills/handover report
 \end_layout
 
 \begin_layout Standard
@@ -641,6 +945,66 @@ Experience with libraries
 TriCovid contains some libraries to operate.
  Whilst it is perfectly possible to infer the usage of them, it may prove
  to be beneficial.
+\end_layout
+
+\begin_layout Section
+TriCovid user guide
+\end_layout
+
+\begin_layout Standard
+This is a brief guide to using TriCovid, intended to cover the use of the
+ application.
+\end_layout
+
+\begin_layout Subsection
+Retrieving data
+\end_layout
+
+\begin_layout Standard
+Users may select from previously populated values in the combo-box.
+ Users may also freehand type the value into the box and it will suggest
+ a possible value which they may accept by pressing enter.
+ Pressing enter is also required if fully typing the chosen country.
+\end_layout
+
+\begin_layout Subsection
+Refreshing data
+\end_layout
+
+\begin_layout Standard
+Data can be refreshed using the appropriately marked refresh ( ↻ ) button.
+\end_layout
+
+\begin_layout Subsection
+Offline use
+\end_layout
+
+\begin_layout Standard
+TriCovid must have an initial internet connection to fetch data.
+ While technically afterwards you could operate offline with that data,
+ it is recommended to not do that.
+\end_layout
+
+\begin_layout Subsection
+Troubleshooting issues
+\end_layout
+
+\begin_layout Standard
+If TriCovid is ran from the console you can view extended information, should
+ a bug occur.
+ In normal operation this should not be necessary.
+\end_layout
+
+\begin_layout Section
+Moral issues
+\end_layout
+
+\begin_layout Standard
+The biggest potential moral issue I see is that users could have outdated
+ information and not realise it.
+ I'm not sure if there is necessarily an easy solution to such an issue,
+ however displaying the information date may at least help.
+ For this reason offline use is not a feature.
 \end_layout
 
 \end_body
