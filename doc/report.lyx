@@ -444,6 +444,13 @@ Original design
 Further designs
 \end_layout
 
+\begin_layout Standard
+The only other design to follow was an unrealistically high detail design.
+ As a result it was decided to try prototyping the design in software.
+ The prototype proved so effective that it moved outside the prototyping
+ stage into release stage.
+\end_layout
+
 \begin_layout Section
 Prototyping
 \end_layout

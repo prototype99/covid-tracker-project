@@ -7,9 +7,10 @@
         "id": "6d2976f1205abe41",
         "type": "leaf",
         "state": {
-          "type": "pdf",
+          "type": "markdown",
           "state": {
-            "file": "doc/assignment-spec.pdf"
+            "file": "doc/project.md",
+            "mode": "preview"
           }
         }
       }
@@ -70,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "doc/assignment-spec.pdf",
+                "file": "doc/project.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,6 +91,7 @@
   },
   "active": "6d2976f1205abe41",
   "lastOpenFiles": [
+    "doc/project.md",
     "doc/assignment-spec.pdf",
     "doc/projects-list.pdf",
     "doc/design-sb-annotated.png",
@@ -98,7 +100,6 @@
     "designs.md",
     "lib.md",
     "technology-researcher.md",
-    "aa.md",
-    "user-ambassador.md"
+    "aa.md"
   ]
 }
